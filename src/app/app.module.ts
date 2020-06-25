@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
@@ -18,6 +19,15 @@ import { SurveyScheduleComponent } from './components/survey-schedule/survey-sch
 import { BatchesComponent } from './components/batches/batches.component';
 import { BatchesDetailsComponent } from './components/batches-details/batches-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { SurveyHomeComponent } from './components/survey-home/survey-home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ChartsModule } from 'ng2-charts';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +40,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SurveyScheduleComponent,
     BatchesComponent,
     BatchesDetailsComponent,
-    DashboardComponent
+    DashboardComponent,
+    CurriculumComponent,
+    ReportsComponent,
+    SurveyHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +52,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    ChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
