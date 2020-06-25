@@ -1,7 +1,7 @@
 export interface ChartData = {
-  dataset: number[][];
+  dataset: any[][];
   legendLabel: string[];
-  xLabel: string[];
+  xAxisLabel: string[];
   chartResponsive: boolean; 
   chartType: string;
 }

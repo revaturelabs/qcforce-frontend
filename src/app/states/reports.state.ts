@@ -1,6 +1,6 @@
 import { ChartTable } from '../interfaces/chartTable.interface';
 
-export interface ReportState {
+export interface ReportsState {
   chartTableList: ChartTable[];
   selectedChartTable: ChartTable;
   newChartTable: ChartTable;
