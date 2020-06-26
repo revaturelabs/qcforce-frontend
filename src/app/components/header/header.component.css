@@ -5,3 +5,16 @@
 #submenu {
   overflow-x: auto;
 }
+
+p { 
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

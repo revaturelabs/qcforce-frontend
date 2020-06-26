@@ -10,13 +10,13 @@ const _headerReducer = createReducer(
   on(menuClick, (state, { name }) => {
     let newState = {...state};
     if (name === "Reports") {
-      state.subMenuList = REPORTSSUBMENU;
+      newState.subMenuList = REPORTSSUBMENU;
     } else if (name === "Batches") {
-      state.subMenuList = BATCHESSUBMENU;
+      newState.subMenuList = BATCHESSUBMENU;
     } else if (name === "Surveys") {
-      state.subMenuList = SURVEYSSUBMENU;
+      newState.subMenuList = SURVEYSSUBMENU;
     } else {
-      state.subMenuList = null;
+      newState.subMenuList = null;
     }
     return newState;
   }),
