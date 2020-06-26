@@ -1,0 +1,2 @@
+Step 1: create a mock json file;
+Step 2: in terminal execute json-server --watch file.json (specify a path to file) most likly .\src\json-server\mock..... .json;
