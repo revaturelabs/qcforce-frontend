@@ -55,16 +55,64 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-e1a695195e21c23337f6f750f6345cfb"' : 'data-target="#xs-components-links-module-AppModule-e1a695195e21c23337f6f750f6345cfb"' }>
+                                            'data-target="#components-links-module-AppModule-6f445b2bbf47a1775e18d41703282059"' : 'data-target="#xs-components-links-module-AppModule-6f445b2bbf47a1775e18d41703282059"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-e1a695195e21c23337f6f750f6345cfb"' :
-                                            'id="xs-components-links-module-AppModule-e1a695195e21c23337f6f750f6345cfb"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-6f445b2bbf47a1775e18d41703282059"' :
+                                            'id="xs-components-links-module-AppModule-6f445b2bbf47a1775e18d41703282059"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/BatchesComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">BatchesComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/BatchesDetailsComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">BatchesDetailsComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/CurriculumComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CurriculumComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/DashboardComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashboardComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/FooterComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">FooterComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/HeaderComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">HeaderComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ReportsComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ReportsComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SidebarComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SidebarComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SurveyCreateComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SurveyCreateComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SurveyHomeComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SurveyHomeComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SurveyManageComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SurveyManageComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SurveyScheduleComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SurveyScheduleComponent</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -87,6 +135,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                         </ul>
                     </li>
+                        <li class="chapter">
+                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
+                                'data-target="#xs-injectables-links"' }>
+                                <span class="icon ion-md-arrow-round-down"></span>
+                                <span>Injectables</span>
+                                <span class="icon ion-ios-arrow-down"></span>
+                            </div>
+                            <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                                <li class="link">
+                                    <a href="injectables/BatchDetailsService.html" data-type="entity-link">BatchDetailsService</a>
+                                </li>
+                            </ul>
+                        </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#miscellaneous-links"'
                             : 'data-target="#xs-miscellaneous-links"' }>

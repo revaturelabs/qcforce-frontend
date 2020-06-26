@@ -1,0 +1,27 @@
+<div class="p-5">
+    <h2 class="title  ">{{' View reports'| uppercase }}</h2><hr>
+    <mat-slide-toggle class="clickable">
+        batch 
+    </mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable">week</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable"> time-period</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable">trainer</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable">all-tables</mat-slide-toggle><br><hr>
+
+    <div class="reports-chart"  >
+        <canvas baseChart 
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+     
+
+</div>
+
+
+
