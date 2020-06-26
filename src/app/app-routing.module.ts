@@ -11,6 +11,7 @@ import { BatchesDetailsComponent } from './components/batches-details/batches-de
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SurveyHomeComponent } from './components/survey-home/survey-home.component';
 import { ReportsComponent } from './components/reports/reports.component';
+
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'survey-create', component: SurveyCreateComponent },
