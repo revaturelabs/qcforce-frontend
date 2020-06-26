@@ -247,9 +247,9 @@ export class SidebarComponent implements OnInit {
         &lt;li routerLink&#x3D;&quot;/survey-schedule&quot; class&#x3D;&quot;sublist clickable&quot;&gt;   - View Survey Schedules&lt;/li&gt;
     &lt;li class&#x3D;&quot;list clickable&quot; routerLink&#x3D;&quot;/batches&quot; &gt;Batches&lt;/li&gt;
 
-    &lt;li class&#x3D;&quot;list&quot;&gt;Reports&lt;/li&gt;
+    &lt;li class&#x3D;&quot;list clickable&quot; routerLink&#x3D;&quot;/reports&quot;&gt;Reports&lt;/li&gt;
 
-    &lt;li class&#x3D;&quot;list&quot;&gt;Curriculum&lt;/li&gt;
+    &lt;!-- &lt;li class&#x3D;&quot;list&quot;&gt;Curriculum&lt;/li&gt; --&gt;
 
    &lt;/ul&gt;
    
@@ -282,7 +282,6 @@ ul {
     font-size: large;
     list-style-type: none;
 }
-
 
 .sublist {
 
@@ -323,8 +322,8 @@ ul {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div id="sidebar" class="bg-dark text-light" >   <ul >    <li class="list clickable" routerLink="/dashboard">Dashboard</li>    <li class="list clickable" routerLink="/survey-home">Survey</li>        <li routerLink="/survey-create" class="sublist clickable">   - Create New Survey</li>        <li routerLink="/survey-manage" class="sublist clickable">   - Manage Survey</li>        <li routerLink="/survey-schedule" class="sublist clickable">   - View Survey Schedules</li>    <li class="list clickable" routerLink="/batches" >Batches</li>    <li class="list">Reports</li>    <li class="list">Curriculum</li>   </ul>   </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesComponent', 'selector': 'app-batches'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div id="sidebar" class="bg-dark text-light" >   <ul >    <li class="list clickable" routerLink="/dashboard">Dashboard</li>    <li class="list clickable" routerLink="/survey-home">Survey</li>        <li routerLink="/survey-create" class="sublist clickable">   - Create New Survey</li>        <li routerLink="/survey-manage" class="sublist clickable">   - Manage Survey</li>        <li routerLink="/survey-schedule" class="sublist clickable">   - View Survey Schedules</li>    <li class="list clickable" routerLink="/batches" >Batches</li>    <li class="list clickable" routerLink="/reports">Reports</li>    <!-- <li class="list">Curriculum</li> -->   </ul>   </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};
 </script>

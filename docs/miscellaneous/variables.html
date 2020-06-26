@@ -58,6 +58,12 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#_headerReducer" title="src/app/reducers/header.reducer.ts"><b>_headerReducer</b>&nbsp;&nbsp;&nbsp;(src/.../header.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BATCHESSUBMENU" title="src/app/consts/header.const.ts"><b>BATCHESSUBMENU</b>&nbsp;&nbsp;&nbsp;(src/.../header.const.ts)</a>
+                        </li>
+                        <li>
                             <a href="#context" title="src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
                         </li>
                         <li>
@@ -67,7 +73,22 @@
                             <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
                         </li>
                         <li>
+                            <a href="#INITHEADERSTATE" title="src/app/consts/header.const.ts"><b>INITHEADERSTATE</b>&nbsp;&nbsp;&nbsp;(src/.../header.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#menuClick" title="src/app/actions/header.action.ts"><b>menuClick</b>&nbsp;&nbsp;&nbsp;(src/.../header.action.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#REPORTSSUBMENU" title="src/app/consts/header.const.ts"><b>REPORTSSUBMENU</b>&nbsp;&nbsp;&nbsp;(src/.../header.const.ts)</a>
+                        </li>
+                        <li>
                             <a href="#require" title="src/test.ts"><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#subMenuClick" title="src/app/actions/header.action.ts"><b>subMenuClick</b>&nbsp;&nbsp;&nbsp;(src/.../header.action.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SURVEYSSUBMENU" title="src/app/consts/header.const.ts"><b>SURVEYSSUBMENU</b>&nbsp;&nbsp;&nbsp;(src/.../header.const.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -76,6 +97,267 @@
     </table>
 </section>
 
+    <h3>src/app/reducers/header.reducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_headerReducer"></a>
+                        <span class="name">
+                            <b>
+                            _headerReducer</b>
+                            <a href="#_headerReducer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createReducer(
+  INITHEADERSTATE,
+  on(menuClick, (state, { name }) &#x3D;&gt; {
+    let newState &#x3D; cloneDeep(INITHEADERSTATE);
+    if (name &#x3D;&#x3D;&#x3D; &#x27;Reports&#x27;) {
+      newState.menuList[0].active &#x3D; true;
+      newState.subMenuList &#x3D; REPORTSSUBMENU;
+    } else if (name &#x3D;&#x3D;&#x3D; &#x27;Batches&#x27;) {
+      newState.menuList[1].active &#x3D; true;
+      newState.subMenuList &#x3D; BATCHESSUBMENU;
+    } else if (name &#x3D;&#x3D;&#x3D; &#x27;Surveys&#x27;) {
+      newState.menuList[2].active &#x3D; true;
+      newState.subMenuList &#x3D; SURVEYSSUBMENU;
+    } 
+    return newState;
+  }),
+  on(subMenuClick, (state, { name }) &#x3D;&gt; {
+    let newState &#x3D; cloneDeep(state);
+    for (let i &#x3D; 0; i &lt; newState.subMenuList.length; i++) {
+      if (newState.subMenuList[i].name &#x3D;&#x3D;&#x3D; name) {
+        newState.subMenuList[i].active &#x3D; true;
+      } else {
+        newState.subMenuList[i].active &#x3D; false;
+      }
+    }
+    return newState;
+  })
+)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>_headerReducer</code> (NgRx inner reducer)</p>
+<p>This is a reducer used by NgRx to process header actions to modify
+  the header state</p>
+<p>This reducer changes the header state (menu and submenu lists) to 
+  respond to a menu and submenu clicks </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/consts/header.const.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="BATCHESSUBMENU"></a>
+                        <span class="name">
+                            <b>
+                            BATCHESSUBMENU</b>
+                            <a href="#BATCHESSUBMENU"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  {
+    name: &#x27;List of Batches&#x27;,
+    routerLink: null,
+    active: false,
+  },
+]</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>BATCHESSUBMENU</code> (Reports Sub Menu)</p>
+<p>A constant HeaderState value representing the 
+  submenu you get after clicking Batches in main menu.</p>
+<p>This constant is used in the Header Reducer to set the HeaderState.submenuList
+  after a menuClick action corresponding to the menu item Batches being clicked</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="INITHEADERSTATE"></a>
+                        <span class="name">
+                            <b>
+                            INITHEADERSTATE</b>
+                            <a href="#INITHEADERSTATE"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/HeaderState.html" target="_self" >HeaderState</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  
+  menuList: [
+    {
+      name: &#x27;Reports&#x27;,
+      routerLink: null,
+      active: false,
+    },
+    {
+      name: &#x27;Batches&#x27;,
+      routerLink: null,
+      active: false,
+    },
+    {
+      name: &#x27;Surveys&#x27;,
+      routerLink: null,
+      active: false,
+    },
+  ],
+  subMenuList: null
+}</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>INNERHEADERSTATE</code> (Init Header State)</p>
+<p>A constant HeaderState value representing the 
+  initial state of header menus.</p>
+<p>We see that main menu has three items - Reports, Batches and Surveys -
+  and the submenu is null.</p>
+<p>  This constant is used in the Header Reducer to set initial header state</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="REPORTSSUBMENU"></a>
+                        <span class="name">
+                            <b>
+                            REPORTSSUBMENU</b>
+                            <a href="#REPORTSSUBMENU"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  {
+    name: &#x27;Batch Report&#x27;,
+    routerLink: &#x27;/batch-reports&#x27;,
+    active: false,
+  },
+  {
+    name: &#x27;Weekly Report by Batch&#x27;,
+    routerLink: null,
+    active: false,
+  },
+]</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>REPORTSSUBMENU</code> (Reports Sub Menu)</p>
+<p>A constant HeaderState value representing the 
+  submenu you get after clicking Reports in main menu.</p>
+<p>This constant is used in the Header Reducer to set the HeaderState.submenuList
+  after a menuClick action corresponding to the menu item Reports being clicked</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SURVEYSSUBMENU"></a>
+                        <span class="name">
+                            <b>
+                            SURVEYSSUBMENU</b>
+                            <a href="#SURVEYSSUBMENU"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  {
+    name: &#x27;Survey Schedule&#x27;,
+    routerLink: null,
+    active: false,
+  },
+  {
+    name: &#x27;Update Survey&#x27;,
+    routerLink: null,
+    active: false,
+  },
+]</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>SURVEYSUBMENU</code> (Reports Sub Menu)</p>
+<p>A constant HeaderState value representing the 
+  submenu you get after clicking Surveys in main menu.</p>
+<p>This constant is used in the Header Reducer to set the HeaderState.submenuList
+  after a menuClick action corresponding to the menu item Surveys being clicked</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
     <h3>src/test.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -182,6 +464,71 @@
                         </td>
                     </tr>
 
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/actions/header.action.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuClick"></a>
+                        <span class="name">
+                            <b>
+                            menuClick</b>
+                            <a href="#menuClick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(&#x27;[Header] Menu Item Clicked&#x27;, props&lt;{ name: string }&gt;())</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>menuClick</code> (NgRx Action)</p>
+<p>This object is an NgRx Action object which can be dispatched
+  to the state store.</p>
+<p>It represents the action of clicking on a main menu item.</p>
+<p>It takes in a payload, namely an object with the name of the menu item you clicked.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subMenuClick"></a>
+                        <span class="name">
+                            <b>
+                            subMenuClick</b>
+                            <a href="#subMenuClick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(&#x27;[Header] Submenu Item Clicked&#x27;, props&lt;{ name: string }&gt;())</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>subMenuClick</code> (NgRx Action)</p>
+<p>This object is an NgRx Action object which can be dispatched
+  to the state store.</p>
+<p>It represents the action of clicking on a submenu item.</p>
+<p>It takes in a payload, namely an object with the name of the submenu item you clicked.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

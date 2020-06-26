@@ -237,7 +237,53 @@ export class SurveyManageComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;survey-manage works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-3&quot;&gt; 
+    &lt;h2 class&#x3D;&quot;title  &quot;&gt;{{&#x27; manage Surveys&#x27;| uppercase }}&lt;/h2&gt;&lt;hr&gt;
+   
+  
+    &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+          &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Surveys&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+          &lt;option selected&gt;Choose...&lt;/option&gt;
+          &lt;option value&#x3D;&quot;1&quot;&gt;Survey 1&lt;/option&gt;
+          &lt;option value&#x3D;&quot;2&quot;&gt;Survey 2&lt;/option&gt;
+          &lt;option value&#x3D;&quot;3&quot;&gt;Survey 3&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+          &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Batch&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+          &lt;option selected&gt;Choose...&lt;/option&gt;
+          &lt;option value&#x3D;&quot;1&quot;&gt;CUNY04-JAVA&lt;/option&gt;
+          &lt;option value&#x3D;&quot;2&quot;&gt;CUNY14_MEAN&lt;/option&gt;
+          &lt;option value&#x3D;&quot;3&quot;&gt;CUNY25_SF&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    
+      &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+          &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Week&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+          &lt;option selected&gt;Choose...&lt;/option&gt;
+          &lt;option value&#x3D;&quot;1&quot;&gt;Week 1&lt;/option&gt;
+          &lt;option value&#x3D;&quot;2&quot;&gt;Week 2&lt;/option&gt;
+          &lt;option value&#x3D;&quot;3&quot;&gt;Week 3&lt;/option&gt;
+          &lt;option value&#x3D;&quot;4&quot;&gt;Week 4&lt;/option&gt;
+          &lt;option value&#x3D;&quot;5&quot;&gt;Week 5&lt;/option&gt;          
+        &lt;/select&gt;
+      &lt;/div&gt;
+    
+     
+    
+    
+   
+&lt;/div&gt;
+
 </code></pre>
     </div>
 
@@ -245,7 +291,35 @@ export class SurveyManageComponent implements OnInit {
                 <p class="comment">
                     <code>./survey-manage.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.title {
+    padding-left: 2rem;
+    color: rgb(108, 108, 110);
+    font-family: Arial, Helvetica, sans-serif;  
+    font-stretch: wider ;
+}
+
+
+
+ul {
+    margin: 0;
+    padding-left: .5rem;
+}
+
+
+li {
+    margin: .25rem 0 .25rem 0;
+    padding: .5rem 0 .5rem 1rem;
+    font-size: large;
+    list-style-type: none;
+    
+}
+
+
+.clickable:hover {
+    color: rgb(27, 27, 27);
+    text-decoration: underline;
+    cursor: pointer;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -273,8 +347,8 @@ export class SurveyManageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>survey-manage works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesComponent', 'selector': 'app-batches'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div class="p-3">     <h2 class="title  ">{{\' manage Surveys\'| uppercase }}</h2><hr>         <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Surveys</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">Survey 1</option>          <option value="2">Survey 2</option>          <option value="3">Survey 3</option>        </select>      </div>      <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Batch</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">CUNY04-JAVA</option>          <option value="2">CUNY14_MEAN</option>          <option value="3">CUNY25_SF</option>        </select>      </div>          <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Week</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">Week 1</option>          <option value="2">Week 2</option>          <option value="3">Week 3</option>          <option value="4">Week 4</option>          <option value="5">Week 5</option>                  </select>      </div>                    </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SurveyManageComponent'};
 </script>
