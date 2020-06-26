@@ -2,17 +2,23 @@
     <h2 class="title ">{{'Revature Training Batches'| uppercase }}</h2><hr>
     <table class="table table-striped">
         <thead>
-            <tr>
+            <!-- <tr>
                 <th scope="col">Batch Name</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">Location</th>
                 <th scope="col">Curriculum</th>
                 <th scope="col">NO. Seats</th>
+            </tr> -->
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Location</th>
+                <th scope="col">Batch Name</th>
+                <th scope="col">NO. Seats</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
+            <!-- <tr>
                 <td routerLink="/batches-details">CUNY04_JAVA</td>
                 <td>May 4, 2020</td>
                 <td>CUNY Queens, NY</td>
@@ -30,6 +36,12 @@
                 <td>October 17, 2020</td>
                 <td>CUNY Queens, NY</td>
                 <td>Spring MicroServices</td>
+            </tr> -->
+            <tr *ngFor="let batch of batchesList">
+                <td>{{batch.id}}</td>
+                <td>{{batch.location}}</td>
+                <td>{{batch.name}}</td>
+                <td>{{batch.totalStudents}}</td>              
             </tr>
         </tbody>
 
