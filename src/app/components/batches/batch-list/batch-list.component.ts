@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-batches',
-  templateUrl: './batches.component.html',
-  styleUrls: ['./batches.component.css']
+  templateUrl: './batch-list.component.html',
+  styleUrls: ['./batch-list.component.css']
 })
-export class BatchesComponent implements OnInit {
+export class BatchListComponent implements OnInit {
 
   batchesList: any;
   url = 'http://localhost:3000/batches';

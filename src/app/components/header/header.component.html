@@ -3,7 +3,7 @@
     <div class="px-3 bg-light logo"><img src="../../../assets/logo.png" height="48" width=""></div> 
     <div class="flex-fill d-none d-md-flex nav">
       <li class="nav-item" *ngFor="let menuItem of menuList | async">
-        <p class="nav-link p-3" (click)="onMenuClick(menuItem.name)">{{ menuItem.name }}</p>
+        <p class="nav-link p-3" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">{{ menuItem.name }}</p>
       </li>
     </div>
     <div class="flex-fill d-block d-md-none"></div> 
@@ -11,13 +11,13 @@
   </div>
   <div class="d-flex d-md-none justify-content-center">
       <li class="nav-item" *ngFor="let menuItem of menuList | async">
-        <p class="nav-link p-3" (click)="onMenuClick(menuItem.name)">{{ menuItem.name }}</p>
+        <p class="nav-link p-3" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">{{ menuItem.name }}</p>
       </li>
   </div>
   <div id="submenu">
     <ul class="nav nav-tabs d-flex justify-content-md-center flex-nowrap">
       <li class="nav-item" *ngFor="let subMenuItem of subMenuList | async">
-        <p class="nav-link">{{ subMenuItem.name }}</p>
+        <p class="nav-link" (click)="onSubMenuClick(subMenuItem.name, subMenuItem.routerLink)">{{ subMenuItem.name }}</p>
       </li>
     </ul>
   </div>

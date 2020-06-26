@@ -21,8 +21,14 @@ export class HeaderComponent implements OnInit {
     this.subMenuList = this.store.select(state => state.header.subMenuList);
   }
  
-  onMenuClick(name : string) {
+  onMenuClick(name: string, routerLink: string) {
     this.store.dispatch(menuClick({ name: name }));
+    this.router.navigate([routerLink]);
+  }
+
+  onSubMenuClick(name: string, routerLink: string) {
+    this.store.dispatch(subMenuClick({ name: name }));
+    this.router.navigate([routerLink]);
   }
 
   ngOnInit(): void {

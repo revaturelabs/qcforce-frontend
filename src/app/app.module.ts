@@ -17,7 +17,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SurveyCreateComponent } from './components/survey-create/survey-create.component';
 import { SurveyManageComponent } from './components/survey-manage/survey-manage.component';
 import { SurveyScheduleComponent } from './components/survey-schedule/survey-schedule.component';
-import { BatchesComponent } from './components/batches/batches.component';
+
 import { BatchesDetailsComponent } from './components/batches-details/batches-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
@@ -30,6 +30,8 @@ import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 
 import { headerReducer } from "./reducers/header.reducer";
+import { BatchReportsComponent } from './components/batches/batch-reports/batch-reports.component';
+import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
 
 
 @NgModule({
@@ -41,12 +43,14 @@ import { headerReducer } from "./reducers/header.reducer";
     SurveyCreateComponent,
     SurveyManageComponent,
     SurveyScheduleComponent,
-    BatchesComponent,
+    BatchListComponent,
     BatchesDetailsComponent,
     DashboardComponent,
     CurriculumComponent,
     ReportsComponent,
-    SurveyHomeComponent
+    SurveyHomeComponent,
+    BatchReportsComponent,
+    BatchListComponent
   ],
   imports: [
     BrowserModule,
