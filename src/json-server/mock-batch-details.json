@@ -1,0 +1,33 @@
+{
+    "batches-details": [
+        {
+            "id": 1,
+            "firstName": "Angelo",
+            "lastName": "Capozzi",
+            "email": "angelo@gmail.com",
+            "grade": "C-"
+        
+        },
+        {
+            "id": 2,
+            "firstName": "Kiryl",
+            "lastName": "Pashkouski",
+            "email": "kpash@gmail.com",
+            "grade": "B"
+        },
+        {
+            "id": 3,
+            "firstName": "Andres",
+            "lastName": "Toledo",
+            "email": "andrest@gmail.com",
+            "grade": "A-"
+        },
+        {
+          "id": 4,
+          "firstName": "Guatam",
+          "lastName": "Ramasubramanian",
+          "email": "gram@gmail.com",
+          "grade": "B+"
+      }
+    ]
+  }
