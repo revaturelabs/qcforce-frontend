@@ -1,4 +1,5 @@
-export interface Batch = {
+import { Associate } from './associate.interface';
+export interface Batch {
   id: string;
   location: string;
   startDate: string;

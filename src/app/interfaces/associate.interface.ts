@@ -1,4 +1,4 @@
-export interface Associate = {
+export interface Associate {
   id: string;
   name: string;
   email: string;

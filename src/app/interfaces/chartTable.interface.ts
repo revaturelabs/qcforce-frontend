@@ -1,6 +1,7 @@
 import { Criteria } from './criteria.interface';
+import { ChartData } from './chartData.interface';
 
-export ChartTable: {
+export interface ChartTable {
   name: string;
   criteria: Criteria;
   chart: ChartData;

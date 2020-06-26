@@ -1,6 +1,6 @@
 import { Batch } from '../interfaces/batch.interface';
 
-export interface BatchState = { 
+export interface BatchState {
   batchList: Batch[];
   selectedBatch: Batch;
 }
