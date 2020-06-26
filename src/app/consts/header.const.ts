@@ -1,43 +1,43 @@
 import { MenuItem } from '../interfaces/menu-item.interface';
 import { HeaderState } from '../states/header.state';
 
-export const INITHEADERSTATE : HeaderState = {
+export const INITHEADERSTATE: HeaderState = {
   menuList: [
-    { 
-      name: "Reports"
+    {
+      name: 'Reports'
     },
-    { 
-      name: "Batches"
+    {
+      name: 'Batches'
     },
-    { 
-      name: "Surveys"
+    {
+      name: 'Surveys'
     },
   ],
   subMenuList: null
-}
+};
 
-export const REPORTSSUBMENU : MenuItem[] = [
+export const REPORTSSUBMENU: MenuItem[] = [
   {
-    name: "Batch Report"
+    name: 'Batch Report'
   },
   {
-    name: "Weekly Report by Batch"
+    name: 'Weekly Report by Batch'
   },
-]
+];
 
-export const BATCHESSUBMENU : MenuItem[] = [
+export const BATCHESSUBMENU: MenuItem[] = [
   {
-    name: "List of Batches"
+    name: 'List of Batches'
   },
-]
+];
 
-export const SURVEYSSUBMENU : MenuItem[] = [
+export const SURVEYSSUBMENU: MenuItem[] = [
   {
-    name: "Survey Schedule"
+    name: 'Survey Schedule'
   },
   {
-    name: "Update Survey"
+    name: 'Update Survey'
   },
-]
+];
 
 
