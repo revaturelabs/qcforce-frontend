@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderState } from "../../states/header.state";
+import { MenuItem } from "../../interfaces/menu-item.interface";
+import { menuClick, subMenuClick } from "../../actions/header.action";
+import { Observable } from "rxjs";
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +13,17 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  menuList : Observable<MenuItem[]>; 
+  subMenuList : Observable<MenuItem[]>; 
+
+  constructor(private router: Router, private store : Store<{header: HeaderState}>) {
+    this.menuList = this.store.select(state => state.header.menuList);
+    this.subMenuList = this.store.select(state => state.header.subMenuList);
+  }
+ 
+  onMenuClick(name : string) {
+    this.store.dispatch(menuClick({ name: name }));
+  }
 
   ngOnInit(): void {
   }
