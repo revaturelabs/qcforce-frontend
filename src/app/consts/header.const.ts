@@ -53,8 +53,8 @@ export const REPORTSSUBMENU: MenuItem[] = [
     active: false,
   },
   {
-    name: 'Weekly Report by Batch',
-    routerLink: null,
+    name: 'Weekly Report',
+    routerLink: '/weekly-reports',
     active: false,
   },
 ];
@@ -72,7 +72,7 @@ export const REPORTSSUBMENU: MenuItem[] = [
 export const BATCHESSUBMENU: MenuItem[] = [
   {
     name: 'List of Batches',
-    routerLink: null,
+    routerLink: '/batch-list',
     active: false,
   },
 ];

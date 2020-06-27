@@ -1,15 +1,14 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
-import { Color, Label } from 'ng2-charts';
+import { Component, OnInit } from '@angular/core';
+import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 
 @Component({
-  selector: 'app-reports',
-  templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css']
+  selector: 'app-batch-reports',
+  templateUrl: './batch-reports.component.html',
+  styleUrls: ['./batch-reports.component.css']
 })
+export class BatchReportsComponent implements OnInit {
 
-export class ReportsComponent implements OnInit {
-  
   public lineChartData: ChartDataSets[] = [
     { data: [3.25, 2, 5, 4, 3, 5, 1], label: 'Batch 1'},
     { data: [2.47, 3.81, 4.81, 2.11, 4.13, 3.51, 1.89], label: 'Batch 2'},
@@ -19,25 +18,24 @@ export class ReportsComponent implements OnInit {
   public lineChartOptions = {
     responsive: true,
   };
-  public lineChartColors: Color[] = [
-    {
-      borderColor: 'gray',
-      backgroundColor: 'rgba(253, 150, 67, 1)',
-    },
-  ];
-  public lineChartLegend = false;
+  
+  public lineChartLegend = true;
   public lineChartType = 'bar';
   public lineChartPlugins = [];
 
+  public doughnutChartLabels: Label[] = ['Too fast', 'Too slow', 'Good'];
+  public doughnutChartData: MultiDataSet  = [
+      [6, 1, 2],
+  ];
+ 
+
+  public doughnutChartLegend = true;
+  public doughnutChartType = 'doughnut';
 
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  changed() {
-    console.log('switched:');
   }
 
 }
