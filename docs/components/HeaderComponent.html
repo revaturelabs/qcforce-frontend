@@ -64,6 +64,22 @@
     <code>src/app/components/header/header.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p><code>HeaderComponent</code> (Angular Component)</p>
+<p>This component represents the header,
+  which includes the Revature Logo, 
+  the menu items (Reports, Batches, Surveys),
+  the submenu tab items and the logout button</p>
+<p>This component uses NgRx HeaderState object to represent
+  what are the menu items and submenu tab items to show at any given page,
+  and whether they are active or not.</p>
+<p>This component also dispatches menuClick and subMenuClick actions
+  to the NgRx state store whenever a user clicks on a menu item or submenu tab</p>
+
+    </p>
 
 
     <p class="comment">
@@ -179,7 +195,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/header/header.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/header/header.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -260,8 +276,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/components/header/header.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/components/header/header.component.ts:55</a></div>
                 </td>
             </tr>
 
@@ -299,8 +315,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/components/header/header.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/components/header/header.component.ts:41</a></div>
                 </td>
             </tr>
 
@@ -381,8 +397,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/components/header/header.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/components/header/header.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -467,7 +483,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/header/header.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/header/header.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -494,7 +510,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/header/header.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/header/header.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -514,6 +530,23 @@ import { menuClick, subMenuClick } from &quot;../../actions/header.action&quot;;
 import { Observable } from &quot;rxjs&quot;;
 import { Store } from &#x27;@ngrx/store&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+
+/**
+ * &#x60;HeaderComponent&#x60; (Angular Component)
+ *
+ * This component represents the header,
+ *  which includes the Revature Logo, 
+ *  the menu items (Reports, Batches, Surveys),
+ *  the submenu tab items and the logout button
+ * 
+ * This component uses NgRx HeaderState object to represent
+ *  what are the menu items and submenu tab items to show at any given page,
+ *  and whether they are active or not.
+ *
+ * This component also dispatches menuClick and subMenuClick actions
+ *  to the NgRx state store whenever a user clicks on a menu item or submenu tab
+ *
+ */
 
 @Component({
   selector: &#x27;app-header&#x27;,
@@ -638,7 +671,7 @@ li:hover {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><header class="bg-light">  <div class="d-flex">    <div class="px-3 bg-light logo"><img src="../../../assets/logo.png" height="48" width=""></div>     <div class="flex-fill d-none d-md-flex nav">      <li class="nav-item" *ngFor="let menuItem of menuList | async">        <p class="nav-link p-3" [class.active]="menuItem.active" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">          {{ menuItem.name }}        </p>      </li>    </div>    <div class="flex-fill d-block d-md-none"></div>     <div><button class="p-3 border-0 bg-light">Sign Out</button></div>   </div>  <div class="d-flex d-md-none justify-content-center">      <li class="nav-item" *ngFor="let menuItem of menuList | async">        <p class="nav-link p-3" [class.active]="menuItem.active" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">          {{ menuItem.name }}        </p>      </li>  </div>  <div id="submenu">    <ul class="nav nav-tabs d-flex justify-content-md-center flex-nowrap">      <li class="nav-item" *ngFor="let subMenuItem of subMenuList | async">        <p class="nav-link" [class.active]="subMenuItem.active" (click)="onSubMenuClick(subMenuItem.name, subMenuItem.routerLink)">          {{ subMenuItem.name }}        </p>      </li>    </ul>  </div></header></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'CurriculumReportsComponent', 'selector': 'app-curriculum-reports'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'},{'name': 'TrainerReportsComponent', 'selector': 'app-trainer-reports'},{'name': 'WeeklyReportsComponent', 'selector': 'app-weekly-reports'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

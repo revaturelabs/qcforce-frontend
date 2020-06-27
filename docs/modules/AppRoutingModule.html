@@ -75,24 +75,26 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import { HeaderComponent } from &#x27;./components/header/header.component&#x27;;
 import { FooterComponent } from &#x27;./components/footer/footer.component&#x27;;
 import { SidebarComponent } from &#x27;./components/sidebar/sidebar.component&#x27;;
-import { SurveyCreateComponent } from &#x27;./components/survey-create/survey-create.component&#x27;;
-import { SurveyManageComponent } from &#x27;./components/survey-manage/survey-manage.component&#x27;;
-import { SurveyScheduleComponent } from &#x27;./components/survey-schedule/survey-schedule.component&#x27;;
+import { SurveyCreateComponent } from &#x27;./components/survey-info/survey-create/survey-create.component&#x27;;
+import { SurveyManageComponent } from &#x27;./components/survey-info/survey-manage/survey-manage.component&#x27;;
+import { SurveyScheduleComponent } from &#x27;./components/survey-info/survey-schedule/survey-schedule.component&#x27;;
 import { BatchListComponent } from &#x27;./components/batches/batch-list/batch-list.component&#x27;;
-import { BatchesDetailsComponent } from &#x27;./components/batches-details/batches-details.component&#x27;;
+import { BatchesDetailsComponent } from &#x27;./components/batches/batches-details/batches-details.component&#x27;;
 import { DashboardComponent } from &#x27;./components/dashboard/dashboard.component&#x27;;
-import { SurveyHomeComponent } from &#x27;./components/survey-home/survey-home.component&#x27;;
-import { ReportsComponent } from &#x27;./components/reports/reports.component&#x27;;
-import { BatchReportsComponent } from &#x27;./components/batches/batch-reports/batch-reports.component&#x27;;
+import { SurveyHomeComponent } from &#x27;./components/survey-info/survey-home/survey-home.component&#x27;;
+import { WeeklyReportsComponent } from &#x27;./components/reports/weekly-reports/weekly-reports.component&#x27;;
+import { BatchReportsComponent } from &#x27;./components/reports/batch-reports/batch-reports.component&#x27;;
+
+
 const routes: Routes &#x3D; [
   { path: &#x27;dashboard&#x27;, component: DashboardComponent},
   { path: &#x27;survey-create&#x27;, component: SurveyCreateComponent },
   { path: &#x27;survey-manage&#x27;, component: SurveyManageComponent },
   { path: &#x27;survey-schedule&#x27;, component: SurveyScheduleComponent },
-  { path: &#x27;batches&#x27;, component: BatchListComponent },
+  { path: &#x27;batch-list&#x27;, component: BatchListComponent },
   { path: &#x27;batches-details&#x27;, component: BatchesDetailsComponent },
   { path: &#x27;survey-home&#x27;, component: SurveyHomeComponent},
-  { path: &#x27;reports&#x27;, component: ReportsComponent },
+  { path: &#x27;weekly-reports&#x27;, component: WeeklyReportsComponent },
   { path: &#x27;batch-reports&#x27;, component: BatchReportsComponent},
   { path: &#x27;&#x27;, redirectTo: &#x27;/dashboard&#x27;, pathMatch: &#x27;full&#x27;}
 ];

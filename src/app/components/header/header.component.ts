@@ -6,6 +6,23 @@ import { Observable } from "rxjs";
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 
+/**
+ * `HeaderComponent` (Angular Component)
+ *
+ * This component represents the header,
+ *  which includes the Revature Logo, 
+ *  the menu items (Reports, Batches, Surveys),
+ *  the submenu tab items and the logout button
+ * 
+ * This component uses NgRx HeaderState object to represent
+ *  what are the menu items and submenu tab items to show at any given page,
+ *  and whether they are active or not.
+ *
+ * This component also dispatches menuClick and subMenuClick actions
+ *  to the NgRx state store whenever a user clicks on a menu item or submenu tab
+ *
+ */
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
