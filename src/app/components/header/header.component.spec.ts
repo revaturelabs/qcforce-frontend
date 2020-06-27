@@ -47,19 +47,14 @@ describe('HeaderComponent', () => {
     expect(fixture.nativeElement.querySelector('button').textContent.toLowerCase()).toEqual('sign out');
   });
 
-  it('main menu has a reports menu item', () => {
-    let query = 'header > div > li > p:nth-child(1)';
-    expect(fixture.nativeElement.querySelector(query).textContent.toLowerCase()).toEqual('reports');
-  });
+  for (let i = 0; i < INITHEADERSTATE.menuList.length; i++) {
 
-  it('main menu has a reports menu item', () => {
-    let query = 'header > div > li > p:nth-child(1)';
-    expect(fixture.nativeElement.querySelector(query).textContent.toLowerCase()).toEqual('batches');
-  });
-  
-  it('main menu has a reports menu item', () => {
-    let query = 'header > div > li > p:nth-child(1)';
-    expect(fixture.nativeElement.querySelector(query).textContent.toLowerCase()).toEqual('surveys');
-  });
+    it(`main menu has a ${INITHEADERSTATE.menuList[i].name} menu item`, () => {
+      let query = `#menu > li:nth-child(${i+1}) > p`;
+      expect(fixture.nativeElement.querySelector(query).textContent.replace(/\s/g, ''))
+        .toEqual(INITHEADERSTATE.menuList[i].name);
+    });
+
+  }
 
 });
