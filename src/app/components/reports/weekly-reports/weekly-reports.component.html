@@ -1,1 +1,35 @@
-<p>weekly-reports works!</p>
+<div class="p-5">
+    <h2 class="title  ">{{' View reports by Week'| uppercase }}</h2><hr>
+    <mat-slide-toggle class="clickable">
+        batch 
+    </mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable">week</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable"> time-period</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable">trainer</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable">all-tables</mat-slide-toggle><br><hr>
+
+    <div class="reports-chart">
+        <canvas baseChart 
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+    </div>
+    <div class="pace-chart">
+        <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            
+            [legend]="doughnutChartLegend"
+            [chartType]="doughnutChartType">
+        </canvas>
+    </div>
+     
+
+</div>
+
+

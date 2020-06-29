@@ -3,31 +3,37 @@
     <mat-slide-toggle class="clickable">
         batch 
     </mat-slide-toggle><br>
-    <mat-slide-toggle class="clickable">week</mat-slide-toggle><br>
+    <mat-slide-toggle class="clickable" (click)="toggleWeek()">week<p *ngIf="weekDisplayed">{{ weeklyInfo }}</p> </mat-slide-toggle><br>
     <mat-slide-toggle class="clickable"> time-period</mat-slide-toggle><br>
     <mat-slide-toggle class="clickable">trainer</mat-slide-toggle><br>
     <mat-slide-toggle class="clickable">all-tables</mat-slide-toggle><br><hr>
 
-    <div class="reports-chart">
-        <canvas baseChart 
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins">
-        </canvas>
-    </div>
-    <div class="pace-chart">
-        <canvas baseChart
-            [data]="doughnutChartData"
-            [labels]="doughnutChartLabels"
+    <div class="d-flex flex-row reports-container">
+        <div class="reports-chart p-2">
+            <canvas baseChart 
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColor"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins">
+            </canvas>
+        </div>
+        <div class="pace-report-chart p-2">
             
-            [legend]="doughnutChartLegend"
-            [chartType]="doughnutChartType">
-        </canvas>
+            <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [colors]="doughnutChartColor"
+                [legend]="doughnutChartLegend"
+                [chartType]="doughnutChartType">
+            </canvas>
+        </div>
+
     </div>
+    
+    
      
 
 </div>
