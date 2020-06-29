@@ -22,4 +22,8 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have company name', () => {
+    expect(fixture.nativeElement.textContent.toLowerCase()).toContain('revature');
+  });
 });

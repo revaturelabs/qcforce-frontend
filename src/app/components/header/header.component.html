@@ -1,23 +1,29 @@
 <header class="bg-light">
   <div class="d-flex">
     <div class="px-3 bg-light logo"><img src="../../../assets/logo.png" height="48" width=""></div> 
-    <div class="flex-fill d-none d-md-flex nav">
+    <div id="menu" class="flex-fill d-none d-md-flex nav">
       <li class="nav-item" *ngFor="let menuItem of menuList | async">
-        <p class="nav-link p-3" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">{{ menuItem.name }}</p>
+        <p class="nav-link p-3" [class.active]="menuItem.active" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">
+          {{ menuItem.name }}
+        </p>
       </li>
     </div>
     <div class="flex-fill d-block d-md-none"></div> 
     <div><button class="p-3 border-0 bg-light">Sign Out</button></div> 
   </div>
-  <div class="d-flex d-md-none justify-content-center">
+  <div id="menu" class="d-flex d-md-none justify-content-center">
       <li class="nav-item" *ngFor="let menuItem of menuList | async">
-        <p class="nav-link p-3" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">{{ menuItem.name }}</p>
+        <p class="nav-link p-3" [class.active]="menuItem.active" (click)="onMenuClick(menuItem.name, menuItem.routerLink)">
+          {{ menuItem.name }}
+        </p>
       </li>
   </div>
   <div id="submenu">
     <ul class="nav nav-tabs d-flex justify-content-md-center flex-nowrap">
       <li class="nav-item" *ngFor="let subMenuItem of subMenuList | async">
-        <p class="nav-link" (click)="onSubMenuClick(subMenuItem.name, subMenuItem.routerLink)">{{ subMenuItem.name }}</p>
+        <p class="nav-link" [class.active]="subMenuItem.active" (click)="onSubMenuClick(subMenuItem.name, subMenuItem.routerLink)">
+          {{ subMenuItem.name }}
+        </p>
       </li>
     </ul>
   </div>

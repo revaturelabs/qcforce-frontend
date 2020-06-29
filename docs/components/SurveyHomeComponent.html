@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/components/survey-home/survey-home.component.ts</code>
+    <code>src/app/components/survey-info/survey-home/survey-home.component.ts</code>
 </p>
 
 
@@ -156,7 +156,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/survey-home/survey-home.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/survey-info/survey-home/survey-home.component.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -196,7 +196,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/components/survey-home/survey-home.component.ts:12</a></div>
+                            class="link-to-prism">src/app/components/survey-info/survey-home/survey-home.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -244,12 +244,30 @@ export class SurveyHomeComponent implements OnInit {
     &lt;/div&gt;
     
     &lt;ul&gt;
-        &lt;li class&#x3D;&quot;border&quot;&gt;Week 1 Java &lt;button&gt;Edit&lt;/button&gt;&lt;button&gt;Delete&lt;/button&gt;&lt;/li&gt;
-        &lt;li class&#x3D;&quot;border&quot;&gt;Week 2 sql&lt;/li&gt;
-        &lt;li class&#x3D;&quot;border&quot;&gt;Week 3 javascript&lt;/li&gt;
-        &lt;li class&#x3D;&quot;border&quot;&gt;Week 4 Angular&lt;/li&gt;
+        &lt;li class&#x3D;&quot;border d-flex&quot;&gt;
+            &lt;div class&#x3D;&quot;flex-fill&quot;&gt;Week 1 Java&lt;/div&gt;
+            &lt;div&gt;
+                &lt;button class&#x3D;&quot;btn btn-light m-1&quot;&gt;Edit&lt;/button&gt;
+                &lt;button class&#x3D;&quot;btn btn-light m-1&quot;&gt;Delete&lt;/button&gt;
+            &lt;/div&gt;           
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;border d-flex&quot;&gt;
+            &lt;div class&#x3D;&quot;flex-fill&quot;&gt;Week 2 SQL&lt;/div&gt;
+            &lt;div&gt;
+                &lt;button class&#x3D;&quot;btn btn-light m-1&quot;&gt;Edit&lt;/button&gt;
+                &lt;button class&#x3D;&quot;btn btn-light m-1&quot;&gt;Delete&lt;/button&gt;
+            &lt;/div&gt;           
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;border d-flex&quot;&gt;
+            &lt;div class&#x3D;&quot;flex-fill&quot;&gt;Week 3 JavaScript&lt;/div&gt;
+            &lt;div&gt;
+                &lt;button class&#x3D;&quot;btn btn-light m-1&quot;&gt;Edit&lt;/button&gt;
+                &lt;button class&#x3D;&quot;btn btn-light m-1&quot;&gt;Delete&lt;/button&gt;
+            &lt;/div&gt;           
+        &lt;/li&gt;
+      
     &lt;/ul&gt;
-&lt;/div&gt;
+&lt;/div&gt;&#x60;
 
 </code></pre>
     </div>
@@ -258,7 +276,35 @@ export class SurveyHomeComponent implements OnInit {
                 <p class="comment">
                     <code>./survey-home.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.title {
+    padding-left: 2rem;
+    color: rgb(108, 108, 110);
+    font-family: Arial, Helvetica, sans-serif;  
+    font-stretch: wider ;
+}
+
+
+
+ul {
+    margin: 0;
+    padding-left: .5rem;
+}
+
+
+li {
+    margin: .25rem 0 .25rem 0;
+    padding: .5rem 0 .5rem 1rem;
+    font-size: large;
+    list-style-type: none;
+    
+}
+
+
+.clickable:hover {
+    color: rgb(27, 27, 27);
+    text-decoration: underline;
+    cursor: pointer;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -286,8 +332,8 @@ export class SurveyHomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-3">     <h2 class="title  ">{{\'Surveys\'| uppercase }}</h2><hr>    <div class="d-flex justify-content-center">        <button class="btn btn-light" routerLink="/survey-create">Create New Survey</button>    </div>        <ul>        <li class="border">Week 1 Java <button>Edit</button><button>Delete</button></li>        <li class="border">Week 2 sql</li>        <li class="border">Week 3 javascript</li>        <li class="border">Week 4 Angular</li>    </ul></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesComponent', 'selector': 'app-batches'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div class="p-3">     <h2 class="title  ">{{\'Surveys\'| uppercase }}</h2><hr>    <div class="d-flex justify-content-center">        <button class="btn btn-light" routerLink="/survey-create">Create New Survey</button>    </div>        <ul>        <li class="border d-flex">            <div class="flex-fill">Week 1 Java</div>            <div>                <button class="btn btn-light m-1">Edit</button>                <button class="btn btn-light m-1">Delete</button>            </div>                   </li>        <li class="border d-flex">            <div class="flex-fill">Week 2 SQL</div>            <div>                <button class="btn btn-light m-1">Edit</button>                <button class="btn btn-light m-1">Delete</button>            </div>                   </li>        <li class="border d-flex">            <div class="flex-fill">Week 3 JavaScript</div>            <div>                <button class="btn btn-light m-1">Edit</button>                <button class="btn btn-light m-1">Delete</button>            </div>                   </li>          </ul></div>`</div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'CurriculumReportsComponent', 'selector': 'app-curriculum-reports'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'},{'name': 'TrainerReportsComponent', 'selector': 'app-trainer-reports'},{'name': 'WeeklyReportsComponent', 'selector': 'app-weekly-reports'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SurveyHomeComponent'};
 </script>
