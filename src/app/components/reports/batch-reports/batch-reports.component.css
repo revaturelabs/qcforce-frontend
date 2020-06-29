@@ -33,11 +33,15 @@ mat-slide-toggle {
     color: grey;
 }
 
+.reports-container {
+    height: 40vh;
+}
 .reports-chart {
-    display: block;
-    height: auto;
-    max-width: 60vw;
+    width: 50vw
     
-    
-    
+}
+
+.pace-report-chart {
+    width: 50vw
+ 
 }

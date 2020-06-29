@@ -90,13 +90,14 @@ export const BATCHESSUBMENU: MenuItem[] = [
 export const SURVEYSSUBMENU: MenuItem[] = [
   {
     name: 'Survey Schedule',
-    routerLink: null,
-    active: false,
+    routerLink: '/survey-schedule',
+    active = false
   },
   {
     name: 'Update Survey',
-    routerLink: null,
-    active: false,
+    routerLink: '/survey-manage',
+    active: false
+
   },
 ];
 
