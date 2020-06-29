@@ -18,7 +18,6 @@ export class WeeklyReportsComponent implements OnInit {
   public lineChartOptions = {
     responsive: true,
   };
-  
   public lineChartLegend = true;
   public lineChartType = 'bar';
   public lineChartPlugins = [];
@@ -27,7 +26,7 @@ export class WeeklyReportsComponent implements OnInit {
   public doughnutChartData: MultiDataSet  = [
       [6, 1, 2],
   ];
- 
+
 
   public doughnutChartLegend = true;
   public doughnutChartType = 'doughnut';
