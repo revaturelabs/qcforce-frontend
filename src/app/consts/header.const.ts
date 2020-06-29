@@ -42,11 +42,11 @@ export const BATCHESSUBMENU: MenuItem[] = [
 export const SURVEYSSUBMENU: MenuItem[] = [
   {
     name: 'Survey Schedule',
-    routerLink: null
+    routerLink: '/survey-schedule'
   },
   {
     name: 'Update Survey',
-    routerLink: null
+    routerLink: '/survey-manage'
   },
 ];
 
