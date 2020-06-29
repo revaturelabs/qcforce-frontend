@@ -204,22 +204,21 @@ export class AppComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;root&quot; class&#x3D;&quot;d-flex flex-column&quot;&gt;
   &lt;app-header&gt;&lt;/app-header&gt;
-
-   &lt;div class&#x3D;&quot;d-flex flex-fill&quot;&gt;
-     &lt;app-sidebar&gt;&lt;/app-sidebar&gt;
-     &lt;div id&#x3D;&quot;content&quot; class&#x3D;&quot;flex-fill&quot;&gt;
-       &lt;router-outlet&gt;&lt;/router-outlet&gt;
-     &lt;/div&gt;
-
+  
+   &lt;div class&#x3D;&quot;flex-fill bg-light&quot;&gt;    
+        &lt;router-outlet&gt;&lt;/router-outlet&gt;
    &lt;/div&gt;
-&lt;app-footer&gt;&lt;/app-footer&gt;
+  &lt;app-footer&gt;&lt;/app-footer&gt;
 &lt;/div&gt;
 &lt;!--
   &lt;app-header&gt;
     &lt;sidebar&gt;
     &lt;router-link&gt;
   &lt;app-footer&gt;
- --&gt;</code></pre>
+  &lt;app-sidebar&gt;&lt;/app-sidebar&gt;
+  &lt;div id&#x3D;&quot;content&quot; class&#x3D;&quot;flex-fill&quot;&gt;
+ --&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -229,6 +228,10 @@ export class AppComponent {
                 <pre class="line-numbers"><code class="language-scss">#root{
     height: 100vh;
     width: 100vw;
+}
+
+#content {
+    overflow: auto;
 }</code></pre>
     </div>
 
@@ -257,8 +260,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div id="root" class="d-flex flex-column">  <app-header></app-header>   <div class="d-flex flex-fill">     <app-sidebar></app-sidebar>     <div id="content" class="flex-fill">       <router-outlet></router-outlet>     </div>   </div><app-footer></app-footer></div><!--  <app-header>    <sidebar>    <router-link>  <app-footer> --></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesComponent', 'selector': 'app-batches'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ReportsComponent', 'selector': 'app-reports'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div id="root" class="d-flex flex-column">  <app-header></app-header>     <div class="flex-fill bg-light">            <router-outlet></router-outlet>   </div>  <app-footer></app-footer></div><!--  <app-header>    <sidebar>    <router-link>  <app-footer>  <app-sidebar></app-sidebar>  <div id="content" class="flex-fill"> --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'CurriculumReportsComponent', 'selector': 'app-curriculum-reports'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'},{'name': 'TrainerReportsComponent', 'selector': 'app-trainer-reports'},{'name': 'WeeklyReportsComponent', 'selector': 'app-weekly-reports'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
