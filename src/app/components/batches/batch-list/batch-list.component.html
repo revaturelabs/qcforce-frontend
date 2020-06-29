@@ -37,14 +37,14 @@
                 <td>CUNY Queens, NY</td>
                 <td>Spring MicroServices</td>
             </tr> -->
-            <tr *ngFor="let batch of batchesList">
+            <tr *ngFor="let batch of batchesList | async">
                 <td>{{batch.id}}</td>
                 <td>{{batch.location}}</td>
                 <td>{{batch.name}}</td>
                 <td>{{batch.totalStudents}}</td>              
             </tr>
         </tbody>
-
+        {{ batchesList | async }}
     </table>
     <p routerLink="/batches-details">batch details</p>
 </div>
