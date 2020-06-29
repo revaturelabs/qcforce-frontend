@@ -91,7 +91,7 @@ export const SURVEYSSUBMENU: MenuItem[] = [
   {
     name: 'Survey Schedule',
     routerLink: '/survey-schedule',
-    active = false
+    active:false
   },
   {
     name: 'Update Survey',
