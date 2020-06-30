@@ -31,6 +31,7 @@ import { BatchEffect } from './effects/batch.effect';
 import { headerReducer } from "./reducers/header.reducer";
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
+import { surveysReducer} from './store/reducers/surveys.reducer';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { BatchListComponent } from './components/batches/batch-list/batch-list.c
     StoreModule.forRoot({
       header: headerReducer,
       router: routerReducer,
-      batch: batchReducer
+      batch: batchReducer,
+      surveys: surveysReducer,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([BatchEffect]),
