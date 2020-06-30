@@ -13,6 +13,6 @@ export class BatchListService {
   constructor(private http: HttpClient) { }
 
   getBatchList() {
-    return this.http.get(this.url);
+    return this.http.get<object[]>(this.url);
   }
 }
