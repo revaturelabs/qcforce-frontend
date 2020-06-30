@@ -37,11 +37,16 @@ mat-slide-toggle {
     height: 40vh;
 }
 .reports-chart {
-    width: 50vw
+    width: 70vw
     
 }
 
 .pace-report-chart {
+    width: 50vw
+ 
+}
+
+.major-report-chart {
     width: 50vw
  
 }
