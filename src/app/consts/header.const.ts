@@ -18,17 +18,17 @@ export const INITHEADERSTATE: HeaderState = {
   menuList: [
     {
       name: 'Reports',
-      routerLink: null,
+      routerLink: '/batch-reports',
       active: false,
     },
     {
       name: 'Batches',
-      routerLink: null,
+      routerLink: '/batch-list',
       active: false,
     },
     {
       name: 'Surveys',
-      routerLink: null,
+      routerLink: '/survey-schedule',
       active: false,
     },
   ],
@@ -91,7 +91,7 @@ export const SURVEYSSUBMENU: MenuItem[] = [
   {
     name: 'Survey Schedule',
     routerLink: '/survey-schedule',
-    active:false
+    active: false
   },
   {
     name: 'Update Survey',
