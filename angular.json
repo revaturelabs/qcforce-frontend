@@ -120,6 +120,16 @@
               "devServerTarget": "qcforce-frontend:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@jefiozie/ngx-aws-deploy:deploy",
+          "options": {
+            "region": "us-east-2",
+            "bucket": "qc-force",
+            "secretAccessKey": "",
+            "accessKeyId": "d4e76eba90150734a84e2125d4cbba6f0cc3c77cceaefc1ce47124cd9106ea97",
+            "subFolder": "qc-force"
+          }
         }
       }
     }

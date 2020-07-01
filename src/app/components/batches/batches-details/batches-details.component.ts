@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BatchesDetailsComponent implements OnInit {
 
+  batchId: string;
   batchesDetails: any = [];
   url = 'http://localhost:3000/batches-details';
 
