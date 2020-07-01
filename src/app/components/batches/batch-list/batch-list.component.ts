@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
+
+// import { BatchState } from 'src/app/states/batch.state';
+// import { getBatchList } from 'src/app/actions/batch.action';
+
+import { Batch } from '../../../models/batch.model';
 import { Store } from '@ngrx/store';
-import { BatchState } from 'src/app/states/batch.state';
-import { getBatchList } from 'src/app/actions/batch.action';
+import { Observable } from 'rxjs';
+import * as fromStore from '../../../store';
 
 @Component({
   selector: 'app-batches',
@@ -11,16 +15,25 @@ import { getBatchList } from 'src/app/actions/batch.action';
 })
 export class BatchListComponent implements OnInit {
 
-  batchesList: any;
-  url = 'http://localhost:3000/batches';
+  batchId: string;
+  batches$: Observable<Batch[]>;
 
-  constructor(private store : Store<{batch: BatchState}>) { }
+  // batchesList: any;
+
+  constructor(private store: Store<fromStore.ReportState>) {}
 
   ngOnInit(): void {
-    this.batchesList = this.store.select((state) => {
-      return state.batch.batchList;
-    });
-    this.store.dispatch(getBatchList());
+    // this.batchesList = this.store.select((state) => {
+    //   return state.batch.batchList;
+    // });
+    // this.store.dispatch(getBatchList());
+
+    this.batches$ = this.store.select(fromStore.getAllBatches);
+    this.store.dispatch(new fromStore.LoadBatches());
+  }
+
+  saveBatchById(batchId: string) {
+    localStorage.setItem('batchId', this.batchId = batchId);
   }
 
 }
