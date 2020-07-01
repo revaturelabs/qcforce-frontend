@@ -33,15 +33,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
-
-/*util imports*/
+import { FormsModule } from '@angular/forms';
+import { BatchEffect } from './effects/batch.effect';
+import { headerReducer } from "./reducers/header.reducer";
+import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
+import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
+import { Ng5SliderModule } from 'ng5-slider';
+import { surveysReducer} from './store/reducers/surveys.reducer';
 import { environment } from '../environments/environment';
-
 /*store imports*/
 import { BatchEffect } from './effects/batch.effect';
 import { headerReducer } from './reducers/header.reducer';
 import { batchReducer } from './reducers/batch.reducer';
 import { reducers, effects } from './store';
+
 
 
 
@@ -82,6 +87,7 @@ import { reducers, effects } from './store';
     ChartsModule,
     FormsModule,
     HttpClientModule,
+    Ng5SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

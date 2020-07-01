@@ -45,7 +45,11 @@
             </tbody>
             </table>       
     </div>
-    <div *ngIf="weekDisplayed">        
+    <div *ngIf="weekDisplayed">  
+        <div class="custom-slider">
+            <ng5-slider [options]="options" [(value)]="minValue" [(highValue)]="maxValue" id="slider"></ng5-slider>   
+        </div>
+           
         <button class="btn weekBtn">All Weeks</button>
         <button class="btn weekBtn">Average of Weeks</button>
     </div>
