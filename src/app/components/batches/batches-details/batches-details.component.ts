@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class BatchesDetailsComponent implements OnInit {
 
   batchId: string;
+
   batchesDetails: any = [];
   url = 'http://localhost:3000/batches-details';
 
@@ -17,6 +18,7 @@ export class BatchesDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(this.url)
       .subscribe((batchDetails) => this.batchesDetails = batchDetails);
+    this.batchId = localStorage.getItem('batchId');
   }
 
 }
