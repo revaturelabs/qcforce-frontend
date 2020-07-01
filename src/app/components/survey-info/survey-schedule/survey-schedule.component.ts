@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // Step 1:
-import { Survey } from '../../../models/survey.model';
+// import { Survey } from '../../../models/survey.model';
+import { Batch } from '../../../models/batch.model';
 
 
 import { Store } from '@ngrx/store';
@@ -14,7 +15,9 @@ import * as fromStore from '../../../store';
 })
 export class SurveyScheduleComponent implements OnInit {
   // Step 2:
-  surveys$: Observable<Survey[]>;
+  // surveys$: Observable<Survey[]>;
+  batchId: string;
+  batches$: Observable<Batch[]>;
 
 
   // Step 3:
@@ -22,7 +25,9 @@ export class SurveyScheduleComponent implements OnInit {
 
   ngOnInit(): void {
     // Step 4:
-    this.surveys$ = this.store.select(fromStore.getAllSurveys);
+    // this.surveys$ = this.store.select(fromStore.getAllSurveys);
+    this.batches$ = this.store.select(fromStore.getAllBatches);
+    this.store.dispatch(new fromStore.LoadBatches());
     }
   }
 

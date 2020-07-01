@@ -7,6 +7,6 @@ import * as surveysActions from '../actions/surveys.action';
 export class SurveysEffects {
     constructor(private actions$: Actions) {}
 
-    @Effect()
+   // @Effect()
     // loadSurveys$ = this.actions$.ofType(surveysActions.LOAD_SURVEYS);
 }
