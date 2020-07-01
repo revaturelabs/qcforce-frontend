@@ -1,13 +1,13 @@
 <div id="submenu">
   <ul class="nav d-flex justify-content-md-center flex-nowrap">
     <li class="nav-item" *ngFor="let subMenuItem of subMenuList">
-      <p class="nav-link" (click)="pickFilter(subMenuItem.name)">
-        {{ subMenuItem.name }}
+      <p class="nav-link" (click)="filterOptionClick(subMenuItem)">
+        {{ subMenuItem }}
       </p>
     </li>
   </ul>
 </div>
-<div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="subMenuList[0].active">
+<div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="filterOptionDisplayed === 'Batch'">
    <table class="table table-striped">
             <thead>
                 <tr>
@@ -19,7 +19,7 @@
             </thead>
     </table> 
 </div>
-<div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="subMenuList[1].active">
+<div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="filterOptionDisplayed === 'Week'">
   <ul class="nav nav-pills">
     <li class="nav-item">
       <p class="nav-link active">All</p>

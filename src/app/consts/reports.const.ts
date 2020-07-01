@@ -4,9 +4,9 @@ export const initReportsState: ReportsState = {
   filterOptionDisplayed: "",
   batchFilterOption: "Average",
   weekFilterOption: "All",
-  graphDisplayed: [
+  graphsDisplayed: [
     "rating-graph",
-    "pace-graph"
+    "pace-graph",
     "major-graph"
   ],
   responseData: []

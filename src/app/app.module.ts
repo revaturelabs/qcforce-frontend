@@ -33,6 +33,7 @@ import { BatchListComponent } from './components/batches/batch-list/batch-list.c
 
 // T
 import { surveysReducer} from './store/reducers/surveys.reducer';
+import { reportsReducer } from './reducers/reports.reducer';
 import { reducers } from './store';
 import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
 import { FilterItemsComponent } from './components/reports/filter-items/filter-items.component';
@@ -70,8 +71,9 @@ import { MajorGraphComponent } from './components/reports/major-graph/major-grap
     StoreModule.forRoot({
       router: routerReducer,
       batch: batchReducer,
+      reports: reportsReducer
     }),
-    StoreModule.forFeature('reports', reducers),
+    StoreModule.forFeature('allSurveyState', reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([BatchEffect]),
     StoreRouterConnectingModule.forRoot(),

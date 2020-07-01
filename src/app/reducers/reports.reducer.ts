@@ -6,17 +6,17 @@ import { filterDisplayedChange, batchFilterChange, weekFilterChange } from '../a
 
 const _reportsReducer = createReducer(
   initReportsState,
-  on(filterDisplayedChange, (state, { payload }) {
+  on(filterDisplayedChange, (state, { payload }) => {
     let newState = {...state};
     newState.filterOptionDisplayed = payload;
     return newState;
   }),
-  on(batchFilterChange, (state, { payload }) {
+  on(batchFilterChange, (state, { payload }) => {
     let newState = {...state};
     newState.batchFilterOption = payload;
     return newState;
   }),
-  on(weekFilterChange, (state, { payload }) {
+  on(weekFilterChange, (state, { payload }) => {
     let newState = {...state};
     newState.weekFilterOption = payload;
     return newState;
