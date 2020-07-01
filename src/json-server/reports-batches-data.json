@@ -1,26 +1,66 @@
 {
-  "batch": [{
-    "batchName": "2005 May04 Ap-CUNY Java",
-    "batchId": 1,
-    "batchStateDate": "05-04-2020",
-    "batchEndDate": "07-10-2020",
-    "batchSkill": "Full Stack Java",
-    "batchLocation": "New York",
-    "type": "Regular",
-    "goodGrade": true,
-    "passingGrade": true,
-    "currentWeek": "Week 10"   
-  }, 
-  {
-    "batchName": "2005 May26 AP-WVU Puthon",
-    "batchId": 2,
-    "batchStateDate": "05-26-2020",
-    "batchEndDate": "08-01-2020",
-    "batchSkill": "Front End Javascript",
-    "batchLocation": "WVU",
-    "type": "Regular",
-    "goodGrade": true,
-    "passingGrade": true,
-    "currentWeek": "Week 7"   
-  }]
+  "batch": [
+    {
+      "batchName": "2005 May04 Ap-CUNY Java",
+      "batchId": 1,
+      "batchStateDate": "05-04-2020",
+      "batchEndDate": "07-10-2020",
+      "batchSkill": "Full Stack Java",
+      "batchLocation": "New York",
+      "type": "Regular",
+      "goodGrade": true,
+      "passingGrade": true,
+      "currentWeek": "Week 10"   
+    }, 
+    {
+      "batchName": "2005 May26 AP-WVU Puthon",
+      "batchId": 2,
+      "batchStateDate": "05-26-2020",
+      "batchEndDate": "08-01-2020",
+      "batchSkill": "Front End Javascript",
+      "batchLocation": "WVU",
+      "type": "Regular",
+      "goodGrade": true,
+      "passingGrade": true,
+      "currentWeek": "Week 7"   
+   }
+  ],
+  "answers": [
+    {
+      "batch": "2005 May04 Ap-CUNY Java",
+      "week": 1,
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2005 May04 Ap-CUNY Java",
+      "week": 1,
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2005 May04 Ap-CUNY Java",
+      "week": 1,
+      "question": "Topic Understanding",
+      "answer": 3
+    },
+    {
+      "batch": "2005 May04 Ap-CUNY Java",
+      "week": 1,
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2005 May04 Ap-CUNY Java",
+      "week": 1,
+      "question": "Materials Helpful",
+      "answer": 4
+    },
+    {
+      "batch": "2005 May04 Ap-CUNY Java",
+      "week": 1,
+      "question": "Materials Helpful",
+      "answer": 5
+    }
+  ]
 }

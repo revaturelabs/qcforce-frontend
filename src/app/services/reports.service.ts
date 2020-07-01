@@ -7,10 +7,12 @@ import { environment } from 'src/environments/environment';
 })
 export class ReportsService {
 
-  getBatchUrl = environment.getBatchUrl;
-
   getBatches() {
-    return this.http.get<any[]>(this.getBatchUrl);
+    return this.http.get<any[]>(environment.getBatchUrl);
+  }
+
+  getAnswers() {
+    return this.http.get<any[]>(environment.getAnswersUrl);
   }
 
   constructor(private http: HttpClient) { 

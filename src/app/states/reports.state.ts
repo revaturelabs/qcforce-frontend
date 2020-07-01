@@ -6,5 +6,5 @@ export interface ReportsState {
   weekFilterOptions: string[];
   weekFilter: string;
   graphsDisplayed: string[];
-  responseData: object[];
+  responseData: any[];
 }

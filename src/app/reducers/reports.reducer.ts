@@ -31,7 +31,14 @@ const _reportsReducer = createReducer(
     newState.batchFilterOptions = options;
     return newState;
   }),
-  on(ReportsActions.getBatchesError, (state) => state)
+  on(ReportsActions.getBatchesError, (state) => state),
+  on(ReportsActions.getAnswers, (state) => state),
+  on(ReportsActions.getAnswersSuccess, (state, { payload }) => {
+    let newState = {...state};
+    newState.responseData = payload;
+    return newState
+  }),
+  on(ReportsActions.getAnswersError, (state) => state)
 );
 
 export function reportsReducer(state : ReportsState | undefined, action: Action) {

@@ -20,6 +20,18 @@ export class ReportsEffect {
     );
   });
 
+  getAnswers = createEffect(() => {
+    return this.actions.pipe(
+      ofType(ReportActions.getAnswers),
+      exhaustMap(() => {
+        return this.reportsService.getAnswers().pipe(
+          map((answers) => ReportActions.getAnswersSuccess({ payload: answers })),
+          catchError((error) => of(ReportActions.getAnswersError()))
+        );
+      })
+    );
+  });
+
   constructor(private actions: Actions, private reportsService: ReportsService) { }
   
 }
