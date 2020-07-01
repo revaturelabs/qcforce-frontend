@@ -45,3 +45,12 @@
 </div>
 <hr/>
 <!-- added as practice delete after-->
+<div *ngIf="!((surveys$ | async)?.length)">
+    No surveys
+</div>
+<div *ngFor="let survey of (surveys$ | async)">{{survey.name}}:
+    <ul> 
+        <li>{{survey.questions}}</li>
+    </ul>
+</div>
+
