@@ -28,6 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { BatchEffect } from './effects/batch.effect';
+import { ReportsEffect } from './effects/reports.effect';
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
 
@@ -75,7 +76,7 @@ import { MajorGraphComponent } from './components/reports/major-graph/major-grap
     }),
     StoreModule.forFeature('allSurveyState', reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([BatchEffect]),
+    EffectsModule.forRoot([BatchEffect, ReportsEffect]),
     StoreRouterConnectingModule.forRoot(),
     NgbModule,
     BrowserAnimationsModule,

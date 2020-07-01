@@ -1,26 +1,37 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { ReportsState } from '../states/reports.state';
 import { initReportsState } from '../consts/reports.const';
-import { filterDisplayedChange, batchFilterChange, weekFilterChange } from '../actions/reports.action'; 
+import * as ReportsActions from '../actions/reports.action'; 
 
 
 const _reportsReducer = createReducer(
   initReportsState,
-  on(filterDisplayedChange, (state, { payload }) => {
+  on(ReportsActions.filterDisplayedChange, (state, { payload }) => {
     let newState = {...state};
     newState.filterOptionDisplayed = payload;
     return newState;
   }),
-  on(batchFilterChange, (state, { payload }) => {
+  on(ReportsActions.batchFilterChange, (state, { payload }) => {
     let newState = {...state};
-    newState.batchFilterOption = payload;
+    newState.batchFilter = payload;
     return newState;
   }),
-  on(weekFilterChange, (state, { payload }) => {
+  on(ReportsActions.weekFilterChange, (state, { payload }) => {
     let newState = {...state};
-    newState.weekFilterOption = payload;
+    newState.weekFilter = payload;
     return newState;
-  })
+  }),
+  on(ReportsActions.getBatches, (state) => state),
+  on(ReportsActions.getBatchesSuccess, (state, { payload }) => {
+    let newState = {...state};
+    let options = ['All', 'Average'];
+    for (let singlebatch of payload) {
+      options.push(singlebatch.batchName);
+    }
+    newState.batchFilterOptions = options;
+    return newState;
+  }),
+  on(ReportsActions.getBatchesError, (state) => state)
 );
 
 export function reportsReducer(state : ReportsState | undefined, action: Action) {

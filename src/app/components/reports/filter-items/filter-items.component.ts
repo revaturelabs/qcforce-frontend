@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
-import { Observable } from 'rxjs';
 import { ReportsState } from '../../../states/reports.state';
-import { filterDisplayedChange, batchFilterChange, weekFilterChange } from '../../../actions/reports.action'; 
+import * as ReportsActions from 'src/app/actions/reports.action'; 
 
 @Component({
   selector: 'app-filter-items',
@@ -12,22 +11,39 @@ import { filterDisplayedChange, batchFilterChange, weekFilterChange } from '../.
 export class FilterItemsComponent implements OnInit {
 
   filterOptionDisplayed : string;
-    
+  batchFilterOptions : string[];
+  batchFilter : string;
+  weekFilterOptions : string[];
+  weekFilter: string;
+  
   subMenuList = [ 'Batch', 'Week' ];
 
   filterOptionClick(subMenuItem) {
     if (this.filterOptionDisplayed === subMenuItem) {
-      this.store.dispatch(filterDisplayedChange({ payload: "" }));
+      this.store.dispatch(ReportsActions.filterDisplayedChange({ payload: "" }));
     } else {
-      this.store.dispatch(filterDisplayedChange({ payload: subMenuItem }));
+      this.store.dispatch(ReportsActions.filterDisplayedChange({ payload: subMenuItem }));
     }
+  }
+
+  batchFilterClick(option) {
+    this.store.dispatch(ReportsActions.batchFilterChange({ payload: option }));
+  }
+
+  weekFilterClick(option) {
+    this.store.dispatch(ReportsActions.weekFilterChange({ payload: option }));
   }
 
   constructor(private store : Store<{ reports: ReportsState }>) { }
 
   ngOnInit(): void {
-    this.store.select((state) => state.reports.filterOptionDisplayed).subscribe((filterOptionDisplayed) => {
-      this.filterOptionDisplayed = filterOptionDisplayed;
+    this.store.dispatch(ReportsActions.getBatches());
+    this.store.select((state) => state.reports).subscribe((reports) => {
+      this.filterOptionDisplayed = reports.filterOptionDisplayed;
+      this.batchFilterOptions = reports.batchFilterOptions;
+      this.batchFilter = reports.batchFilter;
+      this.weekFilterOptions = reports.weekFilterOptions;
+      this.weekFilter = reports.weekFilter;
     });
   }
 

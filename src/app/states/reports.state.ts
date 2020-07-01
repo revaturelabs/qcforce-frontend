@@ -1,8 +1,10 @@
 
 export interface ReportsState {
   filterOptionDisplayed: string;
-  batchFilterOption: string;
-  weekFilterOption: string;
+  batchFilterOptions: string[];
+  batchFilter: string;
+  weekFilterOptions: string[];
+  weekFilter: string;
   graphsDisplayed: string[];
   responseData: object[];
 }

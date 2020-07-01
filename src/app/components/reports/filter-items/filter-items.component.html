@@ -8,24 +8,16 @@
   </ul>
 </div>
 <div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="filterOptionDisplayed === 'Batch'">
-   <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Batch ID</th>
-                    <th>Batch Name</th>
-                    <th>Trainer</th>
-                    <th>No. Associates</th>       
-                </tr>
-            </thead>
-    </table> 
+  <ul class="nav nav-pills">
+    <li class="nav-item" *ngFor="let option of batchFilterOptions">
+      <p class="nav-link" [class.active]="option === batchFilter" (click)="batchFilterClick(option)">{{ option }}</p>
+    </li>
+  </ul>
 </div>
 <div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="filterOptionDisplayed === 'Week'">
   <ul class="nav nav-pills">
-    <li class="nav-item">
-      <p class="nav-link active">All</p>
-    </li>
-    <li class="nav-item">
-      <p class="nav-item p-2">Average</p>
+    <li class="nav-item" *ngFor="let option of weekFilterOptions">
+      <p class="nav-link" [class.active]="option === weekFilter" (click)="weekFilterClick(option)">{{ option }}</p>
     </li>
   </ul>
 </div>

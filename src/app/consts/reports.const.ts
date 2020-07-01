@@ -2,8 +2,10 @@ import { ReportsState } from '../states/reports.state';
 
 export const initReportsState: ReportsState = {
   filterOptionDisplayed: "",
-  batchFilterOption: "Average",
-  weekFilterOption: "All",
+  batchFilterOptions: [ "Average", "All" ],
+  batchFilter: "Average",
+  weekFilterOptions: ["Average", "All"],
+  weekFilter: "All",
   graphsDisplayed: [
     "rating-graph",
     "pace-graph",
