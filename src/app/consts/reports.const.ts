@@ -6,11 +6,30 @@ export const initReportsState: ReportsState = {
   batchFilter: "Average",
   weekFilterOptions: ["All", "Average", "Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
   weekFilter: "All",
-  graphsDisplayed: [
-    "rating-graph",
-    "pace-graph",
-    "major-graph"
-  ],
+  ratingGraph: {
+    visible: false,
+    data: [],
+    labels: [
+      'Satisfaction Rating',
+      'Materials Helpful',
+      'Well Organized',
+      'Questions Encouraged',
+      'Met Expectations',
+      'Topic Understanding',
+      'Project Clarity',
+      'Project Preparedness'
+    ] 
+  },
+  paceGraph: {
+    visible: false,
+    data: [],
+    labels: []
+  },
+  majorGraph: {
+    visible: false,
+    data: [],
+    labels: []
+  },
   responseData: []
 }
 

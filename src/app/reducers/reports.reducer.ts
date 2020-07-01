@@ -2,6 +2,8 @@ import { Action, createReducer, on } from "@ngrx/store";
 import { ReportsState } from '../states/reports.state';
 import { initReportsState } from '../consts/reports.const';
 import * as ReportsActions from '../actions/reports.action'; 
+import * as Filters from '../filters/reports.filter';
+import { cloneDeep } from "lodash";
 
 
 const _reportsReducer = createReducer(
@@ -34,11 +36,17 @@ const _reportsReducer = createReducer(
   on(ReportsActions.getBatchesError, (state) => state),
   on(ReportsActions.getAnswers, (state) => state),
   on(ReportsActions.getAnswersSuccess, (state, { payload }) => {
-    let newState = {...state};
+    let newState = cloneDeep(state);
     newState.responseData = payload;
+    newState = Filters.ratingGraphFilter(newState);
     return newState
   }),
-  on(ReportsActions.getAnswersError, (state) => state)
+  on(ReportsActions.getAnswersError, (state) => state),
+  on(ReportsActions.transformData, (state) => {
+    let newState = cloneDeep(state);
+    newState = Filters.ratingGraphFilter(newState);
+    return newState;
+  })
 );
 
 export function reportsReducer(state : ReportsState | undefined, action: Action) {

@@ -5,6 +5,8 @@ export interface ReportsState {
   batchFilter: string;
   weekFilterOptions: string[];
   weekFilter: string;
-  graphsDisplayed: string[];
+  ratingGraph: any;
+  paceGraph: any;
+  majorGraph: any;
   responseData: any[];
 }

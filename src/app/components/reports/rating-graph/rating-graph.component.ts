@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Store } from "@ngrx/store";
+import { ReportsState } from 'src/app/states/reports.state';
+import * as ReportsActions from 'src/app/actions/reports.action';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'app-rating-graph',
@@ -9,28 +13,9 @@ import { ChartDataSets, ChartOptions } from 'chart.js';
 })
 export class RatingGraphComponent implements OnInit {
 
-  public chartData: ChartDataSets[] = [
-    { data: [3.25, 2, 5, 4, 3, 5], label: 'Week 1'},
-    { data: [2.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 2'},
-    { data: [2.23, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 3'},
-    { data: [2.89, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 4'},
-    { data: [3.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 5'},
-    { data: [4.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 6'},
-    { data: [1.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0], label: 'Week 7'},
-    { data: [0, 0, 0, 0, 0, 0, 3.5, 4.75 ], label: 'Week 8'},
-    { data: [0, 0, 0, 0, 0, 0, 2.89, 3.35 ], label: 'Week 9'},
-  ];
+  public chartData;
 
-  public chartLabels: Label[] = [
-    'Satisfaction Rating',
-    'Materials Helpful',
-    'Well Organized',
-    'Questions Encouraged',
-    'Met Expectations',
-    'Topic Understanding',
-    'Project Clarity',
-    'Project Preparedness'
-  ];
+  public chartLabels;
 
   public chartOptions: any  = {
     responsive: true,
@@ -80,9 +65,13 @@ export class RatingGraphComponent implements OnInit {
   
   public chartPlugins = [];
 
-  constructor() { }
+  constructor(private store : Store<{ reports: ReportsState }>) { }
 
   ngOnInit(): void {
+    this.store.select((state) => state.reports.ratingGraph).subscribe((graph) => {
+      this.chartData = cloneDeep(graph.data);
+      this.chartLabels = cloneDeep(graph.labels);
+    });
   }
 
 }

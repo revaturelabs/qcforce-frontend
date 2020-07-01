@@ -28,10 +28,12 @@ export class FilterItemsComponent implements OnInit {
 
   batchFilterClick(option) {
     this.store.dispatch(ReportsActions.batchFilterChange({ payload: option }));
+    this.store.dispatch(ReportsActions.transformData());
   }
 
   weekFilterClick(option) {
     this.store.dispatch(ReportsActions.weekFilterChange({ payload: option }));
+    this.store.dispatch(ReportsActions.transformData());
   }
 
   constructor(private store : Store<{ reports: ReportsState }>) { }

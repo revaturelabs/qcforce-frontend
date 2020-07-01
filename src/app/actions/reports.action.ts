@@ -11,3 +11,5 @@ export const getBatchesError = createAction('[Reports] Get Batches Error');
 export const getAnswers = createAction('[Reports] Get Answers');
 export const getAnswersSuccess = createAction('[Reports] Get Answers Success', props<{ payload: any[] }>());
 export const getAnswersError = createAction('[Reports] Get Answers Error');
+
+export const transformData = createAction('[Reports] Transform Data');
