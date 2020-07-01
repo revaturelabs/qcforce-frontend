@@ -28,13 +28,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { BatchEffect } from './effects/batch.effect';
-import { headerReducer } from "./reducers/header.reducer";
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
 
 // T
 import { surveysReducer} from './store/reducers/surveys.reducer';
 import { reducers } from './store';
+import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
+import { FilterItemsComponent } from './components/reports/filter-items/filter-items.component';
+import { RatingGraphComponent } from './components/reports/rating-graph/rating-graph.component';
+import { PaceGraphComponent } from './components/reports/pace-graph/pace-graph.component';
+import { MajorGraphComponent } from './components/reports/major-graph/major-graph.component';
 
 
 
@@ -54,12 +58,16 @@ import { reducers } from './store';
     CurriculumComponent,
     WeeklyReportsComponent,
     BatchReportsComponent,
+    ReportsViewComponent,
+    FilterItemsComponent,
+    RatingGraphComponent,
+    PaceGraphComponent,
+    MajorGraphComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      header: headerReducer,
       router: routerReducer,
       batch: batchReducer,
     }),
