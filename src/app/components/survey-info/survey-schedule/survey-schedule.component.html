@@ -45,12 +45,29 @@
 </div>
 <hr/>
 <!-- added as practice delete after-->
-<div *ngIf="!((surveys$ | async)?.length)">
-    No surveys
-</div>
-<div *ngFor="let survey of (surveys$ | async)">{{survey.name}}:
-    <ul> 
-        <li>{{survey.questions}}</li>
-    </ul>
-</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">batchId</th>
+            <th scope="col">batchName</th>
+            <th scope="col">startDate</th>
+            <th scope="col">endDate</th>
+            <th scope="col">skill</th>
+            <th scope="col">location</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let batch of (batches$ | async)">
+            <td>{{batch.id}}</td>
+            <td routerLink="/batches-details">{{batch.batchId}}</td>
+            <td>{{batch.name}}</td>
+            <td>{{batch.startDate}}</td>
+            <td>{{batch.endDate}}</td> 
+            <td>{{batch.skill}}</td> 
+            <td>{{batch.location}}</td>            
+        </tr>
+    </tbody>
+</table>
 
