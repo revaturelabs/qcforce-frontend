@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { ChartDataSets, ChartOptions } from 'chart.js';
-
+import { Options } from 'ng5-slider';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-batch-reports',
   templateUrl: './batch-reports.component.html',
-  styleUrls: ['./batch-reports.component.css']
+  styleUrls: ['./batch-reports.component.css'],
+  styles: [` .custom-slider {width: 50vw}`]
 })
 export class BatchReportsComponent implements OnInit {
 
   weeklyInfo = 'Reports By Week';
   weekDisplayed = false;
   batchDisplayed = false;
+  
+  minValue: number = 1;
+  maxValue: number = 9;
+  options: Options = {
+    floor: 1,
+    ceil: 9,
+    step: 1,
+    showTicks: true,
+  };
 
 
   public lineChartData: ChartDataSets[] = [
@@ -48,34 +59,13 @@ export class BatchReportsComponent implements OnInit {
 
 
   public lineChartColor: Color[] =[
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(255,110,0,1)',
-    },
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(200,255,0,1)',
-    },
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(100, 200, 155,1)',
-    },
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(200, 150, 100 ,1)',
-    },
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(10, 80, 255,1)',
-    },
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(240, 70, 95,1)',
-    },
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(140, 70, 195,1)',
-    },
+   { backgroundColor: 'orange'},
+   { backgroundColor: 'orange'},
+   { backgroundColor: 'orange'},
+   { backgroundColor: 'orange'},
+   { backgroundColor: 'orange'},
+   { backgroundColor: 'orange'},
+   { backgroundColor: 'orange'},
   ];
   public lineChartLegend = true;
   public lineChartType = 'bar';

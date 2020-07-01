@@ -31,7 +31,7 @@ import { BatchEffect } from './effects/batch.effect';
 import { headerReducer } from "./reducers/header.reducer";
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
-
+import { Ng5SliderModule } from 'ng5-slider';
 // T
 import { surveysReducer} from './store/reducers/surveys.reducer';
 import { reducers } from './store';
@@ -74,6 +74,7 @@ import { reducers } from './store';
     ChartsModule,
     FormsModule,
     HttpClientModule,
+    Ng5SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
