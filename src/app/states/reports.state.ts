@@ -1,7 +1,12 @@
-import { ChartTable } from '../interfaces/chartTable.interface';
 
 export interface ReportsState {
-  chartTableList: ChartTable[];
-  selectedChartTable: ChartTable;
-  newChartTable: ChartTable;
+  filterOptionDisplayed: string;
+  batchFilterOptions: string[];
+  batchFilter: string;
+  weekFilterOptions: string[];
+  weekFilter: string;
+  ratingGraph: any;
+  paceGraph: any;
+  majorGraph: any;
+  responseData: any[];
 }

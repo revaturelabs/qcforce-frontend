@@ -3,7 +3,7 @@ import { BatchState } from '../states/batch.state';
 import { getBatchList, getBatchListSuccess, getBatchListError } from '../actions/batch.action';
 import { cloneDeep } from 'lodash';
 import { initBatchState } from '../consts/batch.const';
-import { state } from '@angular/animations';
+//import { state } from '@angular/animations';
 
 
 const _batchReducer = createReducer (

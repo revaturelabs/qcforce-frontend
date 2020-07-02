@@ -33,7 +33,7 @@ mat-slide-toggle {
     width: 50vw 
 }
 .major-report-chart {
-    width: 50vw 
+    width: 50vw; 
 }
 .weekBtn:hover {
     cursor: pointer;
@@ -46,6 +46,3 @@ mat-slide-toggle {
     background-color: rgb(228, 228, 228);
 }
 
-
-
-    
