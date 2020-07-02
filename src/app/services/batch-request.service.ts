@@ -14,7 +14,7 @@ export class BatchRequestService {
   constructor(private http: HttpClient) {}
 
   getBatches(): Observable<Batch[]> {
-    this.url = 'http://localhost:3000/batches';
+    this.url = 'http://localhost:3100/batches';
     return this.http.get<Batch[]>(this.url);
   }
 }
