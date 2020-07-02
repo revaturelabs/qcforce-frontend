@@ -26,6 +26,11 @@ import { WeeklyReportsComponent } from './components/reports/weekly-reports//wee
 import { SurveyHomeComponent } from './components/survey-info/survey-home/survey-home.component';
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
+import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
+import { FilterItemsComponent } from './components/reports/filter-items/filter-items.component';
+import { RatingGraphComponent } from './components/reports/rating-graph/rating-graph.component';
+import { PaceGraphComponent } from './components/reports/pace-graph/pace-graph.component';
+import { MajorGraphComponent } from './components/reports/major-graph/major-graph.component';
 
 /*styling imports*/
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -34,20 +39,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
 import { Ng5SliderModule } from 'ng5-slider';
+
+/*util imports*/
 import { environment } from '../environments/environment';
+
 /*store imports*/
 import { BatchEffect } from './effects/batch.effect';
 import { ReportsEffect } from './effects/reports.effect';
-
-// T
-import { surveysReducer} from './store/reducers/surveys.reducer';
 import { reportsReducer } from './reducers/reports.reducer';
-import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
-import { FilterItemsComponent } from './components/reports/filter-items/filter-items.component';
-import { RatingGraphComponent } from './components/reports/rating-graph/rating-graph.component';
-import { PaceGraphComponent } from './components/reports/pace-graph/pace-graph.component';
-import { MajorGraphComponent } from './components/reports/major-graph/major-graph.component';
 import { batchReducer } from './reducers/batch.reducer';
+
 import { reducers, effects } from './store';
 
 
@@ -82,7 +83,8 @@ import { reducers, effects } from './store';
       batch: batchReducer,
       reports: reportsReducer
     }),
-    StoreModule.forFeature('allSurveyState', reducers),
+    StoreModule.forFeature('information', reducers),
+    EffectsModule.forFeature(effects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([BatchEffect, ReportsEffect]),
     StoreRouterConnectingModule.forRoot(),
