@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 
 import { Batch } from '../models/batch.model';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +16,7 @@ export class BatchRequestService {
   constructor(private http: HttpClient) {}
 
   getBatches(): Observable<Batch[]> {
-    this.url = 'http://localhost:3100/batches';
+    this.url = environment.getBatchListUrl;
     return this.http.get<Batch[]>(this.url);
   }
 }
