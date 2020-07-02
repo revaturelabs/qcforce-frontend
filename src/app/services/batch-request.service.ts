@@ -9,11 +9,12 @@ import { Batch } from '../models/batch.model';
   providedIn: 'root'
 })
 export class BatchRequestService {
-  readonly url = 'http://localhost:3000/batches';
+  url: string;
 
   constructor(private http: HttpClient) {}
 
   getBatches(): Observable<Batch[]> {
+    this.url = 'http://localhost:3000/batches';
     return this.http.get<Batch[]>(this.url);
   }
 }
