@@ -39,12 +39,16 @@ const _reportsReducer = createReducer(
     let newState = cloneDeep(state);
     newState.responseData = payload;
     newState = Filters.ratingGraphFilter(newState);
+    newState = Filters.paceGraphFilter(newState);
+    newState = Filters.majorGraphFilter(newState);
     return newState
   }),
   on(ReportsActions.getAnswersError, (state) => state),
   on(ReportsActions.transformData, (state) => {
     let newState = cloneDeep(state);
     newState = Filters.ratingGraphFilter(newState);
+    newState = Filters.paceGraphFilter(newState);
+    newState = Filters.majorGraphFilter(newState);
     return newState;
   })
 );

@@ -23,12 +23,20 @@ export const initReportsState: ReportsState = {
   paceGraph: {
     visible: false,
     data: [],
-    labels: []
+    labels: [
+      'Too Slow',
+      'Good',
+      'Too Fast'
+    ]
   },
   majorGraph: {
     visible: false,
     data: [],
-    labels: []
+    labels: [
+      'Computer Science Major',
+      'STEM major (non-CS)',
+      'Non-STEM major'
+    ]
   },
   responseData: []
 }
