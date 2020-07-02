@@ -93,7 +93,7 @@ import { reducers, effects } from './store';
     ChartsModule,
     FormsModule,
     HttpClientModule,
-    // Ng5SliderModule,
+    Ng5SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
