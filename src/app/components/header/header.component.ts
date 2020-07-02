@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: 'Surveys',
-      routerLink: '/survey-schedule',
+      routerLink: '/surveys',
     }
   ];
 
