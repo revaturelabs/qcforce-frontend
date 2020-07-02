@@ -1,6 +1,6 @@
 <div class="p-3 ">
-    <h2 class="title ">{{'name of batch'| uppercase }}</h2><hr>
-    <table class="table table-striped">
+    <h2 class="title ">{{'name of batch'| uppercase }}: {{batchId}}</h2><hr>
+    <!-- <table class="table table-striped">
         <thead>           
             <tr>
                 <th scope="col">Id</th>
@@ -20,9 +20,21 @@
                 <td>{{details.grade}}</td>               
             </tr>
         </tbody>
-
     </table>
-    <p routerLink="/batch-list">back to batch list</p>
-</div>
+</div> -->
 <hr/>
-<p>This is: {{batchId}}</p>
+<h2 class="title  ">{{ 'view reports'| uppercase }}</h2>
+<div class="reports-chart p-2">
+    <canvas baseChart 
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColor"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+          >
+    </canvas>
+</div>  
+  
+<p routerLink="/batch-list">back to batch list</p>

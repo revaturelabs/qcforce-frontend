@@ -33,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
-// import { Ng5SliderModule } from 'ng5-slider';
+import { Ng5SliderModule } from 'ng5-slider';
 import { surveysReducer} from './store/reducers/surveys.reducer';
 import { environment } from '../environments/environment';
 /*store imports*/
@@ -82,7 +82,7 @@ import { reducers, effects } from './store';
     ChartsModule,
     FormsModule,
     HttpClientModule,
-    // Ng5SliderModule,
+    Ng5SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
