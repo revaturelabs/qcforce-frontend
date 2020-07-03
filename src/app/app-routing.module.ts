@@ -13,6 +13,7 @@ import { SurveyHomeComponent } from './components/survey-info/survey-home/survey
 import { WeeklyReportsComponent } from './components/reports/weekly-reports/weekly-reports.component';
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
+import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'batch-reports', component: BatchReportsComponent},
   { path: 'batch-reports', component: BatchReportsComponent},
   { path: 'reports', component: ReportsViewComponent},
+  { path: 'surveys', component: SurveyViewComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
 
