@@ -53,6 +53,7 @@ import { batchReducer } from './reducers/batch.reducer';
 import { reducers, effects } from './store';
 import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
 import { SubnavItemsComponent } from './components/survey-info/subnav-items/subnav-items.component';
+import { SurveyQuestionsComponent } from './components/survey-info/survey-questions/survey-questions.component';
 
 
 
@@ -79,6 +80,7 @@ import { SubnavItemsComponent } from './components/survey-info/subnav-items/subn
     MajorGraphComponent,
     SurveyViewComponent,
     SubnavItemsComponent,
+    SurveyQuestionsComponent,
   ],
   imports: [
     BrowserModule,

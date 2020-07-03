@@ -1,1 +1,8 @@
 <app-subnav-items></app-subnav-items>
+<div *ngIf="subMenuSelected === 'Schedule'">
+  <app-survey-manage></app-survey-manage>
+  <app-survey-schedule></app-survey-schedule>
+</div>
+<div *ngIf="subMenuSelected === 'Edit'">
+  <app-survey-questions></app-survey-questions>
+</div>
