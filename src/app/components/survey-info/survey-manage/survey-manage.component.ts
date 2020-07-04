@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyManageComponent implements OnInit {
 
+  minDate;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.minDate = new Date();
   }
 
 }

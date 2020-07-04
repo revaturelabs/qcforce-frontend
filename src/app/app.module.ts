@@ -47,9 +47,13 @@ import { environment } from '../environments/environment';
 import { BatchEffect } from './effects/batch.effect';
 import { ReportsEffect } from './effects/reports.effect';
 import { reportsReducer } from './reducers/reports.reducer';
+import { surveysReducer } from './reducers/surveys.reducer';
 import { batchReducer } from './reducers/batch.reducer';
 
 import { reducers, effects } from './store';
+import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
+import { SubnavItemsComponent } from './components/survey-info/subnav-items/subnav-items.component';
+import { SurveyQuestionsComponent } from './components/survey-info/survey-questions/survey-questions.component';
 
 
 
@@ -74,6 +78,9 @@ import { reducers, effects } from './store';
     RatingGraphComponent,
     PaceGraphComponent,
     MajorGraphComponent,
+    SurveyViewComponent,
+    SubnavItemsComponent,
+    SurveyQuestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +88,8 @@ import { reducers, effects } from './store';
     StoreModule.forRoot({
       router: routerReducer,
       batch: batchReducer,
-      reports: reportsReducer
+      reports: reportsReducer,
+      surveys: surveysReducer
     }),
     StoreModule.forFeature('information', reducers),
     EffectsModule.forFeature(effects),
