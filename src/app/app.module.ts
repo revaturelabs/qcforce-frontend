@@ -31,6 +31,9 @@ import { FilterItemsComponent } from './components/reports/filter-items/filter-i
 import { RatingGraphComponent } from './components/reports/rating-graph/rating-graph.component';
 import { PaceGraphComponent } from './components/reports/pace-graph/pace-graph.component';
 import { MajorGraphComponent } from './components/reports/major-graph/major-graph.component';
+import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
+import { SubnavItemsComponent } from './components/survey-info/subnav-items/subnav-items.component';
+import { SurveyQuestionsComponent } from './components/survey-info/survey-questions/survey-questions.component';
 
 /*styling imports*/
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -44,16 +47,13 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { environment } from '../environments/environment';
 
 /*store imports*/
-import { BatchEffect } from './effects/batch.effect';
-import { ReportsEffect } from './effects/reports.effect';
-import { reportsReducer } from './reducers/reports.reducer';
-import { surveysReducer } from './reducers/surveys.reducer';
-import { batchReducer } from './reducers/batch.reducer';
-
-import { reducers, effects } from './store';
-import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
-import { SubnavItemsComponent } from './components/survey-info/subnav-items/subnav-items.component';
-import { SurveyQuestionsComponent } from './components/survey-info/survey-questions/survey-questions.component';
+import * as fromStore from './store';  
+//import { BatchEffect } from './effects/batch.effect';
+//import { ReportsEffect } from './effects/reports.effect';
+//import { reportsReducer } from './reducers/reports.reducer';
+//import { surveysReducer } from './reducers/surveys.reducer';
+//import { batchReducer } from './reducers/batch.reducer';
+//import { reducers, effects } from './store';
 
 
 
@@ -87,14 +87,18 @@ import { SurveyQuestionsComponent } from './components/survey-info/survey-questi
     AppRoutingModule,
     StoreModule.forRoot({
       router: routerReducer,
-      batch: batchReducer,
-      reports: reportsReducer,
-      surveys: surveysReducer
+      reports: fromStore.reportsReducer,
+      batch: fromStore.batchesReducer,
+      surveys: fromStore.surveysReducer
     }),
-    StoreModule.forFeature('information', reducers),
-    EffectsModule.forFeature(effects),
+    //StoreModule.forFeature('information', reducers),
+    EffectsModule.forRoot([
+      fromStore.ReportsEffects,
+      fromStore.BatchesEffects,
+      fromStore.SurveysEffects
+    ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([BatchEffect, ReportsEffect]),
+    //EffectsModule.forRoot([BatchEffect, ReportsEffect]),
     StoreRouterConnectingModule.forRoot(),
     NgbModule,
     BrowserAnimationsModule,

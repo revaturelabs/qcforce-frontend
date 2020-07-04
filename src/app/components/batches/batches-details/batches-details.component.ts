@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { SurveyBatchIdService } from '../../../services/survey-batch-id.service';
+import { BatchesService } from 'src/app/services/batches.service';
 
 
 import { Color, Label, MultiDataSet } from 'ng2-charts';
@@ -61,12 +61,12 @@ export class BatchesDetailsComponent implements OnInit {
   public lineChartPlugins = [];
 
 
-  constructor(private surveyBatchId: SurveyBatchIdService) {}
+  constructor(private batchesService: BatchesService) {}
 
   ngOnInit(): void {
     this.batchId = localStorage.getItem('batchId');
 
-    this.surveyBatchId.getSurveysByBatchId(this.batchId)
+    this.batchesService.getSurveysByBatchId(this.batchId)
       .subscribe(data => {console.log(data.key);
                           this.items = data; });
     console.log(this.items);

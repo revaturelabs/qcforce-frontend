@@ -18,7 +18,7 @@ export class BatchListComponent implements OnInit {
   constructor(private store: Store<fromStore.AppState>) {}
 
   ngOnInit(): void {
-    this.batches$ = this.store.select(fromStore.getAllBatches);
+    this.batches$ = this.store.select(fromStore.selectAllBatches);
     this.store.dispatch(new fromStore.LoadBatches());
   }
 
