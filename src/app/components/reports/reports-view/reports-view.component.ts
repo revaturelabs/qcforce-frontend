@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from "@ngrx/store";
+import { Store } from '@ngrx/store';
 import { ReportsState } from 'src/app/states/reports.state';
 import * as ReportsActions from 'src/app/actions/reports.action'; 
 
@@ -10,10 +10,10 @@ import * as ReportsActions from 'src/app/actions/reports.action';
 })
 export class ReportsViewComponent implements OnInit {
 
-  constructor(private store : Store<{ reports: ReportsState }>) { }
+  constructor(private store: Store<{ reports: ReportsState }>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(ReportsActions.getAnswers());    
+    this.store.dispatch(ReportsActions.getAnswers());
   }
 
 }

@@ -17,7 +17,7 @@
                     <th>No. Associates</th>       
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="">
                 <tr>
                     <td>NY-1456</td>
                     <td>2005CUNY_JAVA</td>
@@ -78,11 +78,11 @@
         <div class="pace-report-chart p-2">
             
             <canvas baseChart
-                [data]="doughnutChartData"
-                [labels]="doughnutChartLabels"
-                [colors]="doughnutChartColor"
-                [legend]="doughnutChartLegend"
-                [chartType]="doughnutChartType">
+                [datasets]="paceChartData"
+                [labels]="paceChartLabels"
+                [colors]="paceChartColor"
+                [legend]="paceChartLegend"
+                [chartType]="paceChartType">
             </canvas>
         </div>
         <div class="major-report-chart p-2">
@@ -171,6 +171,22 @@
         </tbody>
         </table>
         
+
+    </div>
+
+    <div class="line-chart-container">
+
+        <div style="display: block;" class="line-chart">
+            <canvas baseChart width="400" height="400"
+              [datasets]="weekChartData"
+              [labels]="weekChartLabels"
+              [options]="weekChartOptions"
+              [colors]="weekChartColors"
+              [legend]="weekChartLegend"
+              [chartType]="weekChartType"
+              [plugins]="weekChartPlugins">
+            </canvas>
+          </div>
 
     </div>
    

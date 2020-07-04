@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
-import { ChartDataSets, ChartOptions } from 'chart.js';
+import { ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import { Options } from 'ng5-slider';
 import { FormGroup, FormControl } from '@angular/forms';
 @Component({
@@ -14,9 +14,8 @@ export class BatchReportsComponent implements OnInit {
   weeklyInfo = 'Reports By Week';
   weekDisplayed = false;
   batchDisplayed = false;
-  
-  minValue: number = 1;
-  maxValue: number = 9;
+  minValue = 1;
+  maxValue = 9;
   options: Options = {
     floor: 1,
     ceil: 9,
@@ -58,7 +57,7 @@ export class BatchReportsComponent implements OnInit {
   };
 
 
-  public lineChartColor: Color[] =[
+  public lineChartColor: Color[] = [
    { backgroundColor: 'orange'},
    { backgroundColor: 'orange'},
    { backgroundColor: 'orange'},
@@ -71,43 +70,34 @@ export class BatchReportsComponent implements OnInit {
   public lineChartType = 'bar';
   public lineChartPlugins = [];
 
-  public doughnutChartLabels: Label[] = ['Too fast', 'Too slow', 'Good'];
-  public doughnutChartData: MultiDataSet  = [
-      [6, 1, 2],
-      [5, 2, 2],
-      [6, 0, 3]
+  // ==================Pace Chart====================
+
+  public paceChartOptions: ChartOptions = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: -1,
+          max: 1
+        }
+      }]
+    }
+  };
+  public paceChartType: ChartType = 'horizontalBar';
+  public paceChartLegend = true;
+
+  public paceChartData: ChartDataSets[] = [
+    { data: [-.25, .55, 1], label: 'Pace of training' },
+  ];
+  public paceChartLabels: string[] = ['Batch 1', 'Batch 2', 'Batch 3'];
+
+  public paceChartColor: Color[] = [
+
+    { backgroundColor: 'orange' },
   ];
 
-  public doughnutChartColor: Color[] = [
-    {
-      borderColor: 'gray',
-      backgroundColor: [
-        'rgba(255, 70, 70, 1)',
-        'rgba(200, 255, 0, 1)',
-        'rgba(100, 200, 100, 1)',
-      ]
-    },
-    {
-      borderColor: 'gray',
-      backgroundColor: [
-        'rgba(255, 70, 70, 1)',
-        'rgba(200, 255, 0, 1)',
-        'rgba(100, 200, 100, 1)',
-      ]
-    },
-     {
-      borderColor: 'gray',
-      backgroundColor: [
-        'rgba(255, 70, 70, 1)',
-        'rgba(200, 255, 0, 1)',
-        'rgba(100, 200, 100, 1)',
-      ]
-    },
-  ];
 
-  public doughnutChartLegend = true;
-  public doughnutChartType = 'doughnut';
-
+ // =====================Major Chart===============================
   public majorChartLabels: Label[] = ['Computer Science', 'STEM (non-CS)', 'Non-STEM'];
   public majorChartData: MultiDataSet  = [
       [6, 1, 2],
@@ -128,6 +118,49 @@ export class BatchReportsComponent implements OnInit {
   public majorChartType = 'doughnut';
 
 
+  // =================Week Chart=================================
+
+  public weekChartData: ChartDataSets[] = [
+    { data: [3.45, 2.89, 3.99, 4.01, 4.45, 4.12, 3.72], label: 'Question 1' },
+    { data: [2.93, 3.67, 3.25, 2.90, 4.23, 2.45, 3.75], label: 'Question 2' },
+    { data: [2.12, 3.3, 3.8, 2.5, 4.8, 2.25, 2.4], label: 'Question 3' },
+    { data: [2.99, 4.06, 3.89, 3.54, 4.45, 2.7, 3.36], label: 'Question 4' },
+  ];
+  public weekChartLabels: Label[] = ['week 1', 'week 2', 'week 3', 'week 4', 'week 5', 'week 6', 'week 7'];
+  public weekChartOptions: ChartOptions  = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 1,
+          max: 5,
+        }
+      }]
+    }
+  };
+  public weekChartColors: Color[] = [
+    {
+      borderColor: 'red',
+      backgroundColor: 'white'
+    },
+     {
+      borderColor: 'blue',
+      backgroundColor: 'white'
+    },
+     {
+      borderColor: 'green',
+      backgroundColor: 'white'
+    },
+     {
+      borderColor: 'orange',
+      backgroundColor: 'white'
+    },
+  ];
+  public weekChartLegend = true;
+  public weekChartType = 'line';
+  public weekChartPlugins = [];
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -140,7 +173,7 @@ export class BatchReportsComponent implements OnInit {
     //   }
 
     //   return data;
-    //});
+    // });
   }
 
   toggleWeek(){
