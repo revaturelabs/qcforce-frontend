@@ -47,12 +47,12 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { environment } from '../environments/environment';
 
 /*store imports*/
-import * as fromStore from './store';  
-//import { BatchEffect } from './effects/batch.effect';
-//import { ReportsEffect } from './effects/reports.effect';
-//import { reportsReducer } from './reducers/reports.reducer';
-//import { surveysReducer } from './reducers/surveys.reducer';
-//import { batchReducer } from './reducers/batch.reducer';
+import * as fromStore from './store';
+// import { BatchesEffects } from './store/effects/batches.effect';
+// import { ReportsEffect } from './effects/reports.effect';
+// import { reportsReducer } from './store/reducers/reports.reducer';
+// import { surveysReducer } from './store/reducers/surveys.reducer';
+// import { batchesReducer } from './store/reducers/batches.reducer';
 //import { reducers, effects } from './store';
 
 

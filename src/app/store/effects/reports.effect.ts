@@ -25,4 +25,14 @@ export class ReportsEffects {
     })
   );
 
+  @Effect()
+  getBatches$ = this.actions$.pipe(
+    ofType(ReportsActions.GET_BATCHES),
+    switchMap(() => { return this.reportsService.getBatches().pipe(
+        map(batches => new ReportsActions.GetBatchesSuccess(batches)),
+        catchError(error => of(new ReportsActions.GetBatchesFail(error)))
+      )
+    })
+  );
+
 }
