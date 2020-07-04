@@ -27,12 +27,12 @@ export class FilterItemsComponent implements OnInit {
 
   batchFilterClick(option) {
     this.store.dispatch(new fromStore.BatchFilterChange(option));
-    //this.store.dispatch(fromStore.TransformData());
+    this.store.dispatch(new fromStore.TransformData());
   }
 
   weekFilterClick(option) {
     this.store.dispatch(new fromStore.WeekFilterChange(option));
-    //this.store.dispatch(ReportsActions.transformData());
+    this.store.dispatch(new fromStore.TransformData());
   }
 
   constructor(private store : Store<fromStore.AppState>) { }

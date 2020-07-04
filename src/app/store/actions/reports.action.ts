@@ -11,6 +11,7 @@ export const GET_BATCHES_FAIL = '[Reports] Get Batches Fail';
 export const GET_ANSWERS = '[Reports] Get Answers';
 export const GET_ANSWERS_SUCCESS = '[Reports] Get Answers Success';
 export const GET_ANSWERS_FAIL = '[Reports] Get Answers Fail';
+export const TRANSFORM_DATA = '[Reports] Transform Data';
 
 export class FilterDisplayedChange implements Action {
   readonly type = FILTER_DISPLAYED_CHANGE;
@@ -55,6 +56,10 @@ export class GetAnswersFail implements Action {
   constructor(public payload: any) {}
 }
 
+export class TransformData implements Action {
+  readonly type = TRANSFORM_DATA;
+}
+
 export type ReportsAction = FilterDisplayedChange | BatchFilterChange | WeekFilterChange 
   | GetBatches | GetBatchesSuccess | GetBatchesFail
-  | GetAnswers | GetAnswersSuccess | GetAnswersFail;
+  | GetAnswers | GetAnswersSuccess | GetAnswersFail | TransformData;
