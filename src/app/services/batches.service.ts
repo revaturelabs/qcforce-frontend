@@ -10,13 +10,12 @@ import { environment } from '../../environments/environment';
 export class BatchesService {
 
   constructor(private http: HttpClient) {}
-  
+
   getBatches(): Observable<Batch[]> {
     return this.http.get<Batch[]>(environment.getBatchListUrl);
   }
-  
   getSurveysByBatchId(batchId: string): Observable <any> {
-    let url = environment.getSurveysByBatchIdUrl + '?batchId=' + batchId;
+    const url = environment.getSurveysByBatchIdUrl + '?batchId=' + batchId;
     return this.http.get<any>(url);
   }
 }

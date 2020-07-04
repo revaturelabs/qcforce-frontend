@@ -15,12 +15,9 @@ export class ReportsService {
     return this.http.get<any[]>(environment.getAnswersUrl);
   }
 
-  constructor(private http: HttpClient) { 
-        
-  }
+  constructor(private http: HttpClient) { }
 
 
 
-  
 
 }
