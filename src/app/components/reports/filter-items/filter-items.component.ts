@@ -35,7 +35,7 @@ export class FilterItemsComponent implements OnInit {
     //this.store.dispatch(ReportsActions.transformData());
   }
 
-  constructor(private store : Store<{ reports: fromStore.ReportsState }>) { }
+  constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.dispatch(new fromStore.GetBatches());

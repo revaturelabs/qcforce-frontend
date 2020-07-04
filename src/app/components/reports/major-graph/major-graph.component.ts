@@ -29,7 +29,7 @@ export class MajorGraphComponent implements OnInit {
   public chartLegend = true;
   public chartType = 'doughnut';
 
-  constructor(private store : Store<{ reports: fromStore.ReportsState }>) { }
+  constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select((state) => state.reports.majorGraph).subscribe((graph) => {

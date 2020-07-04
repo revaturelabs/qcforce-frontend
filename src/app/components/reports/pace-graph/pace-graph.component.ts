@@ -47,7 +47,7 @@ export class PaceGraphComponent implements OnInit {
   
   public chartType = 'doughnut';
 
-  constructor(private store : Store<{ reports: fromStore.ReportsState }>) { }
+  constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select((state) => state.reports.paceGraph).subscribe((graph) => {

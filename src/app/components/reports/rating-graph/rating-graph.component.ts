@@ -64,7 +64,7 @@ export class RatingGraphComponent implements OnInit {
   
   public chartPlugins = [];
 
-  constructor(private store : Store<{ reports: fromStore.ReportsState }>) { }
+  constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select((state) => state.reports.ratingGraph).subscribe((graph) => {

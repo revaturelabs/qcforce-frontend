@@ -9,7 +9,7 @@ import * as fromStore from 'src/app/store';
 })
 export class ReportsViewComponent implements OnInit {
 
-  constructor(private store: Store<{ reports: fromStore.ReportsState }>) { }
+  constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.dispatch(new fromStore.GetAnswers());
