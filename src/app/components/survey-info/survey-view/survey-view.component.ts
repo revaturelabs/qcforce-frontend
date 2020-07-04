@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
-import { SurveysState } from 'src/app/states/surveys.state';
-import * as SurveysActions from 'src/app/actions/surveys.action';
+import * as fromStore from 'src/app/store';
 
 @Component({
   selector: 'app-survey-view',
@@ -12,10 +11,10 @@ export class SurveyViewComponent implements OnInit {
   
   subMenuSelected : string; 
 
-  constructor(private store : Store<{ surveys: SurveysState }>) { }
+  constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.select((state) => state.surveys.subnavSelected).subscribe((navSelected) => {
+    this.store.select(fromStore.selectSubnavSelected).subscribe((navSelected) => {
       this.subMenuSelected = navSelected;
     })
   }

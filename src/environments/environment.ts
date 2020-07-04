@@ -7,6 +7,7 @@ export const environment = {
   getBatchUrl: "http://localhost:3000/batch",
   getAnswersUrl: "http://localhost:3000/answers",
   getBatchListUrl: 'http://localhost:3100/batches',
+  getSurveysByBatchIdUrl: 'http://localhost:3001/surveys'
 };
 
 /*

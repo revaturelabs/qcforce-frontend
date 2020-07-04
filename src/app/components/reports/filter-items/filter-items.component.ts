@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
-import { ReportsState } from '../../../states/reports.state';
-import * as ReportsActions from 'src/app/actions/reports.action'; 
+import * as fromStore from 'src/app/store';
 
 @Component({
   selector: 'app-filter-items',
@@ -20,27 +19,27 @@ export class FilterItemsComponent implements OnInit {
 
   filterOptionClick(subMenuItem) {
     if (this.filterOptionDisplayed === subMenuItem) {
-      this.store.dispatch(ReportsActions.filterDisplayedChange({ payload: "" }));
+      this.store.dispatch(new fromStore.FilterDisplayedChange(""));
     } else {
-      this.store.dispatch(ReportsActions.filterDisplayedChange({ payload: subMenuItem }));
+      this.store.dispatch(new fromStore.FilterDisplayedChange(subMenuItem));
     }
   }
 
   batchFilterClick(option) {
-    this.store.dispatch(ReportsActions.batchFilterChange({ payload: option }));
-    this.store.dispatch(ReportsActions.transformData());
+    this.store.dispatch(new fromStore.BatchFilterChange(option));
+    //this.store.dispatch(fromStore.TransformData());
   }
 
   weekFilterClick(option) {
-    this.store.dispatch(ReportsActions.weekFilterChange({ payload: option }));
-    this.store.dispatch(ReportsActions.transformData());
+    this.store.dispatch(new fromStore.WeekFilterChange(option));
+    //this.store.dispatch(ReportsActions.transformData());
   }
 
-  constructor(private store : Store<{ reports: ReportsState }>) { }
+  constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(ReportsActions.getBatches());
-    this.store.select((state) => state.reports).subscribe((reports) => {
+    this.store.dispatch(new fromStore.GetBatches());
+    this.store.select(fromStore.selectReportsState).subscribe((reports) => {
       this.filterOptionDisplayed = reports.filterOptionDisplayed;
       this.batchFilterOptions = reports.batchFilterOptions;
       this.batchFilter = reports.batchFilter;

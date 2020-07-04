@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
-import { SurveysState } from 'src/app/states/surveys.state';
-import * as SurveysActions from 'src/app/actions/surveys.action';
+import * as fromStore from 'src/app/store';
 
 @Component({
   selector: 'app-subnav-items',
@@ -12,10 +11,10 @@ export class SubnavItemsComponent implements OnInit {
 
   subMenuList : string[];
 
-  constructor(private store : Store<{ surveys: SurveysState }>) { }
+  constructor(private store : Store<{ surveys: fromStore.SurveysState }>) { }
 
   subnavOptionClick(menuItem) {
-    this.store.dispatch(SurveysActions.subnavOptionClick({ payload: menuItem }));
+    this.store.dispatch(new fromStore.SubnavOptionClick(menuItem));
   }
 
   ngOnInit(): void {
