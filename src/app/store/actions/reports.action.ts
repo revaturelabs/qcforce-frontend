@@ -56,10 +56,6 @@ export class GetAnswersFail implements Action {
   constructor(public payload: any) {}
 }
 
-export class TransformData implements Action {
-  readonly type = TRANSFORM_DATA;
-}
-
 export type ReportsAction = FilterDisplayedChange | BatchFilterChange | WeekFilterChange 
   | GetBatches | GetBatchesSuccess | GetBatchesFail
-  | GetAnswers | GetAnswersSuccess | GetAnswersFail | TransformData;
+  | GetAnswers | GetAnswersSuccess | GetAnswersFail;

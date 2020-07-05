@@ -34,27 +34,25 @@ function calculate(data, questionList, batch, week) {
 export function ratingGraphFilter(state) {
   let bF = state.batchFilter;
   let wF = state.weekFilter;
+  let multiDataSet = []
   if (wF !== "All" && bF !== "All") {
     let data = calculate(state.responseData, state.ratingGraph.labels, bF, wF);
     let label = `${bF} (${wF})`;
-    state.ratingGraph.data = [];
-    state.ratingGraph.data.push({ data, label });
+    multiDataSet.push({ data, label });
   } else if (wF === "All" && bF !== "All") {
-    state.ratingGraph.data = [];
     for (let wFOption of state.weekFilterOptions.slice(2)) {
       let data = calculate(state.responseData, state.ratingGraph.labels, bF, wFOption);
       let label = `${bF} (${wFOption})`;
-      state.ratingGraph.data.push({ data, label });
+      multiDataSet.push({ data, label });
     }
   } else if (wF !== "All" && bF === "All") {
-    state.ratingGraph.data = [];
     for (let bFOption of state.batchFilterOptions.slice(2)) {
       let data = calculate(state.responseData, state.ratingGraph.labels, bFOption, wF);
       let label = `${bFOption} (${wF})`;
-      state.ratingGraph.data.push({ data, label });
+      multiDataSet.push({ data, label });
     }
   }
-  return state;
+  return multiDataSet;
 }
 
 function calcPace(data, labels, batch, week) {
@@ -74,24 +72,22 @@ function calcPace(data, labels, batch, week) {
 export function paceGraphFilter(state) {
   let bF = state.batchFilter;
   let wF = state.weekFilter;
+  let multiDataSet = [];
   if (wF !== "All" && bF !== "All") {
     let singleData = calcPace(state.responseData, state.paceGraph.labels,bF, wF); 
-    state.paceGraph.data = []
-    state.paceGraph.data.push(singleData);
+    multiDataSet.push(singleData);
   } else if (wF === "All" && bF !== "All") {
-    state.paceGraph.data = []
     for (let wFOption of state.weekFilterOptions.slice(2)) {
       let singleData = calcPace(state.responseData, state.paceGraph.labels, bF, wFOption);
-      state.paceGraph.data.push(singleData);
+      multiDataSet.push(singleData);
     }
   } else if (wF !== "All" && bF === "All") {
-    state.paceGraph.data = []
     for (let bFOption of state.batchFilterOptions.slice(2)) {
       let singleData = calcPace(state.responseData, state.paceGraph.labels, bFOption, wF);
-      state.paceGraph.data.push(singleData);
+      multiDataSet.push(singleData);
     } 
   }
-  return state;
+  return multiDataSet;
 }
 
 function calcMajor(data, labels, batch) {
@@ -110,18 +106,17 @@ function calcMajor(data, labels, batch) {
 
 export function majorGraphFilter(state) {
   let bF = state.batchFilter;
+  let multiDataSet = [];
   if (bF !== "All") {
     let singleData = calcMajor(state.responseData, state.majorGraph.labels, bF);
-    state.majorGraph.data = [];
-    state.majorGraph.data.push(singleData);
+    multiDataSet.push(singleData);
   } else {
-    state.majorGraph.data = [];
     for (let bFOption of state.batchFilterOptions.slice(2)) {
       let singleData = calcMajor(state.responseData, state.majorGraph.labels, bFOption);
-      state.majorGraph.data.push(singleData);
+      multiDataSet.push(singleData);
     } 
   }
-  return state;
+  return multiDataSet;
 }
 
 export function graphFilter(state){

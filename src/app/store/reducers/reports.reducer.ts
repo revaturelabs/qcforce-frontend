@@ -1,7 +1,6 @@
 import * as fromReports from '../actions/reports.action';
 import { ReportsState, initReportsState } from '../states';
 import { cloneDeep } from 'lodash';
-import { graphFilter } from 'src/app/filters/reports.filter';
 
 export function reportsReducer(
   state: ReportsState = initReportsState,
@@ -25,9 +24,8 @@ export function reportsReducer(
         return { ...state };
     }
     case fromReports.GET_ANSWERS_SUCCESS: {
-      let newState = cloneDeep(state);
-      newState.responseData = action.payload;
-      return graphFilter(newState);
+      let responseData = action.payload;
+      return { ...state, responseData };
     }
     case fromReports.GET_ANSWERS_FAIL: {
       return { ...state };
@@ -36,18 +34,14 @@ export function reportsReducer(
       return { ...state };
     }
     case fromReports.GET_BATCHES_SUCCESS: {
-      let newState = cloneDeep(state);
+      let batchFilterOptions = ['All', 'Average'];
       for (let batch of action.payload) {
-        newState.batchFilterOptions.push(batch.batchName);
+        batchFilterOptions.push(batch.batchName);
       }
-      return newState;
+      return {...state, batchFilterOptions};
     }
     case fromReports.GET_BATCHES_FAIL: {
       return { ...state };
-    }
-    case fromReports.TRANSFORM_DATA: {
-      let newState = cloneDeep(state);
-      return graphFilter(newState);
     }
   }
   return state;
