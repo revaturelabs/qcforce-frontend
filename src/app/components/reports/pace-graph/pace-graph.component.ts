@@ -50,7 +50,7 @@ export class PaceGraphComponent implements OnInit {
   constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.select((state) => state.reports.paceGraph).subscribe((graph) => {
+    this.store.select(fromStore.selectPaceGraphData).subscribe((graph) => {
       this.chartData = cloneDeep(graph.data);
       this.chartLabels = cloneDeep(graph.labels);
     });

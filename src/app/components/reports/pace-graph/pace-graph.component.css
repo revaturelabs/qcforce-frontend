@@ -1,3 +1,7 @@
-.pace-report-chart {
-    width: 50vw;
+p {
+  font-size: 1.25rem;
+}
+
+canvas {
+  width: 25rem;
 }

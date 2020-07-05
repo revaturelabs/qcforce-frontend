@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { ChartDataSets, ChartOptions, ChartType} from 'chart.js';
+import * as pluginAnnotations from 'chartjs-plugin-annotation';
 import { Options } from 'ng5-slider';
 import { FormGroup, FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-batch-reports',
   templateUrl: './batch-reports.component.html',
@@ -127,7 +129,7 @@ export class BatchReportsComponent implements OnInit {
     { data: [2.99, 4.06, 3.89, 3.54, 4.45, 2.7, 3.36], label: 'Question 4' },
   ];
   public weekChartLabels: Label[] = ['week 1', 'week 2', 'week 3', 'week 4', 'week 5', 'week 6', 'week 7'];
-  public weekChartOptions: ChartOptions  = {
+  public weekChartOptions: ChartOptions & { annotation: any }  = {
     responsive: true,
     scales: {
       yAxes: [{
@@ -136,29 +138,60 @@ export class BatchReportsComponent implements OnInit {
           max: 5,
         }
       }]
-    }
+    },
+    annotation: {
+      annotations: [ 
+        {
+          type: 'line',
+          mode: 'vertical',
+          scaleID: 'x-axis-0',
+          value: 'week 3',
+          borderColor: 'black',
+          borderWidth: 2,
+          label: {
+            enabled: true,
+            fontColor: 'white',
+            content: 'week 3'
+          }
+        },
+        {
+          type: 'line',
+          mode: 'horizontal',
+          scaleID: 'y-axis-0',
+          value: 3.25,
+          borderColor: 'black',
+          borderWidth: 2,
+          label: {
+            enabled: true,
+            fontColor: 'white',
+            borderColor: 'blue',
+            content: 'Question 2: 3.25'
+          }
+        },
+      ]
+    },
   };
   public weekChartColors: Color[] = [
     {
       borderColor: 'red',
-      backgroundColor: 'white'
+      backgroundColor: 'rgba(255,255,255,0)'
     },
      {
       borderColor: 'blue',
-      backgroundColor: 'white'
+      backgroundColor: 'rgba(255,255,255,0)'
     },
      {
       borderColor: 'green',
-      backgroundColor: 'white'
+      backgroundColor: 'rgba(255,255,255,0)'
     },
      {
       borderColor: 'orange',
-      backgroundColor: 'white'
+      backgroundColor: 'rgba(255,255,255,0)'
     },
   ];
   public weekChartLegend = true;
   public weekChartType = 'line';
-  public weekChartPlugins = [];
+  public weekChartPlugins = [pluginAnnotations];
 
 
   constructor() { }
