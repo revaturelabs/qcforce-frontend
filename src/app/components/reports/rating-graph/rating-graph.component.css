@@ -1,3 +1,7 @@
-.reports-chart {
-    width: 70vw
+p {
+  font-size: 1.25rem;
+}
+
+canvas {
+  width: 40rem;
 }    
