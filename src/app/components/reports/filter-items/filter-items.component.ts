@@ -27,10 +27,16 @@ export class FilterItemsComponent implements OnInit {
 
   batchFilterClick(option) {
     this.store.dispatch(new fromStore.BatchFilterChange(option));
+    if (option === 'All' && this.weekFilter === 'All') {
+      this.store.dispatch(new fromStore.WeekFilterChange('Average'));
+    }
   }
 
   weekFilterClick(option) {
     this.store.dispatch(new fromStore.WeekFilterChange(option));
+    if (option === 'All' && this.batchFilter === 'All') {
+      this.store.dispatch(new fromStore.BatchFilterChange('Average'));
+    }
   }
 
   constructor(private store : Store<fromStore.AppState>) { }
