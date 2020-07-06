@@ -9,7 +9,7 @@ import { ReportsService } from 'src/app/services/reports.service';
 
 @Injectable()
 export class ReportsEffects {
- 
+
   constructor(
     private actions$: Actions,
     private reportsService: ReportsService
@@ -21,7 +21,7 @@ export class ReportsEffects {
     switchMap(() => { return this.reportsService.getAnswers().pipe(
         map(answers => new ReportsActions.GetAnswersSuccess(answers)),
         catchError(error => of(new ReportsActions.GetAnswersFail(error)))
-      )
+      );
     })
   );
 
@@ -31,7 +31,7 @@ export class ReportsEffects {
     switchMap(() => { return this.reportsService.getBatches().pipe(
         map(batches => new ReportsActions.GetBatchesSuccess(batches)),
         catchError(error => of(new ReportsActions.GetBatchesFail(error)))
-      )
+      );
     })
   );
 

@@ -26,51 +26,7 @@ export class BatchReportsComponent implements OnInit {
   };
 
 
-  public lineChartData: ChartDataSets[] = [
-    { data: [3.25, 2, 5, 4, 3, 5], label: 'Week 1'},
-    { data: [2.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 2'},
-    { data: [2.23, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 3'},
-    { data: [2.89, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 4'},
-    { data: [3.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 5'},
-    { data: [4.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 6'},
-    { data: [1.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0], label: 'Week 7'},
-    { data: [0, 0, 0, 0, 0, 0, 3.5, 4.75 ], label: 'Week 8'},
-    { data: [0, 0, 0, 0, 0, 0, 2.89, 3.35 ], label: 'Week 9'},
-  ];
-  public lineChartLabels: Label[] = [
-    'Satisfaction Rating',
-    'Materials Helpful',
-    'Well Organized',
-    'Questions Encouraged',
-    'Met Expectations',
-    'Topic Understanding',
-    'Project Clarity',
-    'Project Preparedness'
-  ];
-  public lineChartOptions: any  = {
-    responsive: true,
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  };
 
-
-  public lineChartColor: Color[] = [
-   { backgroundColor: 'orange'},
-   { backgroundColor: 'orange'},
-   { backgroundColor: 'orange'},
-   { backgroundColor: 'orange'},
-   { backgroundColor: 'orange'},
-   { backgroundColor: 'orange'},
-   { backgroundColor: 'orange'},
-  ];
-  public lineChartLegend = true;
-  public lineChartType = 'bar';
-  public lineChartPlugins = [];
 
   // ==================Pace Chart====================
 
@@ -140,7 +96,7 @@ export class BatchReportsComponent implements OnInit {
       }]
     },
     annotation: {
-      annotations: [ 
+      annotations: [
         {
           type: 'line',
           mode: 'vertical',
@@ -193,23 +149,85 @@ export class BatchReportsComponent implements OnInit {
   public weekChartType = 'line';
   public weekChartPlugins = [pluginAnnotations];
 
+  // ===================BaR CHART=====================
+
+  public lineChartData: ChartDataSets[] = [
+    { data: [3.25], label: 'satisfaction-rating'},
+    { data: [2], label: 'materials-helpful'},
+    { data: [2.75], label: 'well-organized'},
+    { data: [4], label: 'questions-encouraged'},
+    // { data: [2.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 2'},
+    // { data: [2.23, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 3'},
+    // { data: [2.89, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 4'},
+    // { data: [3.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 5'},
+    // { data: [4.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0 ], label: 'Week 6'},
+    // { data: [1.47, 3.81, 4.81, 2.11, 4.13, 3.51, 0, 0], label: 'Week 7'},
+    // { data: [0, 0, 0, 0, 0, 0, 3.5, 4.75 ], label: 'Week 8'},
+    // { data: [0, 0, 0, 0, 0, 0, 2.89, 3.35 ], label: 'Week 9'},
+  ];
+  public lineChartLabels: Label[] = [
+
+    'Survey Questions',
+    // 'Satisfaction Rating',
+    // 'Materials Helpful',
+    //  'Well Organized',
+    //  'Questions Encouraged',
+    // 'Met Expectations',
+    // 'Topic Understanding',
+    // 'Project Clarity',
+    // 'Project Preparedness'
+  ];
+  public lineChartOptions: any  = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  };
+
+
+   public lineChartColor: Color[];
+
+  //  { backgroundColor: 'orange'},
+  //  { backgroundColor: 'red'},
+  //  { backgroundColor: 'green'},
+  //  { backgroundColor: 'blue'},
+  //  { backgroundColor: 'orange'},
+  //  { backgroundColor: 'orange'},
+  //  { backgroundColor: 'orange'},
+  // ];
+
+  public colors = ['red', 'orange', 'yellow', 'green', 'teal'];
+  colorIndex = 0;
+
+  public lineChartLegend = true;
+  public lineChartType = 'bar';
+  public lineChartPlugins = [];
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.lineChartColor = this.changeBarChartColor(this.lineChartData);    
+
     // this.lineChartData = this.state.select((state) => {
     //   let data = [];
     //   for() {
     //     let singleData = [];
     //     let label = '';
     //     data.push({ data: singleData, label: label });
-    //   }
-
+    //   }    
     //   return data;
     // });
   }
 
-  toggleWeek(){
-    this.weekDisplayed = true;
-  }
+ changeBarChartColor(data) {
+    // console.log(this.colors);
+    return data.map((datum) => {
+    return {backgroundColor: this.colors[Math.round(datum.data[0])]};
+    });
+ }
 }

@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-export const FILTER_DISPLAYED_CHANGE = '[Reports] Filter Items Display Change';
+
 export const BATCH_FILTER_CHANGE = '[Reports] Batch Filter Option Change';
 export const WEEK_FILTER_CHANGE = '[Reports] Week Filter Option Change';
 
@@ -13,10 +13,7 @@ export const GET_ANSWERS_SUCCESS = '[Reports] Get Answers Success';
 export const GET_ANSWERS_FAIL = '[Reports] Get Answers Fail';
 export const TRANSFORM_DATA = '[Reports] Transform Data';
 
-export class FilterDisplayedChange implements Action {
-  readonly type = FILTER_DISPLAYED_CHANGE;
-  constructor(public payload: string) {}
-}
+
 
 export class BatchFilterChange implements Action {
   readonly type = BATCH_FILTER_CHANGE;
@@ -56,6 +53,6 @@ export class GetAnswersFail implements Action {
   constructor(public payload: any) {}
 }
 
-export type ReportsAction = FilterDisplayedChange | BatchFilterChange | WeekFilterChange 
+export type ReportsAction = BatchFilterChange | WeekFilterChange
   | GetBatches | GetBatchesSuccess | GetBatchesFail
   | GetAnswers | GetAnswersSuccess | GetAnswersFail;

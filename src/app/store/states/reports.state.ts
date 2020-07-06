@@ -1,5 +1,4 @@
 export interface ReportsState {
-  filterOptionDisplayed: string;
   batchFilterOptions: string[];
   batchFilter: string;
   weekFilterOptions: string[];
@@ -12,7 +11,7 @@ export interface ReportsState {
 }
 
 export const initReportsState: ReportsState = {
-  filterOptionDisplayed: '',
+
   batchFilterOptions: [ 'Average' ],
   batchFilter: 'Average',
   weekFilterOptions: ['All', 'Average', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
@@ -29,7 +28,7 @@ export const initReportsState: ReportsState = {
       'Topic Understanding',
       'Project Clarity',
       'Project Preparedness'
-    ] 
+    ]
   },
   paceGraph: {
     visible: false,
@@ -49,8 +48,8 @@ export const initReportsState: ReportsState = {
       'Non-STEM major'
     ]
   },
-  questionList:  [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized', 
-  'Questions Encouraged', 'Met Expectations','Topic Understanding', 
+  questionList:  [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized',  
+  'Questions Encouraged', 'Met Expectations', 'Topic Understanding',  
   'Project Clarity', 'Project Preparedness'],
   responseData: []
 }

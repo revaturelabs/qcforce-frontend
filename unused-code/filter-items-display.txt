@@ -1,0 +1,31 @@
+filterOptionDisplayed: string;
+filterOptionDisplayed: '',
+
+export const FILTER_DISPLAYED_CHANGE = '[Reports] Filter Items Display Change';
+export class FilterDisplayedChange implements Action {
+  readonly type = FILTER_DISPLAYED_CHANGE;
+  constructor(public payload: string) {}
+}
+
+case fromReports.FILTER_DISPLAYED_CHANGE: {
+      const filterOptionDisplayed = action.payload;
+      return { ...state, filterOptionDisplayed };
+}
+
+filterOptionClick(subMenuItem) {
+    if (this.filterOptionDisplayed === subMenuItem) {
+      this.store.dispatch(new fromStore.FilterDisplayedChange(''));
+    } else {
+      this.store.dispatch(new fromStore.FilterDisplayedChange(subMenuItem));
+    }
+}
+
+<div id="submenu">  
+  <ul class="nav d-flex justify-content-center flex-nowrap">
+    <li class="nav-item" *ngFor="let subMenuItem of subMenuList">
+      <p class="nav-link" (click)="filterOptionClick(subMenuItem)">
+        {{ subMenuItem }}
+      </p>
+    </li>
+  </ul>
+</div>

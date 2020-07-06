@@ -1,12 +1,9 @@
-.weekly-report {
-    padding: 25px
-}
-
-canvas {
-    width: 900px !important;
-    height: 360px !important;
+.weekly-report { 
+    margin: 10px 0 30px 0;
+    height: 50vh; 
+    width: 80vw;
 }
 
 p {
     font-size: 1.25rem;
-  }
+}

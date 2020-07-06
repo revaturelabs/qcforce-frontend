@@ -2,14 +2,16 @@ p {
   font-size: 1.25rem;
 }
 
-canvas {
-  width: 900px !important;
-  height: 360px !important;
-}  
+.rating-chart {
+  margin: 10px 0 30px 0;
+  height: 50vh; 
+  width: 80vw;
+}
+
 
 @media (min-width: 768px) {
     canvas {
-      width: 80vw !important;
-      height: 40vh !important;
+      width: 80vw;
+      
     }  
   }

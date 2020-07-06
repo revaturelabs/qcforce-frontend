@@ -1,5 +1,5 @@
 function _batchClearence(answer, batch) {
-  if (batch === "Average") {
+  if (batch === 'Average') {
     return true;
   } else {
     return answer.batch === batch;
@@ -7,7 +7,7 @@ function _batchClearence(answer, batch) {
 }
 
 function _weekClearence(answer, week) {
-  if (week === "Average") {
+  if (week === 'Average') {
     return true;
   } else {
     return answer.week === week;
@@ -15,15 +15,15 @@ function _weekClearence(answer, week) {
 }
 
 function calculate(data, questionList, batch, week) {
-  let avg = questionList.map(() => 0);
-  let num = questionList.map(() => 0);
-  for (let answer of data) {
-    let qIndex = questionList.indexOf(answer.question);
-    if (qIndex != -1 && 
-      _batchClearence(answer, batch) && 
-      _weekClearence(answer, week)) 
+  const avg = questionList.map(() => 0);
+  const num = questionList.map(() => 0);
+  for (const answer of data) {
+    const qIndex = questionList.indexOf(answer.question);
+    if (qIndex !== -1 &&
+      _batchClearence(answer, batch) &&
+      _weekClearence(answer, week))
     {
-      let val = answer.answer * 1;
+      const val = answer.answer * 1;
       num[qIndex]++;
       avg[qIndex] = ((num[qIndex] - 1) / num[qIndex]) * avg[qIndex] + (1 / num[qIndex]) * val;
     }
@@ -32,14 +32,14 @@ function calculate(data, questionList, batch, week) {
 }
 
 function calculateByWeek(data, weekList, batch, question) {
-  let avg = weekList.map(() => 0);
-  let num = weekList.map(() => 0);
-  for (let answer of data) {
-    let wIndex = weekList.indexOf(answer.week);
-    if (wIndex != -1 && 
+  const avg = weekList.map(() => 0);
+  const num = weekList.map(() => 0);
+  for (const answer of data) {
+    const wIndex = weekList.indexOf(answer.week);
+    if (wIndex !== -1 &&
       _batchClearence(answer, batch) && answer.question === question)
     {
-      let val = answer.answer * 1;
+      const val = answer.answer * 1;
       num[wIndex]++;
       avg[wIndex] = ((num[wIndex] - 1) / num[wIndex]) * avg[wIndex] + (1 / num[wIndex]) * val;
     }
@@ -49,17 +49,17 @@ function calculateByWeek(data, weekList, batch, question) {
 
 
 export function ratingGraphFilter(state) {
-  let bF = state.batchFilter;
-  let wF = state.weekFilter;
-  let multiDataSet = []
-  if (wF !== "All" && bF !== "All") {
-    let data = calculate(state.responseData, state.ratingGraph.labels, bF, wF);
-    let label = `${bF} (${wF})`;
+  const bF = state.batchFilter;
+  const wF = state.weekFilter;
+  const multiDataSet = [];
+  if (wF !== 'All' && bF !== 'All') {
+    const data = calculate(state.responseData, state.ratingGraph.labels, bF, wF);
+    const label = `${bF} (${wF})`;
     multiDataSet.push({ data, label });
-  } else if (wF !== "All" && bF === "All") {
-    for (let bFOption of state.batchFilterOptions.slice(2)) {
-      let data = calculate(state.responseData, state.ratingGraph.labels, bFOption, wF);
-      let label = `${bFOption} (${wF})`;
+  } else if (wF !== 'All' && bF === 'All') {
+    for (const bFOption of state.batchFilterOptions.slice(2)) {
+      const data = calculate(state.responseData, state.ratingGraph.labels, bFOption, wF);
+      const label = `${bFOption} (${wF})`;
       multiDataSet.push({ data, label });
     }
   }
@@ -67,13 +67,13 @@ export function ratingGraphFilter(state) {
 }
 
 export function weeklyGraphFilter(state) {
-  let bF = state.batchFilter;
-  let wF = state.weekFilter;
-  let multiDataSet = [];
-  if (wF === "All" && bF !== "All") {
-    for (let question of state.questionList) {
-      let data = calculateByWeek(state.responseData, state.weekFilterOptions.slice(2), bF, question);
-      let label = question;
+  const bF = state.batchFilter;
+  const wF = state.weekFilter;
+  const multiDataSet = [];
+  if (wF === 'All' && bF !== 'All') {
+    for (const question of state.questionList) {
+      const data = calculateByWeek(state.responseData, state.weekFilterOptions.slice(2), bF, question);
+      const label = question;
       multiDataSet.push({ data, label });
     }
   }
@@ -81,13 +81,13 @@ export function weeklyGraphFilter(state) {
 }
 
 function calcPace(data, labels, batch, week) {
-  let singledata = [0,0,0];
-  for (let answer of data) {
-    if (answer.question === "Pace of Training" &&
-      _batchClearence(answer, batch) && 
-      _weekClearence(answer, week)) 
+  const singledata = [0, 0, 0];
+  for (const answer of data) {
+    if (answer.question === 'Pace of Training' &&
+      _batchClearence(answer, batch) &&
+      _weekClearence(answer, week))
     {
-      let i = labels.indexOf(answer.answer);
+      const i = labels.indexOf(answer.answer);
       singledata[i]++;
     }
   }
@@ -95,33 +95,33 @@ function calcPace(data, labels, batch, week) {
 }
 
 export function paceGraphFilter(state) {
-  let bF = state.batchFilter;
-  let wF = state.weekFilter;
-  let multiDataSet = [];
-  if (wF !== "All" && bF !== "All") {
-    let singleData = calcPace(state.responseData, state.paceGraph.labels,bF, wF); 
+  const bF = state.batchFilter;
+  const wF = state.weekFilter;
+  const multiDataSet = [];
+  if (wF !== 'All' && bF !== 'All') {
+    const singleData = calcPace(state.responseData, state.paceGraph.labels, bF, wF);
     multiDataSet.push(singleData);
-  } else if (wF === "All" && bF !== "All") {
-    for (let wFOption of state.weekFilterOptions.slice(2)) {
-      let singleData = calcPace(state.responseData, state.paceGraph.labels, bF, wFOption);
+  } else if (wF === 'All' && bF !== 'All') {
+    for (const wFOption of state.weekFilterOptions.slice(2)) {
+      const singleData = calcPace(state.responseData, state.paceGraph.labels, bF, wFOption);
       multiDataSet.push(singleData);
     }
-  } else if (wF !== "All" && bF === "All") {
-    for (let bFOption of state.batchFilterOptions.slice(2)) {
-      let singleData = calcPace(state.responseData, state.paceGraph.labels, bFOption, wF);
+  } else if (wF !== 'All' && bF === 'All') {
+    for (const bFOption of state.batchFilterOptions.slice(2)) {
+      const singleData = calcPace(state.responseData, state.paceGraph.labels, bFOption, wF);
       multiDataSet.push(singleData);
-    } 
+    }
   }
   return multiDataSet;
 }
 
 function calcMajor(data, labels, batch) {
-  let singledata = [0,0,0];
-  for (let answer of data) {
-    if (answer.question === "Background" &&
+  const singledata = [0, 0, 0];
+  for (const answer of data) {
+    if (answer.question === 'Background' &&
       _batchClearence(answer, batch))
     {
-      let i = labels.indexOf(answer.answer);
+      const i = labels.indexOf(answer.answer);
       singledata[i]++;
     }
   }
@@ -130,16 +130,19 @@ function calcMajor(data, labels, batch) {
 
 
 export function majorGraphFilter(state) {
+  // tslint:disable-next-line: prefer-const
   let bF = state.batchFilter;
+  // tslint:disable-next-line: prefer-const
   let multiDataSet = [];
-  if (bF !== "All") {
+  if (bF !== 'All') {
+    // tslint:disable-next-line: prefer-const
     let singleData = calcMajor(state.responseData, state.majorGraph.labels, bF);
     multiDataSet.push(singleData);
   } else {
-    for (let bFOption of state.batchFilterOptions.slice(2)) {
-      let singleData = calcMajor(state.responseData, state.majorGraph.labels, bFOption);
+    for (const bFOption of state.batchFilterOptions.slice(2)) {
+      const singleData = calcMajor(state.responseData, state.majorGraph.labels, bFOption);
       multiDataSet.push(singleData);
-    } 
+    }
   }
   return multiDataSet;
 }
