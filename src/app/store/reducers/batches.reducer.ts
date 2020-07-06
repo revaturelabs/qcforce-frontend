@@ -1,5 +1,5 @@
 import * as fromBatches from '../actions/batches.action';
-import { BatchesState , initBatchesState } from '../states/batches.state'
+import { BatchesState , initBatchesState } from '../states/batches.state';
 
 /**
  * The reducer function which changes batch state
