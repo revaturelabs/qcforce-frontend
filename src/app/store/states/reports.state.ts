@@ -8,14 +8,15 @@ export interface ReportsState {
   paceGraph: any;
   majorGraph: any;
   responseData: any[];
+  questionList: string[];
 }
 
 export const initReportsState: ReportsState = {
-  filterOptionDisplayed: "",
-  batchFilterOptions: [ "All", "Average" ],
-  batchFilter: "Average",
-  weekFilterOptions: ["All", "Average", "Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
-  weekFilter: "All",
+  filterOptionDisplayed: '',
+  batchFilterOptions: [ 'Average' ],
+  batchFilter: 'Average',
+  weekFilterOptions: ['All', 'Average', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+  weekFilter: 'All',
   ratingGraph: {
     visible: false,
     data: [],
@@ -48,6 +49,9 @@ export const initReportsState: ReportsState = {
       'Non-STEM major'
     ]
   },
+  questionList:  [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized', 
+  'Questions Encouraged', 'Met Expectations','Topic Understanding', 
+  'Project Clarity', 'Project Preparedness'],
   responseData: []
 }
 
