@@ -88,7 +88,7 @@ import * as fromStore from './store';
     StoreModule.forRoot({
       router: routerReducer,
       reports: fromStore.reportsReducer,
-      batch: fromStore.batchesReducer,
+      batches: fromStore.batchesReducer,
       surveys: fromStore.surveysReducer
     }),
     //StoreModule.forFeature('information', reducers),
