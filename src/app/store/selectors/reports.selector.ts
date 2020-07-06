@@ -11,43 +11,17 @@ const _selectTitle = (state: ReportsState) => {
     } else if (state.batchFilter === 'Average') {
       reportTitle = 'Average Across Batches';
     }
+    // tslint:disable-next-line: prefer-const
     for (let option of state.batchFilterOptions.slice(2)) {
         if (state.batchFilter === option) {
             reportTitle = option;
         }
     }
     return reportTitle;
-}
-const _selectWeekGraphData = (state: ReportsState) => {
-  return {
-    data: weeklyGraphFilter(state),
-    labels: state.weekFilterOptions.slice(2)
-  }
-}
-const _selectRatingGraphData = (state: ReportsState) => {
-  return {
-    data: ratingGraphFilter(state),
-    labels: [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized', 
-      'Questions Encouraged', 'Met Expectations','Topic Understanding', 
-      'Project Clarity', 'Project Preparedness'] 
-  };
-}
-const _selectPaceGraphData = (state: ReportsState) => {
-  return {
-    data: paceGraphFilter(state),
-    labels: ['Too Slow', 'Good', 'Too Fast']
-  };
-}
-const _selectMajorGraphData = (state: ReportsState) => {
-  return {
-    data: majorGraphFilter(state),
-    labels: ['Computer Science Major', 'STEM major', 'Non-STEM major']
-  };
-}
+};
+
+
 export const selectBatchFilter = createSelector(selectReportsState, _selectBatchFilter);
 export const selectWeekFilter = createSelector(selectReportsState, _selectWeekFilter);
 export const selectTitle = createSelector(selectReportsState, _selectTitle);
-export const selectRatingGraphData = createSelector(selectReportsState, _selectRatingGraphData);
-export const selectPaceGraphData = createSelector(selectReportsState, _selectPaceGraphData);
-export const selectMajorGraphData = createSelector(selectReportsState, _selectMajorGraphData);
-export const selectWeekGraphData = createSelector(selectReportsState, _selectWeekGraphData);
+

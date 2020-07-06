@@ -29,3 +29,111 @@ filterOptionClick(subMenuItem) {
     </li>
   </ul>
 </div>
+
+----From Reports.selector.ts-----
+// tslint:disable-next-line: variable-name
+const _selectWeekGraphData = (state: ReportsState) => {
+  return {
+    data: weeklyGraphFilter(state),
+    labels: state.weekFilterOptions.slice(2)
+  };
+};
+
+const _selectRatingGraphData = (state: ReportsState) => {
+  return {
+    data: ratingGraphFilter(state),
+    labels: [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized', 
+      'Questions Encouraged', 'Met Expectations','Topic Understanding', 
+      'Project Clarity', 'Project Preparedness'] 
+  };
+}
+// tslint:disable-next-line: variable-name
+const _selectPaceGraphData = (state: ReportsState) => {
+  return {
+    data: paceGraphFilter(state),
+    labels: ['Too Slow', 'Good', 'Too Fast']
+  };
+}
+// tslint:disable-next-line: variable-name
+const _selectMajorGraphData = (state: ReportsState) => {
+  return {
+    data: majorGraphFilter(state),
+    labels: ['Computer Science Major', 'STEM major', 'Non-STEM major']
+  };
+}
+------End reports.selector.ts---------
+
+----From Reports.state.ts-------
+ ratingGraph: any;
+  paceGraph: any;
+  majorGraph: any;
+
+   questionMapping: {
+   q1: 'Satisfaction Rating',
+   q2: 'Materials Helpful',
+   q3: 'Well Organized',
+   q4: 'Questions Encouraged',
+   q5: 'Met Expectations',
+   q6: 'Topic Understanding'
+  },
+
+ratingGraph: {
+    visible: false,
+    data: [],
+    labels: [
+      'Satisfaction Rating',
+      'Materials Helpful',
+      'Well Organized',
+      'Questions Encouraged',
+      'Met Expectations',
+      'Topic Understanding',
+      'Project Clarity',
+      'Project Preparedness'
+    ]
+  },
+  paceGraph: {
+    visible: false,
+    data: [],
+    labels: [
+      'Too Slow',
+      'Good',
+      'Too Fast'
+    ]
+  },
+  majorGraph: {
+    visible: false,
+    data: [],
+    labels: [
+      'Computer Science Major',
+      'STEM major (non-CS)',
+      'Non-STEM major'
+    ]
+  },
+
+  'Project Clarity', 'Project Preparedness'
+  --------end report.state.ts--------
+export const selectRatingGraphData = createSelector(selectReportsState, _selectRatingGraphData);
+export const selectPaceGraphData = createSelector(selectReportsState, _selectPaceGraphData);
+export const selectMajorGraphData = createSelector(selectReportsState, _selectMajorGraphData);
+export const selectWeekGraphData = createSelector(selectReportsState, _selectWeekGraphData);
+---reports.actions------
+export const GET_ANSWERS = '[Reports] Get Answers';
+export const GET_ANSWERS_SUCCESS = '[Reports] Get Answers Success';
+export const GET_ANSWERS_FAIL = '[Reports] Get Answers Fail';
+export const TRANSFORM_DATA = '[Reports] Transform Data';
+
+export class GetAnswers implements Action {
+  readonly type = GET_ANSWERS;
+}
+
+export class GetAnswersSuccess implements Action {
+  readonly type = GET_ANSWERS_SUCCESS;
+  constructor(public payload: any[]) {}
+}
+
+export class GetAnswersFail implements Action {
+  readonly type = GET_ANSWERS_FAIL;
+  constructor(public payload: any) {}
+}
+
+ | GetAnswers | GetAnswersSuccess | GetAnswersFail

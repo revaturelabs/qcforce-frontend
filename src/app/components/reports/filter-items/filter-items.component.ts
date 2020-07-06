@@ -29,6 +29,7 @@ export class FilterItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(new fromStore.GetBatches());
+    this.store.dispatch(new fromStore.GetWeeks());
     this.store.select(fromStore.selectReportsState).subscribe((reports) => {
       this.filterOptionDisplayed = reports.filterOptionDisplayed;
       this.batchFilterOptions = reports.batchFilterOptions;

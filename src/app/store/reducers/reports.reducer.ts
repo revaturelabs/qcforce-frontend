@@ -16,27 +16,53 @@ export function reportsReducer(
       const weekFilter = action.payload;
       return { ...state, weekFilter };
     }
-    case fromReports.GET_ANSWERS: {
-        return { ...state };
-    }
-    case fromReports.GET_ANSWERS_SUCCESS: {
-      const responseData = action.payload;
-      return { ...state, responseData };
-    }
-    case fromReports.GET_ANSWERS_FAIL: {
-      return { ...state };
-    }
+    // case fromReports.GET_ANSWERS: {
+    //     return { ...state };
+    // }
+    // case fromReports.GET_ANSWERS_SUCCESS: {
+    //   const responseData = action.payload;
+    //   return { ...state, responseData };
+    // }
+    // case fromReports.GET_ANSWERS_FAIL: {
+    //   return { ...state };
+    // }
     case fromReports.GET_BATCHES: {
       return { ...state };
     }
     case fromReports.GET_BATCHES_SUCCESS: {
-      const batchFilterOptions = [ 'Average'];
+      const batchFilterOptions = ['Average'];
       for (const batch of action.payload) {
-        batchFilterOptions.push(batch.batchName);
+        batchFilterOptions.push(batch);
       }
       return {...state, batchFilterOptions};
     }
     case fromReports.GET_BATCHES_FAIL: {
+      return { ...state };
+    }
+
+    case fromReports.GET_ALL_WEEKS_ONE_BATCH: {
+      return { ...state };
+    }
+    case fromReports.GET_ALL_WEEKS_ONE_BATCH_SUCCESS: {
+      const responseData = action.payload;
+      return {...state, responseData};
+    }
+    case fromReports.GET_ALL_WEEKS_ONE_BATCH_FAIL: {
+      return { ...state };
+    }
+
+    case fromReports.GET_WEEKS: {
+      return { ...state };
+    }
+    case fromReports.GET_WEEKS_SUCCESS: {
+      const weekFilterOptions = ['All', 'Average'];
+      const weekList = action.payload.slice(9).concat(action.payload.slice(0, 9));
+      for (const week of weekList) {
+        weekFilterOptions.push(week);
+      }
+      return {...state, weekFilterOptions};
+    }
+    case fromReports.GET_WEEKS_FAIL: {
       return { ...state };
     }
   }
