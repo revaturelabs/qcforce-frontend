@@ -17,7 +17,8 @@ Endpoint | Purpose | REST Request Method
 /batch/chartdatabatch/name/{name}| Get list of averaged data for questions based on a specified batchName|GET
 /batch/chartdatabatch/all| Get the averaged data for questions across all batches over all weeks|GET
 /batch/chartdatabatch/{name}/{week}| Get the averaged data for questions based on a specified batch and a particular week|GET
-
+/batch/chartdatabatch/all/batch/{batch}|Get the average for all questions over all weeks for a particular batch|GET
+/batch/chartdatabatch/all/week/{week}| Get the average for all questions across batches for a particular week| GET
 ## 3. **Training Service**
 ### Associate Controller
 Endpoint | Purpose | REST Request Method
