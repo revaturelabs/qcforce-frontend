@@ -22,6 +22,12 @@ export class ReportsViewComponent implements OnInit {
     this.store.select(fromStore.selectTitle).subscribe((reportTitle) => {
       this.reportVariable = reportTitle;
     });
+    this.store.select(fromStore.selectBatchFilter).subscribe((batchFilter) => {
+       this.batchFilter = batchFilter;
+    });
+    this.store.select(fromStore.selectWeekFilter).subscribe((weekFilter) => {
+      this.weekFilter = weekFilter;
+   });
   }
 
 }

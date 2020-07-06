@@ -4,10 +4,27 @@
 
 export const environment = {
   production: false,
-  getBatchUrl: 'http://localhost:3000/batch',
+  // =============Angelo's URLS==============================
+  getBatchUrl: 'http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087/batch/list',
+  getWeeksUrl: 'http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087/batch/weeks',
+  getBatchAllWeeks: 'http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087/batch/chartdatabatch/name/',
   getAnswersUrl: 'http://localhost:3000/answers',
-  getBatchListUrl: 'http://localhost:3100/batches',
-  getSurveysByBatchIdUrl: 'http://localhost:3001/surveys'
+
+  // =============Kiryl's URLS==============================
+  
+  getBatchListUrl: 'http://ec2-18-219-219-28.us-east-2.compute.amazonaws.com:8086/batch/', // 'http://localhost:3100/batches',
+  getSurveysByBatchIdUrl: 'http://localhost:3001/surveys',
+  getBatchByBatchName: 'http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087',
+  
+
+ 
+  // get = ;
+
+  /* Sync Service: http://ec2-3-23-215-133.us-east-2.compute.amazonaws.com:8085;
+   * Training Service: 'http://ec2-18-219-219-28.us-east-2.compute.amazonaws.com:8086';
+   * Survey Service: http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087;
+   */
+
 };
 
 /*

@@ -1,7 +1,7 @@
 /**
  * index.ts contains information about all reducer functions for this module
  */
-//import { ActionReducerMap, createSelector, createFeatureSelector } from '@ngrx/store';
+// import { ActionReducerMap, createSelector, createFeatureSelector } from '@ngrx/store';
 export * from './reports.reducer';
 export * from './batches.reducer';
 export * from './surveys.reducer';

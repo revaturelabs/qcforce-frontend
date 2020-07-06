@@ -9,8 +9,8 @@ export class HeaderComponent implements OnInit {
 
   menuList = [
     {
-      name: "Reports",
-      routerLink: "/reports"
+      name: 'Reports',
+      routerLink: '/reports'
     },
     {
       name: 'Batches',
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   ];
 
   constructor() { }
- 
+
   ngOnInit(): void {
   }
 

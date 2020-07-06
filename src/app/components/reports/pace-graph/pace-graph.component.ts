@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
-import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Store } from "@ngrx/store";
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { Store } from '@ngrx/store';
 import * as fromStore from 'src/app/store';
 import { cloneDeep } from 'lodash';
 
@@ -12,6 +12,31 @@ import { cloneDeep } from 'lodash';
 })
 export class PaceGraphComponent implements OnInit {
 
+
+  public paceChartOptions: ChartOptions = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: -1,
+          max: 1
+        }
+      }]
+    }
+  };
+  public paceChartType: ChartType = 'horizontalBar';
+  public paceChartLegend = true;
+
+  public paceChartData: ChartDataSets[] = [
+    { data: [-.25, .55, 1], label: 'Pace of training' },
+  ];
+  public paceChartLabels: string[] = ['Batch 1', 'Batch 2', 'Batch 3'];
+
+  public paceChartColor: Color[] = [
+
+    { backgroundColor: 'orange' },
+  ];
+// ======================replace==================
   public chartLabels;
 
   public chartData;
@@ -44,10 +69,10 @@ export class PaceGraphComponent implements OnInit {
   ];
 
   public chartLegend = true;
-  
+
   public chartType = 'doughnut';
 
-  constructor(private store : Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select(fromStore.selectPaceGraphData).subscribe((graph) => {

@@ -1,22 +1,21 @@
 import { Action } from '@ngrx/store';
 
-export const FILTER_DISPLAYED_CHANGE = '[Reports] Filter Items Display Change';
 export const BATCH_FILTER_CHANGE = '[Reports] Batch Filter Option Change';
 export const WEEK_FILTER_CHANGE = '[Reports] Week Filter Option Change';
 
-export const GET_BATCHES = '[Reports] Get Batches';
+export const GET_BATCHES = '[Reports] Get Batches'; // one of any batch [ {}, {}, {}]
 export const GET_BATCHES_SUCCESS = '[Reports] Get Batches Success';
 export const GET_BATCHES_FAIL = '[Reports] Get Batches Fail';
 
-export const GET_ANSWERS = '[Reports] Get Answers';
-export const GET_ANSWERS_SUCCESS = '[Reports] Get Answers Success';
-export const GET_ANSWERS_FAIL = '[Reports] Get Answers Fail';
-export const TRANSFORM_DATA = '[Reports] Transform Data';
+export const GET_WEEKS = '[Reports] Get Weeks'; // one of any week [ {}, {}, {}] .../week/name/{}
+export const GET_WEEKS_SUCCESS = '[Reports] Get Weeks Success';
+export const GET_WEEKS_FAIL = '[Reports] Get Weeks Fail';
 
-export class FilterDisplayedChange implements Action {
-  readonly type = FILTER_DISPLAYED_CHANGE;
-  constructor(public payload: string) {}
-}
+export const GET_ALL_WEEKS_ONE_BATCH = '[Reports] Get All Weeks for a Batch';
+export const GET_ALL_WEEKS_ONE_BATCH_SUCCESS = '[Reports] Get All Weeks for a Batch Success!';
+export const GET_ALL_WEEKS_ONE_BATCH_FAIL = '[Reports] Get All Weeks for a Batch FAILED';
+
+
 
 export class BatchFilterChange implements Action {
   readonly type = BATCH_FILTER_CHANGE;
@@ -42,20 +41,35 @@ export class GetBatchesFail implements Action {
   constructor(public payload: any) {}
 }
 
-export class GetAnswers implements Action {
-  readonly type = GET_ANSWERS;
+export class GetWeeks implements Action {
+  readonly type = GET_WEEKS;
 }
 
-export class GetAnswersSuccess implements Action {
-  readonly type = GET_ANSWERS_SUCCESS;
+export class GetWeeksSuccess implements Action {
+  readonly type = GET_WEEKS_SUCCESS;
   constructor(public payload: any[]) {}
 }
 
-export class GetAnswersFail implements Action {
-  readonly type = GET_ANSWERS_FAIL;
+export class GetWeeksFail implements Action {
+  readonly type = GET_WEEKS_FAIL;
   constructor(public payload: any) {}
 }
 
-export type ReportsAction = FilterDisplayedChange | BatchFilterChange | WeekFilterChange 
+export class GetAllWeeksOneBatch implements Action {
+  readonly type = GET_ALL_WEEKS_ONE_BATCH;
+}
+
+export class GetAllWeeksOneBatchSuccess implements Action {
+  readonly type = GET_ALL_WEEKS_ONE_BATCH_SUCCESS;
+  constructor(public payload: any[]) {}
+}
+
+export class GetAllWeeksOneBatchFail implements Action {
+  readonly type = GET_ALL_WEEKS_ONE_BATCH_FAIL;
+  constructor(public payload: any) {}
+}
+
+export type ReportsAction = BatchFilterChange | WeekFilterChange
   | GetBatches | GetBatchesSuccess | GetBatchesFail
-  | GetAnswers | GetAnswersSuccess | GetAnswersFail;
+  | GetAllWeeksOneBatch | GetAllWeeksOneBatchSuccess | GetAllWeeksOneBatchFail
+  | GetWeeks | GetWeeksSuccess | GetWeeksFail;
