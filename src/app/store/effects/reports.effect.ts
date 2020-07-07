@@ -26,6 +26,17 @@ export class ReportsEffects {
   // );
 
   @Effect()
+  getQuestions$ = this.actions$.pipe(
+    ofType(ReportsActions.GET_QUESTIONS),
+    exhaustMap(() => {
+      return this.reportsService.getAvgWeekBatch().pipe(
+        map(({ data }) => new ReportsActions.GetQuestionsSuccess(data)),
+        catchError(error => of(new ReportsActions.GetQuestionsFail(error)))
+      );
+    })
+  );
+  
+  @Effect()
   getAvgWeekBatch$ = this.actions$.pipe(
     ofType(ReportsActions.GET_AVG_WEEK_BATCH),
     exhaustMap(() => {

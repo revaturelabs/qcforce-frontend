@@ -69,6 +69,16 @@ export function reportsReducer(
     case fromReports.GET_WEEKS_FAIL: {
       return { ...state };
     }
+    case fromReports.GET_QUESTIONS: {
+      return { ...state };
+    }
+    case fromReports.GET_QUESTIONS_SUCCESS: {
+      const listLongQuestions = Object.keys(action.payload); 
+      return {...state, listLongQuestions};
+    }
+    case fromReports.GET_QUESTIONS_FAIL: {
+      return { ...state };
+    }
     case fromReports.GET_ONE_WEEK_ONE_BATCH: {
       return { ...state };
     }

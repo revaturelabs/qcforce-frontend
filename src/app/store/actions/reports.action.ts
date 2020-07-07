@@ -11,6 +11,10 @@ export const GET_WEEKS = '[Reports] Get Weeks'; // one of any week [ {}, {}, {}]
 export const GET_WEEKS_SUCCESS = '[Reports] Get Weeks Success';
 export const GET_WEEKS_FAIL = '[Reports] Get Weeks Fail';
 
+export const GET_QUESTIONS = '[Reports] Get Questions'; 
+export const GET_QUESTIONS_SUCCESS = '[Reports] Get Questions Success';
+export const GET_QUESTIONS_FAIL = '[Reports] Get Questions Fail';
+
 export const GET_ALL_WEEKS_ONE_BATCH = '[Reports] Get All Weeks for a Batch';
 export const GET_ALL_WEEKS_ONE_BATCH_SUCCESS = '[Reports] Get All Weeks for a Batch Success!';
 export const GET_ALL_WEEKS_ONE_BATCH_FAIL = '[Reports] Get All Weeks for a Batch FAILED';
@@ -61,6 +65,20 @@ export class GetWeeksFail implements Action {
   constructor(public payload: any) {}
 }
 
+export class GetQuestions implements Action {
+  readonly type = GET_QUESTIONS;
+}
+
+export class GetQuestionsSuccess implements Action {
+  readonly type = GET_QUESTIONS_SUCCESS;
+  constructor(public payload: any) {}
+}
+
+export class GetQuestionsFail implements Action {
+  readonly type = GET_QUESTIONS_FAIL;
+  constructor(public payload: any) {}
+}
+
 export class GetAllWeeksOneBatch implements Action {
   readonly type = GET_ALL_WEEKS_ONE_BATCH;
   constructor(public payload: string) {}
@@ -105,10 +123,11 @@ export class GetAvgWeekBatchFail implements Action {
   constructor(public payload: any) {}
 }
 
+
 export type ReportsAction = BatchFilterChange | WeekFilterChange
   | GetBatches | GetBatchesSuccess | GetBatchesFail
   | GetWeeks | GetWeeksSuccess | GetWeeksFail
+  | GetQuestions | GetQuestionsSuccess | GetQuestionsFail
   | GetAllWeeksOneBatch | GetAllWeeksOneBatchSuccess | GetAllWeeksOneBatchFail
   | GetOneWeekOneBatch | GetOneWeekOneBatchSuccess | GetOneWeekOneBatchFail
   | GetAvgWeekBatch | GetAvgWeekBatchSuccess | GetAvgWeekBatchFail;
-
