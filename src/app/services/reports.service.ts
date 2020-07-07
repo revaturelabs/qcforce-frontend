@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { env } from 'process';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class ReportsService {
 
   getBatchAllWeeks(batch) {
     return this.http.get<any[]>(environment.getBatchAllWeeks + batch);
+  }
+
+  getWeekAllBatches(week) {
+    return this.http.get<any[]>(environment.getWeekAllUrl + week);
   }
 
   getOneBatchOneWeek(batch, week) {

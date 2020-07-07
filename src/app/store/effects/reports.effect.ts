@@ -89,4 +89,15 @@ export class ReportsEffects {
     })
   );
 
+  @Effect()
+  getWeekAllBatches$ = this.actions$.pipe(
+    ofType(ReportsActions.GET_ONE_WEEK_ALL_BATCHES),
+    exhaustMap(({ payload: {graph, week} }) => {
+      return this.reportsService.getWeekAllBatches(week).pipe(
+        map(data => new ReportsActions.GetOneWeekAllBatchesSuccess({graph, data})),
+        catchError(error => of(new ReportsActions.GetOneWeekAllBatchesFail(error)))
+      );
+    })
+  );
+
 }

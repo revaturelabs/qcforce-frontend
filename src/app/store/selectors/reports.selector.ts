@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { ReportsState } from '../states';
-import * as Filters from 'src/app/filters/reports.filter';
+import * as Filters from '../../filters/reports.filter';
 
 export const selectReportsState = (state) => state.reports;
 const _selectBatchFilter = (state: ReportsState) => state.batchFilter;
@@ -20,6 +20,7 @@ const _selectTitle = (state: ReportsState) => {
     }
     return reportTitle;
 };
+// tslint:disable-next-line: variable-name
 const _selectWeeklyGraphData = (state: ReportsState) => {
   return {
     data: Filters.weekGraphData(state),

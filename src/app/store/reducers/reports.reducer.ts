@@ -52,6 +52,18 @@ export function reportsReducer(
       return { ...state };
     }
 
+    case fromReports.GET_ONE_WEEK_ALL_BATCHES: {
+      return { ...state };
+    }
+    case fromReports.GET_ONE_WEEK_ALL_BATCHES_SUCCESS: {
+      let newState = cloneDeep(state);
+      newState[action.payload.graph] = action.payload.data;
+      return newState;
+    }
+    case fromReports.GET_ONE_WEEK_ALL_BATCHES_FAIL: {
+      return { ...state };
+    }
+
     case fromReports.GET_WEEKS: {
       return { ...state };
     }

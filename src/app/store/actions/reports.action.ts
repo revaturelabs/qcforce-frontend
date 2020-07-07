@@ -23,9 +23,13 @@ export const GET_ONE_WEEK_ONE_BATCH = '[Reports] Get a Week for a Batch';
 export const GET_ONE_WEEK_ONE_BATCH_SUCCESS = '[Reports] Get a Week for a Batch Success!';
 export const GET_ONE_WEEK_ONE_BATCH_FAIL = '[Reports] Get a Week for a Batch FAILED';
 
-export const GET_AVG_WEEK_BATCH = '[Report] Get Average over All Weeks/Batches';
-export const GET_AVG_WEEK_BATCH_SUCCESS = '[Report] Get Average over All Weeks/Batches Success';
-export const GET_AVG_WEEK_BATCH_FAIL = '[Report] Get Average over All Weeks/Batches Fail';
+export const GET_AVG_WEEK_BATCH = '[Reports] Get Average over All Weeks/Batches';
+export const GET_AVG_WEEK_BATCH_SUCCESS = '[Reports] Get Average over All Weeks/Batches Success';
+export const GET_AVG_WEEK_BATCH_FAIL = '[Reports] Get Average over All Weeks/Batches Fail';
+
+export const GET_ONE_WEEK_ALL_BATCHES = '[Reports] Get One Week for all Batches';
+export const GET_ONE_WEEK_ALL_BATCHES_SUCCESS = '[Reports] Get One Week for all Batches Success!';
+export const GET_ONE_WEEK_ALL_BATCHES_FAIL = '[Reports] Get One Week for all Batches FAILED';
 
 export class BatchFilterChange implements Action {
   readonly type = BATCH_FILTER_CHANGE;
@@ -124,6 +128,21 @@ export class GetAvgWeekBatchFail implements Action {
   constructor(public payload: any) {}
 }
 
+export class GetOneWeekAllBatches implements Action {
+  readonly type = GET_ONE_WEEK_ALL_BATCHES;
+  constructor(public payload: any) {}
+}
+
+export class GetOneWeekAllBatchesSuccess implements Action {
+  readonly type = GET_ONE_WEEK_ALL_BATCHES_SUCCESS;
+  constructor(public payload: any) {}
+}
+
+export class GetOneWeekAllBatchesFail implements Action {
+  readonly type = GET_ONE_WEEK_ALL_BATCHES_FAIL;
+  constructor(public payload: any) {}
+}
+
 
 export type ReportsAction = BatchFilterChange | WeekFilterChange
   | GetBatches | GetBatchesSuccess | GetBatchesFail
@@ -131,4 +150,5 @@ export type ReportsAction = BatchFilterChange | WeekFilterChange
   | GetQuestions | GetQuestionsSuccess | GetQuestionsFail
   | GetAllWeeksOneBatch | GetAllWeeksOneBatchSuccess | GetAllWeeksOneBatchFail
   | GetOneWeekOneBatch | GetOneWeekOneBatchSuccess | GetOneWeekOneBatchFail
+  | GetOneWeekAllBatches | GetOneWeekAllBatchesSuccess | GetOneWeekAllBatchesFail
   | GetAvgWeekBatch | GetAvgWeekBatchSuccess | GetAvgWeekBatchFail;

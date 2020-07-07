@@ -65,9 +65,14 @@ export class RatingGraphComponent implements OnInit {
     'rgba(248, 74, 11, 1)', // red-orange
     'rgba(248, 126, 11, 1)', // orange
     'rgba(248, 176, 11, 1)', // orange-yellow
+    'rgba(248, 206, 11, 1)', // yellow-orange
     'rgba(248, 231, 5, 1)', // yellow
     'rgba(183, 247, 7, 1)', // yellow-green
-    'rgba(63, 247, 7, 1)', // green
+    'rgba(123, 247, 7, 1)', // green-yellow
+    'rgba(93, 247, 7, 1)', // green-yellow-green
+    'rgba(63, 247, 7, 1)', // green-green-yellow
+    'rgba(23, 247, 7, 1)', // green-green
+    'rgba(0, 255, 0, 1)', // pure-green
   ];
   colorIndex = 0;
 
@@ -78,18 +83,33 @@ export class RatingGraphComponent implements OnInit {
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    // this.chartColor = this.getChartColor(this.chartData);
+
     this.store.select(fromStore.selectRatingGraphData).subscribe((graph) => {
       console.log(graph.data);
       this.chartData = cloneDeep(graph.data);
       this.chartLabels = cloneDeep(graph.labels);
+      if(this.chartData.length > 0){
+        this.chartColor = this.getChartColor(this.chartData[0].data);
+      };
     });
   }
 
   getChartColor(data) {
-    return data.map((datum) => {
-      return {backgroundColor: this.colors[Math.round(datum.data[0])]};
+    const backgroundColor = data.map((datum) => {
+      return this.colors[this.getColorGradient(datum)];
     });
-  }
 
+    return [{backgroundColor}];
+  }
+    // 1-5 range of datum
+    // .25 color changes
+    // 20/5
+  getColorGradient(datum) {
+    const index = Math.round(((datum - 1) / 4) * this.colors.length);
+    if (index === this.colors.length) {
+      return index - 1;
+    }
+
+    return index;
+  }
 }
