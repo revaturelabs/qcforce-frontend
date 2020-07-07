@@ -19,13 +19,16 @@ export class FilterItemsComponent implements OnInit {
 
   pullDataActions(batch, week) {
     if (week === 'Average' && batch === 'Average') {
-      this.store.dispatch(new fromStore.GetAvgWeekBatch());
+      let graph = 'responseData';
+      this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
     }
     else if (week === 'All' && batch !== 'Average') {
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch(batch));
+      let graph = 'responseData';
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
     } 
     else if (week !== 'Average' && batch !== 'Average') {
-      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ batch, week }));
+      let graph = 'responseData';
+      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graph, batch, week }));
     }
   }
 

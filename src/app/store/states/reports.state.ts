@@ -20,7 +20,6 @@ export const initReportsState: ReportsState = {
 
   questionShortList: [
     'Satisfaction Rating',
-    'One on One/Assessments',
     'Met Expectations',
     'Pace of Training',
     'Questions Encouraged',

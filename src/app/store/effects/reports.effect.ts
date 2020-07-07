@@ -39,9 +39,9 @@ export class ReportsEffects {
   @Effect()
   getAvgWeekBatch$ = this.actions$.pipe(
     ofType(ReportsActions.GET_AVG_WEEK_BATCH),
-    exhaustMap(() => {
+    exhaustMap(({ payload: { graph } }) => {
       return this.reportsService.getAvgWeekBatch().pipe(
-        map(data => new ReportsActions.GetAvgWeekBatchSuccess(data)),
+        map(data => new ReportsActions.GetAvgWeekBatchSuccess({ graph, data })),
         catchError(error => of(new ReportsActions.GetAvgWeekBatchFail(error)))
       );
     })
@@ -50,9 +50,9 @@ export class ReportsEffects {
   @Effect()
   getBatchAllWeeks$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ALL_WEEKS_ONE_BATCH),
-    exhaustMap(({ payload }) => {
-      return this.reportsService.getBatchAllWeeks(payload).pipe(
-        map(data => new ReportsActions.GetAllWeeksOneBatchSuccess(data)),
+    exhaustMap(({ payload: {graph, batch} }) => {
+      return this.reportsService.getBatchAllWeeks(batch).pipe(
+        map(data => new ReportsActions.GetAllWeeksOneBatchSuccess({graph, data})),
         catchError(error => of(new ReportsActions.GetAllWeeksOneBatchFail(error)))
       );
     })
@@ -61,9 +61,9 @@ export class ReportsEffects {
   @Effect()
   getOneBatchOneWeek = this.actions$.pipe(
     ofType(ReportsActions.GET_ONE_WEEK_ONE_BATCH),
-    exhaustMap(({ payload }) => {
-      return this.reportsService.getOneBatchOneWeek(payload).pipe(
-        map(data => new ReportsActions.GetOneWeekOneBatchSuccess(data)),
+    exhaustMap(({ payload: { graph, batch, week} }) => {
+      return this.reportsService.getOneBatchOneWeek(batch, week).pipe(
+        map(data => new ReportsActions.GetOneWeekOneBatchSuccess({ graph, data })),
         catchError(error => of(new ReportsActions.GetOneWeekOneBatchFail(error)))
       );
     })

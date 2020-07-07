@@ -45,10 +45,7 @@ export function reportsReducer(
     }
     case fromReports.GET_ALL_WEEKS_ONE_BATCH_SUCCESS: {
       let newState = cloneDeep(state);
-      newState.responseData = action.payload;
-      if (newState.responseData.length > 0) {
-        newState.questionLongList = Object.keys(newState.responseData[0].data);
-      }
+      newState[action.payload.graph] = action.payload.data;
       return newState;
     }
     case fromReports.GET_ALL_WEEKS_ONE_BATCH_FAIL: {
@@ -84,8 +81,7 @@ export function reportsReducer(
     }
     case fromReports.GET_ONE_WEEK_ONE_BATCH_SUCCESS: {
       let newState = cloneDeep(state);
-      newState.responseData = [action.payload];
-      newState.questionLongList = Object.keys(action.payload.data);
+      newState[action.payload.graph] = [action.payload.data];
       return newState;
     }
     case fromReports.GET_ONE_WEEK_ONE_BATCH_FAIL: {
@@ -96,7 +92,7 @@ export function reportsReducer(
     }
     case fromReports.GET_AVG_WEEK_BATCH_SUCCESS: {
       let newState = cloneDeep(state);
-      newState.responseData = [action.payload];
+      newState[action.payload.graph] = [action.payload.data];
       return newState;
     }
     case fromReports.GET_AVG_WEEK_BATCH_FAIL: {

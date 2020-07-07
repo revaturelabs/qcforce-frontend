@@ -23,7 +23,7 @@ export class ReportsService {
     return this.http.get<any[]>(environment.getBatchAllWeeks + batch);
   }
 
-  getOneBatchOneWeek({ batch, week }) {
+  getOneBatchOneWeek(batch, week) {
     return this.http.get<any>(environment.getOneBatchOneWeek + batch + '/' + week);
   }
   

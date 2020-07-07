@@ -81,12 +81,12 @@ export class GetQuestionsFail implements Action {
 
 export class GetAllWeeksOneBatch implements Action {
   readonly type = GET_ALL_WEEKS_ONE_BATCH;
-  constructor(public payload: string) {}
+  constructor(public payload: any) {}
 }
 
 export class GetAllWeeksOneBatchSuccess implements Action {
   readonly type = GET_ALL_WEEKS_ONE_BATCH_SUCCESS;
-  constructor(public payload: any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class GetAllWeeksOneBatchFail implements Action {
@@ -96,7 +96,7 @@ export class GetAllWeeksOneBatchFail implements Action {
 
 export class GetOneWeekOneBatch implements Action {
   readonly type = GET_ONE_WEEK_ONE_BATCH;
-  constructor(public payload: object) {}
+  constructor(public payload: any) {}
 }
 
 export class GetOneWeekOneBatchSuccess implements Action {
@@ -111,6 +111,7 @@ export class GetOneWeekOneBatchFail implements Action {
 
 export class GetAvgWeekBatch implements Action {
   readonly type = GET_AVG_WEEK_BATCH;
+  constructor(public payload: any) {}
 }
 
 export class GetAvgWeekBatchSuccess implements Action {
