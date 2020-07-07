@@ -13,7 +13,7 @@ const _selectTitle = (state: ReportsState) => {
       reportTitle = 'Average Across Batches';
     }
     // tslint:disable-next-line: prefer-const
-    for (let option of state.batchFilterOptions.slice(2)) {
+    for (let option of state.batchFilterOptions.slice(1)) {
         if (state.batchFilter === option) {
             reportTitle = option;
         }
@@ -26,17 +26,33 @@ const _selectWeeklyGraphData = (state: ReportsState) => {
     data: Filters.weekGraphData(state),
     labels: state.weekFilterOptions.slice(2)
   };
-}
+};
+// tslint:disable-next-line: variable-name
 const _selectRatingGraphData = (state: ReportsState) => {
-  console.log(state);
   return {
     data: Filters.ratingGraphData(state),
     labels: state.ratingGraphQuestions
   };
-}
+};
+
+// tslint:disable-next-line: variable-name
+const _selectPaceGraphData = (state: ReportsState) => {
+  if (state.weekFilter !== 'All') {
+    return {
+      data: Filters.paceGraphData(state),
+      labels: state.paceGraphQuestions
+    };
+  } else {
+    return {
+      data:  Filters.paceGraphDataAll(state),
+      labels: state.paceGraphQuestions
+    };
+  }
+};
 
 export const selectBatchFilter = createSelector(selectReportsState, _selectBatchFilter);
 export const selectWeekFilter = createSelector(selectReportsState, _selectWeekFilter);
 export const selectTitle = createSelector(selectReportsState, _selectTitle);
 export const selectWeeklyGraphData = createSelector(selectReportsState, _selectWeeklyGraphData);
 export const selectRatingGraphData = createSelector(selectReportsState, _selectRatingGraphData);
+export const selectPaceGraphData = createSelector(selectReportsState, _selectPaceGraphData);

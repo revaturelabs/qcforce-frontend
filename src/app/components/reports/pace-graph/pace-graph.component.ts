@@ -15,6 +15,10 @@ export class PaceGraphComponent implements OnInit {
 
   public paceChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+     },
     scales: {
       yAxes: [{
         ticks: {
@@ -27,10 +31,9 @@ export class PaceGraphComponent implements OnInit {
   public paceChartType: ChartType = 'horizontalBar';
   public paceChartLegend = true;
 
-  public paceChartData: ChartDataSets[] = [
-    { data: [-.25, .55, 1], label: 'Pace of training' },
-  ];
-  public paceChartLabels: string[] = ['Batch 1', 'Batch 2', 'Batch 3'];
+  public paceChartData: ChartDataSets[];
+
+  public paceChartLabels: string[];
 
   public paceChartColor: Color[] = [
 
@@ -75,9 +78,12 @@ export class PaceGraphComponent implements OnInit {
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    //this.store.select(fromStore.selectPaceGraphData).subscribe((graph) => {
-    //  this.chartData = cloneDeep(graph.data);
-    //  this.chartLabels = cloneDeep(graph.labels);
-    //});
+    this.store.select(fromStore.selectPaceGraphData).subscribe((graph) => {
+    //  console.log(graph.data);
+      if(graph) {
+        this.paceChartData = cloneDeep(graph.data);
+        this.paceChartLabels = cloneDeep(graph.labels);
+      }
+    });
   }
 }

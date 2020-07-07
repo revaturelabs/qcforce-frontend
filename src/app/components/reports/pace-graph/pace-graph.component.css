@@ -2,6 +2,9 @@ p {
   font-size: 1.25rem;
 }
 
+/* .pace-chart {
+  width: 40wv;
+} */
 canvas {
-  width: 25rem;  
+  width: 45rem !important;  
 }

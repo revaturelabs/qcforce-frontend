@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
-import { map, switchMap, exhaustMap, catchError } from 'rxjs/operators';
+import { map, switchMap, exhaustMap, catchError, mergeMap } from 'rxjs/operators';
 
 import * as ReportsActions from '../actions/reports.action';
 import { ReportsService } from 'src/app/services/reports.service';
@@ -28,7 +28,7 @@ export class ReportsEffects {
   @Effect()
   getQuestions$ = this.actions$.pipe(
     ofType(ReportsActions.GET_QUESTIONS),
-    exhaustMap(() => {
+    mergeMap(() => {
       return this.reportsService.getAvgWeekBatch().pipe(
         map(({ data }) => new ReportsActions.GetQuestionsSuccess(data)),
         catchError(error => of(new ReportsActions.GetQuestionsFail(error)))
@@ -39,7 +39,7 @@ export class ReportsEffects {
   @Effect()
   getAvgWeekBatch$ = this.actions$.pipe(
     ofType(ReportsActions.GET_AVG_WEEK_BATCH),
-    exhaustMap(({ payload: { graph } }) => {
+    mergeMap(({ payload: { graph } }) => {
       return this.reportsService.getAvgWeekBatch().pipe(
         map(data => new ReportsActions.GetAvgWeekBatchSuccess({ graph, data })),
         catchError(error => of(new ReportsActions.GetAvgWeekBatchFail(error)))
@@ -50,7 +50,7 @@ export class ReportsEffects {
   @Effect()
   getBatchAllWeeks$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ALL_WEEKS_ONE_BATCH),
-    exhaustMap(({ payload: {graph, batch} }) => {
+    mergeMap(({ payload: {graph, batch} }) => {
       return this.reportsService.getBatchAllWeeks(batch).pipe(
         map(data => new ReportsActions.GetAllWeeksOneBatchSuccess({graph, data})),
         catchError(error => of(new ReportsActions.GetAllWeeksOneBatchFail(error)))
@@ -61,7 +61,7 @@ export class ReportsEffects {
   @Effect()
   getOneBatchOneWeek = this.actions$.pipe(
     ofType(ReportsActions.GET_ONE_WEEK_ONE_BATCH),
-    exhaustMap(({ payload: { graph, batch, week} }) => {
+    mergeMap(({ payload: { graph, batch, week} }) => {
       return this.reportsService.getOneBatchOneWeek(batch, week).pipe(
         map(data => new ReportsActions.GetOneWeekOneBatchSuccess({ graph, data })),
         catchError(error => of(new ReportsActions.GetOneWeekOneBatchFail(error)))
@@ -92,7 +92,7 @@ export class ReportsEffects {
   @Effect()
   getWeekAllBatches$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ONE_WEEK_ALL_BATCHES),
-    exhaustMap(({ payload: {graph, week} }) => {
+    mergeMap(({ payload: {graph, week} }) => {
       return this.reportsService.getWeekAllBatches(week).pipe(
         map(data => new ReportsActions.GetOneWeekAllBatchesSuccess({graph, data})),
         catchError(error => of(new ReportsActions.GetOneWeekAllBatchesFail(error)))

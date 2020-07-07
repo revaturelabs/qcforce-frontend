@@ -7,10 +7,12 @@ export interface ReportsState {
   weekGraphQuestions: string[];
   ratingGraphData: any[];
   ratingGraphQuestions: string[];
-  //questionLongList: string[];
+  // questionLongList: string[];
   listShortQuestions: string[];
   listLongQuestions: string[];
   // questionMapping: object;
+  paceGraphData: any[];
+  paceGraphQuestions: string[];
 }
 
 export const initReportsState: ReportsState = {
@@ -27,7 +29,9 @@ export const initReportsState: ReportsState = {
     'Questions Encouraged',
     'Topic Understanding',
     'Well Organized',
-    'Materials Helpful'
+    'Materials Helpful',
+    'Project Clarity',
+    'Project Preparedness',
   ],
 
   ratingGraphData: [],
@@ -37,9 +41,16 @@ export const initReportsState: ReportsState = {
     'Questions Encouraged',
     'Topic Understanding',
     'Well Organized',
-    'Materials Helpful'
+    'Materials Helpful',
+    'Project Clarity',
+    'Project Preparedness',
   ],
-  
+
+  paceGraphData: [],
+  paceGraphQuestions: [
+    'Pace of Training',
+  ],
+
   listShortQuestions: [
     'Project Clarity',
     'One-to-One/Online Assessment',
@@ -56,7 +67,7 @@ export const initReportsState: ReportsState = {
     'Project Feedback',
     'Issues',
     'Satisfaction Rating',
-    'Met Expectations',    
+    'Met Expectations',
     'Pace of Training',
     'Questions Encouraged',
     'Well Organized',
@@ -64,10 +75,10 @@ export const initReportsState: ReportsState = {
     'Materials Helpful',
     'Batch Name'
   ],
-  //questionLongList: [],
+  // questionLongList: [],
   listLongQuestions: [
   ],
-  //responseData: [],
+  // responseData: [],
 
 };
 

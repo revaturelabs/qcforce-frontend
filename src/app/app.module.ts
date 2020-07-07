@@ -48,6 +48,7 @@ import { environment } from '../environments/environment';
 
 /*store imports*/
 import * as fromStore from './store';
+import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
 // import { BatchesEffects } from './store/effects/batches.effect';
 // import { ReportsEffect } from './effects/reports.effect';
 // import { reportsReducer } from './store/reducers/reports.reducer';
@@ -81,6 +82,7 @@ import * as fromStore from './store';
     SurveyViewComponent,
     SubnavItemsComponent,
     SurveyQuestionsComponent,
+    AssessmentGraphComponent,
   ],
   imports: [
     BrowserModule,

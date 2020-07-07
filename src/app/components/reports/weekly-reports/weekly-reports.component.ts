@@ -115,8 +115,10 @@ export class WeeklyReportsComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.select(fromStore.selectWeeklyGraphData).subscribe((graph) => {
-      this.weekChartData = cloneDeep(graph.data);
-      this.weekChartLabels = cloneDeep(graph.labels);
+      if (graph) {
+        this.weekChartData = cloneDeep(graph.data);
+        this.weekChartLabels = cloneDeep(graph.labels);
+      }
     });
   }
 

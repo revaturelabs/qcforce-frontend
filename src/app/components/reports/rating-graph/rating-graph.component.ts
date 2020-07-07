@@ -19,6 +19,9 @@ export class RatingGraphComponent implements OnInit {
   public chartOptions: any  = {
     responsive: true,
     maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+     },
     legend: {
       labels: {
         fontSize: 18
@@ -70,9 +73,9 @@ export class RatingGraphComponent implements OnInit {
     'rgba(183, 247, 7, 1)', // yellow-green
     'rgba(123, 247, 7, 1)', // green-yellow
     'rgba(93, 247, 7, 1)', // green-yellow-green
-    'rgba(63, 247, 7, 1)', // green-green-yellow
-    'rgba(23, 247, 7, 1)', // green-green
-    'rgba(0, 255, 0, 1)', // pure-green
+    'rgba(63, 190, 7, 1)', // green-green-yellow
+    'rgba(34, 175, 40, 1)', // green-green
+    'rgba(15, 155, 15, 1)', // dark-green
   ];
   colorIndex = 0;
 
@@ -85,12 +88,13 @@ export class RatingGraphComponent implements OnInit {
   ngOnInit(): void {
 
     this.store.select(fromStore.selectRatingGraphData).subscribe((graph) => {
-      console.log(graph.data);
-      this.chartData = cloneDeep(graph.data);
-      this.chartLabels = cloneDeep(graph.labels);
-      if(this.chartData.length > 0){
-        this.chartColor = this.getChartColor(this.chartData[0].data);
-      };
+      if (graph) {
+        this.chartData = cloneDeep(graph.data);
+        this.chartLabels = cloneDeep(graph.labels);
+        if (this.chartData.length > 0) {
+          this.chartColor = this.getChartColor(this.chartData[0].data);
+        }
+      }
     });
   }
 
