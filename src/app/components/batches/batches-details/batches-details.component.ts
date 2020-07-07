@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Associate } from '../../../models/associate.model';
 import { Store } from '@ngrx/store';
@@ -10,7 +10,7 @@ import * as fromStore from '../../../store';
   templateUrl: './batches-details.component.html',
   styleUrls: ['./batches-details.component.css']
 })
-export class BatchesDetailsComponent implements OnInit {
+export class BatchesDetailsComponent implements OnInit, OnDestroy {
 
   batchName: string;
 
@@ -24,4 +24,7 @@ export class BatchesDetailsComponent implements OnInit {
     this.associates$ = this.store.select(fromStore.selectAllAssociates);
     this.store.dispatch(new fromStore.LoadAssociates(this.batchName));
     }
+  ngOnDestroy(): void {
+    localStorage.clear();
+  }
 }
