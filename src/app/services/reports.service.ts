@@ -23,9 +23,14 @@ export class ReportsService {
     return this.http.get<any[]>(environment.getBatchAllWeeks + batch);
   }
 
+  getOneBatchOneWeek({ batch, week }) {
+    return this.http.get<any>(environment.getOneBatchOneWeek + batch + '/' + week);
+  }
+  
+  getAvgWeekBatch() {
+    return this.http.get<any>(environment.getAvgWeekBatch);
+  }
+
   constructor(private http: HttpClient) { }
-
-
-
 
 }

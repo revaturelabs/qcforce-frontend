@@ -14,3 +14,18 @@ export function weekGraphData(state) {
   }
   return multiData;
 }
+
+export function oneWeekOneBatchData(state) {
+  let multiData = [];
+  let questionList = state.questionShortList;
+  let data = questionList.map((q) => 0);
+  for (let i = 0; i < questionList.length; i++) {
+    if (state.responseData[0].data[state.questionLongList[i]]) {
+      data[i] = state.responseData[0].data[state.questionLongList[i]];
+    }
+  }
+  let label = `${state.batchFilter} (${state.weekFilter})`;
+  multiData.push({ data, label });
+  return multiData;
+}
+

@@ -69,6 +69,29 @@ export function reportsReducer(
     case fromReports.GET_WEEKS_FAIL: {
       return { ...state };
     }
+    case fromReports.GET_ONE_WEEK_ONE_BATCH: {
+      return { ...state };
+    }
+    case fromReports.GET_ONE_WEEK_ONE_BATCH_SUCCESS: {
+      let newState = cloneDeep(state);
+      newState.responseData = [action.payload];
+      newState.questionLongList = Object.keys(action.payload.data);
+      return newState;
+    }
+    case fromReports.GET_ONE_WEEK_ONE_BATCH_FAIL: {
+      return { ...state };
+    }
+    case fromReports.GET_AVG_WEEK_BATCH: {
+      return { ...state };
+    }
+    case fromReports.GET_AVG_WEEK_BATCH_SUCCESS: {
+      let newState = cloneDeep(state);
+      newState.responseData = [action.payload];
+      return newState;
+    }
+    case fromReports.GET_AVG_WEEK_BATCH_FAIL: {
+      return { ...state };
+    }
   }
   return state;
 }

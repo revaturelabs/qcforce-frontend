@@ -26,12 +26,34 @@ export class ReportsEffects {
   // );
 
   @Effect()
+  getAvgWeekBatch$ = this.actions$.pipe(
+    ofType(ReportsActions.GET_AVG_WEEK_BATCH),
+    exhaustMap(() => {
+      return this.reportsService.getAvgWeekBatch().pipe(
+        map(data => new ReportsActions.GetAvgWeekBatchSuccess(data)),
+        catchError(error => of(new ReportsActions.GetAvgWeekBatchFail(error)))
+      );
+    })
+  );
+  
+  @Effect()
   getBatchAllWeeks$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ALL_WEEKS_ONE_BATCH),
     exhaustMap(({ payload }) => {
       return this.reportsService.getBatchAllWeeks(payload).pipe(
         map(data => new ReportsActions.GetAllWeeksOneBatchSuccess(data)),
         catchError(error => of(new ReportsActions.GetAllWeeksOneBatchFail(error)))
+      );
+    })
+  );
+
+  @Effect()
+  getOneBatchOneWeek = this.actions$.pipe(
+    ofType(ReportsActions.GET_ONE_WEEK_ONE_BATCH),
+    exhaustMap(({ payload }) => {
+      return this.reportsService.getOneBatchOneWeek(payload).pipe(
+        map(data => new ReportsActions.GetOneWeekOneBatchSuccess(data)),
+        catchError(error => of(new ReportsActions.GetOneWeekOneBatchFail(error)))
       );
     })
   );

@@ -28,7 +28,7 @@ export class RatingGraphComponent implements OnInit {
       yAxes: [
         {
             ticks: {
-            min: 1,
+            min: 0,
             max: 5,
             fontSize: 18
           },
@@ -79,10 +79,10 @@ export class RatingGraphComponent implements OnInit {
 
   ngOnInit(): void {
     // this.chartColor = this.getChartColor(this.chartData);
-   // this.store.select(fromStore.selectRatingGraphData).subscribe((graph) => {
-   //   this.chartData = cloneDeep(graph.data);
-   //   this.chartLabels = cloneDeep(graph.labels);
-   // });
+    this.store.select(fromStore.selectRatingGraphData).subscribe((graph) => {
+      this.chartData = cloneDeep(graph.data);
+      this.chartLabels = cloneDeep(graph.labels);
+    });
   }
 
   getChartColor(data) {
