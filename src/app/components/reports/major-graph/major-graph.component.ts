@@ -32,10 +32,10 @@ export class MajorGraphComponent implements OnInit {
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.select(fromStore.selectMajorGraphData).subscribe((graph) => {
-      this.chartData = cloneDeep(graph.data);
-      this.chartLabels = cloneDeep(graph.labels);
-    });
+    //this.store.select(fromStore.selectMajorGraphData).subscribe((graph) => {
+    //  this.chartData = cloneDeep(graph.data);
+    //  this.chartLabels = cloneDeep(graph.labels);
+    //});
   }
 
 }

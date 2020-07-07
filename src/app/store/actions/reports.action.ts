@@ -15,8 +15,6 @@ export const GET_ALL_WEEKS_ONE_BATCH = '[Reports] Get All Weeks for a Batch';
 export const GET_ALL_WEEKS_ONE_BATCH_SUCCESS = '[Reports] Get All Weeks for a Batch Success!';
 export const GET_ALL_WEEKS_ONE_BATCH_FAIL = '[Reports] Get All Weeks for a Batch FAILED';
 
-
-
 export class BatchFilterChange implements Action {
   readonly type = BATCH_FILTER_CHANGE;
   constructor(public payload: string) {}
@@ -57,6 +55,7 @@ export class GetWeeksFail implements Action {
 
 export class GetAllWeeksOneBatch implements Action {
   readonly type = GET_ALL_WEEKS_ONE_BATCH;
+  constructor(public payload: string) {}
 }
 
 export class GetAllWeeksOneBatchSuccess implements Action {

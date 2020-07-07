@@ -18,7 +18,7 @@ export class ReportsViewComponent implements OnInit {
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new fromStore.GetAnswers());
+    //this.store.dispatch(new fromStore.GetAnswers());
     this.store.select(fromStore.selectTitle).subscribe((reportTitle) => {
       this.reportVariable = reportTitle;
     });

@@ -28,7 +28,8 @@ export class ReportsEffects {
   @Effect()
   getBatchAllWeeks$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ALL_WEEKS_ONE_BATCH),
-    exhaustMap((action) => { return this.reportsService.getBatchAllWeeks(action.payload).pipe(
+    exhaustMap(({ payload }) => {
+      return this.reportsService.getBatchAllWeeks(payload).pipe(
         map(data => new ReportsActions.GetAllWeeksOneBatchSuccess(data)),
         catchError(error => of(new ReportsActions.GetAllWeeksOneBatchFail(error)))
       );

@@ -1,6 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { ReportsState } from '../states';
-import { ratingGraphFilter, paceGraphFilter, majorGraphFilter, weeklyGraphFilter } from 'src/app/filters/reports.filter';
+import { weekGraphData } from 'src/app/filters/reports.filter';
+
 export const selectReportsState = (state) => state.reports;
 const _selectBatchFilter = (state: ReportsState) => state.batchFilter;
 const _selectWeekFilter = (state: ReportsState) => state.weekFilter;
@@ -19,9 +20,13 @@ const _selectTitle = (state: ReportsState) => {
     }
     return reportTitle;
 };
-
-
+const _selectWeeklyGraphData = (state: ReportsState) => {
+  return {
+    data: weekGraphData(state),
+    labels: state.weekFilterOptions.slice(2)
+  };
+}
 export const selectBatchFilter = createSelector(selectReportsState, _selectBatchFilter);
 export const selectWeekFilter = createSelector(selectReportsState, _selectWeekFilter);
 export const selectTitle = createSelector(selectReportsState, _selectTitle);
-
+export const selectWeeklyGraphData = createSelector(selectReportsState, _selectWeeklyGraphData);

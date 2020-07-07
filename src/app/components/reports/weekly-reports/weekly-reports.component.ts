@@ -25,7 +25,7 @@ export class WeeklyReportsComponent implements OnInit {
       yAxes: [
         {
             ticks: {
-            min: 1,
+            min: 0,
             max: 5,
             fontSize: 18
           },
@@ -114,9 +114,9 @@ export class WeeklyReportsComponent implements OnInit {
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.select(fromStore.selectWeekGraphData).subscribe((graph) => {
-      this.weekChartData = cloneDeep(graph.data);
+    this.store.select(fromStore.selectWeeklyGraphData).subscribe((graph) => {
       console.log(graph.data);
+      this.weekChartData = cloneDeep(graph.data);
       this.weekChartLabels = cloneDeep(graph.labels);
     });
   }

@@ -19,15 +19,15 @@ export class FilterItemsComponent implements OnInit {
 
   batchFilterClick(option) {
     this.store.dispatch(new fromStore.BatchFilterChange(option));
-    if (option === 'All' && this.weekFilter === 'All') {
-      this.store.dispatch(new fromStore.WeekFilterChange('Average'));
+    if (this.weekFilter === 'All' && option !== 'Average') {
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch(option));
     }
   }
 
   weekFilterClick(option) {
     this.store.dispatch(new fromStore.WeekFilterChange(option));
-    if (option === 'All' && this.batchFilter === 'All') {
-      this.store.dispatch(new fromStore.BatchFilterChange('Average'));
+    if (option === 'All' && this.batchFilter !== 'Average') {
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch(this.batchFilter));
     }
   }
 

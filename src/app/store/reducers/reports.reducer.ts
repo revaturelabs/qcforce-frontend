@@ -44,8 +44,12 @@ export function reportsReducer(
       return { ...state };
     }
     case fromReports.GET_ALL_WEEKS_ONE_BATCH_SUCCESS: {
-      const responseData = action.payload;
-      return {...state, responseData};
+      let newState = cloneDeep(state);
+      newState.responseData = action.payload;
+      if (newState.responseData.length > 0) {
+        newState.questionLongList = Object.keys(newState.responseData[0].data);
+      }
+      return newState;
     }
     case fromReports.GET_ALL_WEEKS_ONE_BATCH_FAIL: {
       return { ...state };
