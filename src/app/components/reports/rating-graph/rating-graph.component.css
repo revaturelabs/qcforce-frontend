@@ -3,5 +3,13 @@ p {
 }
 
 canvas {
-  width: 40rem;
-}    
+  width: 900px !important;
+  height: 360px !important;
+}  
+
+@media (min-width: 768px) {
+    canvas {
+      width: 80vw !important;
+      height: 40vh !important;
+    }  
+  }
