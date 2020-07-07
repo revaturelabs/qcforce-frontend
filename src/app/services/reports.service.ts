@@ -15,6 +15,14 @@ export class ReportsService {
     return this.http.get<any[]>(environment.getAnswersUrl);
   }
 
+  getWeeks() {
+    return this.http.get<any[]>(environment.getWeeksUrl);
+  }
+
+  getBatchAllWeeks(batch) {
+    return this.http.get<any[]>(environment.getBatchAllWeeks + batch);
+  }
+
   constructor(private http: HttpClient) { }
 
 

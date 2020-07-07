@@ -53,7 +53,7 @@ import * as fromStore from './store';
 // import { reportsReducer } from './store/reducers/reports.reducer';
 // import { surveysReducer } from './store/reducers/surveys.reducer';
 // import { batchesReducer } from './store/reducers/batches.reducer';
-//import { reducers, effects } from './store';
+// import { reducers, effects } from './store';
 
 
 
@@ -91,14 +91,14 @@ import * as fromStore from './store';
       batches: fromStore.batchesReducer,
       surveys: fromStore.surveysReducer
     }),
-    //StoreModule.forFeature('information', reducers),
+    // StoreModule.forFeature('information', reducers),
     EffectsModule.forRoot([
       fromStore.ReportsEffects,
       fromStore.BatchesEffects,
       fromStore.SurveysEffects
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    //EffectsModule.forRoot([BatchEffect, ReportsEffect]),
+    // EffectsModule.forRoot([BatchEffect, ReportsEffect]),
     StoreRouterConnectingModule.forRoot(),
     NgbModule,
     BrowserAnimationsModule,

@@ -1,57 +1,33 @@
 export interface ReportsState {
-  filterOptionDisplayed: string;
   batchFilterOptions: string[];
   batchFilter: string;
   weekFilterOptions: string[];
   weekFilter: string;
-  ratingGraph: any;
-  paceGraph: any;
-  majorGraph: any;
   responseData: any[];
-  questionList: string[];
+  questionShortList: string[];
+  questionLongList: string[];
+  // questionMapping: object;
 }
 
 export const initReportsState: ReportsState = {
-  filterOptionDisplayed: '',
+
   batchFilterOptions: [ 'Average' ],
   batchFilter: 'Average',
-  weekFilterOptions: ['All', 'Average', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+  weekFilterOptions: ['All', 'Average'],
   weekFilter: 'All',
-  ratingGraph: {
-    visible: false,
-    data: [],
-    labels: [
-      'Satisfaction Rating',
-      'Materials Helpful',
-      'Well Organized',
-      'Questions Encouraged',
-      'Met Expectations',
-      'Topic Understanding',
-      'Project Clarity',
-      'Project Preparedness'
-    ] 
-  },
-  paceGraph: {
-    visible: false,
-    data: [],
-    labels: [
-      'Too Slow',
-      'Good',
-      'Too Fast'
-    ]
-  },
-  majorGraph: {
-    visible: false,
-    data: [],
-    labels: [
-      'Computer Science Major',
-      'STEM major (non-CS)',
-      'Non-STEM major'
-    ]
-  },
-  questionList:  [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized', 
-  'Questions Encouraged', 'Met Expectations','Topic Understanding', 
-  'Project Clarity', 'Project Preparedness'],
+
+  questionShortList: [
+    'Satisfaction Rating',
+    'One on One/Assessments',
+    'Met Expectations',
+    'Pace of Training',
+    'Questions Encouraged',
+    'Topic Understanding',
+    'Well Organized',
+    'Materials Helpful'
+  ],
+  questionLongList: [],
   responseData: []
-}
+
+};
 

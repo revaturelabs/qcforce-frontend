@@ -1,21 +1,15 @@
 
-<div id="submenu">  
-  <ul class="nav d-flex justify-content-center flex-nowrap">
-    <li class="nav-item" *ngFor="let subMenuItem of subMenuList">
-      <p class="nav-link" (click)="filterOptionClick(subMenuItem)">
-        {{ subMenuItem }}
-      </p>
-    </li>
-  </ul>
-</div>
-<div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="filterOptionDisplayed === 'Batch'">
+
+<div class="d-flex justify-content-md-center flex-nowrap p-2" >
+  <h6>{{ 'Batch' | uppercase }}</h6>
   <ul class="nav nav-pills">
     <li class="nav-item" *ngFor="let option of batchFilterOptions">
       <p class="nav-link" [class.active]="option === batchFilter" (click)="batchFilterClick(option)">{{ option }}</p>
     </li>
   </ul>
 </div>
-<div class="d-flex justify-content-md-center flex-nowrap p-2" *ngIf="filterOptionDisplayed === 'Week'">
+<div class="d-flex justify-content-md-center flex-nowrap p-2">
+  <h6>{{ 'Week' | uppercase }}</h6>
   <ul class="nav nav-pills">
     <li class="nav-item" *ngFor="let option of weekFilterOptions">
       <p class="nav-link" [class.active]="option === weekFilter" (click)="weekFilterClick(option)">{{ option }}</p>

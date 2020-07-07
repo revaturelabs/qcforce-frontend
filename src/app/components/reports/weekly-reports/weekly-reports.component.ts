@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Label, MultiDataSet, Color } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
-import { Store } from "@ngrx/store";
+import { Store } from '@ngrx/store';
 import * as fromStore from 'src/app/store';
 import { cloneDeep } from 'lodash';
 @Component({
@@ -15,16 +15,34 @@ export class WeeklyReportsComponent implements OnInit {
   public weekChartLabels: Label[];
   public weekChartOptions: ChartOptions = {
     responsive: true,
-    scales: {
-      yAxes: [{
-        ticks: {
-          min: 1,
-          max: 5,
-        }
-      }]
+    maintainAspectRatio: false,
+    legend: {
+      labels: {
+        fontSize: 18
+      }
     },
+    scales: {
+      yAxes: [
+        {
+            ticks: {
+            min: 1,
+            max: 5,
+            fontSize: 18
+          },
+        },
+      ],
+      xAxes: [
+        {
+            ticks: {
+            fontSize: 18
+          },
+        },
+      ],
+    },
+
+    
     // annotation: {
-    //   annotations: [ 
+    //   annotations: [
     //     {
     //       type: 'line',
     //       mode: 'vertical',
@@ -93,7 +111,7 @@ export class WeeklyReportsComponent implements OnInit {
   public weekChartType = 'line';
   public weekChartPlugins = [pluginAnnotations];
 
-  constructor(private store : Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select(fromStore.selectWeekGraphData).subscribe((graph) => {

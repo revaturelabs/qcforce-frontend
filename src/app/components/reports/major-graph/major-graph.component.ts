@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Store } from "@ngrx/store";
+import { Store } from '@ngrx/store';
 import * as fromStore from 'src/app/store';
 import { cloneDeep } from 'lodash';
 
@@ -29,7 +29,7 @@ export class MajorGraphComponent implements OnInit {
   public chartLegend = true;
   public chartType = 'doughnut';
 
-  constructor(private store : Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select(fromStore.selectMajorGraphData).subscribe((graph) => {
