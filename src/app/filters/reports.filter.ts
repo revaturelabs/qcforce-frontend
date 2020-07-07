@@ -1,17 +1,17 @@
 export function weekGraphData(state) {
   let multiData = [];
   let weekList = state.weekFilterOptions.slice(2);
-  for (let i = 0; i < state.questionShortList.length; i++) {
-    let qIndex = state.listShortQuestions.indexOf(state.questionShortList[i]);
+  for (let i = 0; i < state.weekGraphLabels.length; i++) {
+    let qIndex = state.listShortQuestions.indexOf(state.weekGraphLabels[i]);
     let data = weekList.map((week) => 0);
-    for (let responseDatum of state.responseData) {
+    for (let responseDatum of state.weekGraphData) {
       let wIndex = weekList.indexOf(responseDatum.label);
       let value = responseDatum.data[state.listLongQuestions[qIndex]];
       if (value) {
         data[wIndex] = value;
       }
     }
-    let label = state.questionShortList[i];
+    let label = state.weekGraphLabels[i];
     multiData.push({ data, label });
   }
   return multiData;

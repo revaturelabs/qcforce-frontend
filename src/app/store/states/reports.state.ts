@@ -3,9 +3,9 @@ export interface ReportsState {
   batchFilter: string;
   weekFilterOptions: string[];
   weekFilter: string;
-  responseData: any[];
-  questionShortList: string[];
-  questionLongList: string[];
+  weekGraphData: any[];
+  weekGraphLabels: string[];
+  //questionLongList: string[];
   listShortQuestions: string[];
   listLongQuestions: string[];
   // questionMapping: object;
@@ -18,15 +18,16 @@ export const initReportsState: ReportsState = {
   weekFilterOptions: ['All', 'Average'],
   weekFilter: 'All',
 
-  questionShortList: [
+  weekGraphData: [],
+  weekGraphLabels: [
     'Satisfaction Rating',
     'Met Expectations',
-    'Pace of Training',
     'Questions Encouraged',
     'Topic Understanding',
     'Well Organized',
     'Materials Helpful'
   ],
+  
   listShortQuestions: [
     'Project Clarity',
     'One-to-One/Online Assessment',
@@ -51,10 +52,10 @@ export const initReportsState: ReportsState = {
     'Materials Helpful',
     'Batch Name'
   ],
-  questionLongList: [],
+  //questionLongList: [],
   listLongQuestions: [
   ],
-  responseData: [],
+  //responseData: [],
 
 };
 

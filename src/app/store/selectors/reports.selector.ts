@@ -29,7 +29,7 @@ const _selectWeeklyGraphData = (state: ReportsState) => {
 const _selectRatingGraphData = (state: ReportsState) => {
   return {
     data: Filters.oneWeekOneBatchData(state),
-    labels: state.questionShortList
+    labels: [] //state.questionShortList
   };
 }
 
