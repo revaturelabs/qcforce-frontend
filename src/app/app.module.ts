@@ -89,13 +89,15 @@ import * as fromStore from './store';
       router: routerReducer,
       reports: fromStore.reportsReducer,
       batches: fromStore.batchesReducer,
-      surveys: fromStore.surveysReducer
+      surveys: fromStore.surveysReducer,
+      associates: fromStore.associatesReducer,
     }),
     // StoreModule.forFeature('information', reducers),
     EffectsModule.forRoot([
       fromStore.ReportsEffects,
       fromStore.BatchesEffects,
-      fromStore.SurveysEffects
+      fromStore.SurveysEffects,
+      fromStore.AssociatesEffects,
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     // EffectsModule.forRoot([BatchEffect, ReportsEffect]),
