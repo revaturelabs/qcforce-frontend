@@ -19,7 +19,7 @@ export class FilterItemsComponent implements OnInit {
 
   pullDataActions(batch, week) {
     if (week === 'Average' && batch === 'Average') {
-      let graph = 'weekGraphData';
+      let graph = 'ratingGraphData';
       this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
     }
     else if (week === 'All' && batch !== 'Average') {
@@ -27,7 +27,7 @@ export class FilterItemsComponent implements OnInit {
       this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
     } 
     else if (week !== 'Average' && batch !== 'Average') {
-      let graph = 'weekGraphData';
+      let graph = 'ratingGraphData';
       this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graph, batch, week }));
     }
   }

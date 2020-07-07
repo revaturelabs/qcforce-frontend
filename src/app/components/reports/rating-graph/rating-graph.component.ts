@@ -80,6 +80,7 @@ export class RatingGraphComponent implements OnInit {
   ngOnInit(): void {
     // this.chartColor = this.getChartColor(this.chartData);
     this.store.select(fromStore.selectRatingGraphData).subscribe((graph) => {
+      console.log(graph.data);
       this.chartData = cloneDeep(graph.data);
       this.chartLabels = cloneDeep(graph.labels);
     });

@@ -1,8 +1,8 @@
 export function weekGraphData(state) {
   let multiData = [];
   let weekList = state.weekFilterOptions.slice(2);
-  for (let i = 0; i < state.weekGraphLabels.length; i++) {
-    let qIndex = state.listShortQuestions.indexOf(state.weekGraphLabels[i]);
+  for (let i = 0; i < state.weekGraphQuestions.length; i++) {
+    let qIndex = state.listShortQuestions.indexOf(state.weekGraphQuestions[i]);
     let data = weekList.map((week) => 0);
     for (let responseDatum of state.weekGraphData) {
       let wIndex = weekList.indexOf(responseDatum.label);
@@ -11,20 +11,28 @@ export function weekGraphData(state) {
         data[wIndex] = value;
       }
     }
-    let label = state.weekGraphLabels[i];
+    let label = state.weekGraphQuestions[i];
     multiData.push({ data, label });
   }
   return multiData;
 }
 
-export function oneWeekOneBatchData(state) {
+export function ratingGraphData(state) {
   let multiData = [];
-  let questionList = state.questionShortList;
+  let questionList = state.ratingGraphQuestions;
   let data = questionList.map((q) => 0);
   for (let i = 0; i < questionList.length; i++) {
-    if (state.responseData[0].data[state.questionLongList[i]]) {
-      data[i] = state.responseData[0].data[state.questionLongList[i]];
+    let qIndex = state.listShortQuestions.indexOf(questionList[i]);
+    let avg = 0;
+    let num = 0;
+    for (let responseDatum of state.ratingGraphData) {
+      let value = responseDatum.data[state.listLongQuestions[qIndex]];
+      if (value) {
+        num++;
+        avg = ((num-1)/num) * avg + (1/num) * value;
+      }
     }
+    data[i] = avg;
   }
   let label = `${state.batchFilter} (${state.weekFilter})`;
   multiData.push({ data, label });

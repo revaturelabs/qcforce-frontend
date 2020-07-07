@@ -4,7 +4,9 @@ export interface ReportsState {
   weekFilterOptions: string[];
   weekFilter: string;
   weekGraphData: any[];
-  weekGraphLabels: string[];
+  weekGraphQuestions: string[];
+  ratingGraphData: any[];
+  ratingGraphQuestions: string[];
   //questionLongList: string[];
   listShortQuestions: string[];
   listLongQuestions: string[];
@@ -19,7 +21,17 @@ export const initReportsState: ReportsState = {
   weekFilter: 'All',
 
   weekGraphData: [],
-  weekGraphLabels: [
+  weekGraphQuestions: [
+    'Satisfaction Rating',
+    'Met Expectations',
+    'Questions Encouraged',
+    'Topic Understanding',
+    'Well Organized',
+    'Materials Helpful'
+  ],
+
+  ratingGraphData: [],
+  ratingGraphQuestions: [
     'Satisfaction Rating',
     'Met Expectations',
     'Questions Encouraged',
