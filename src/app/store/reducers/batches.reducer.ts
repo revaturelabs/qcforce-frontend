@@ -7,6 +7,7 @@ import { BatchesState , initBatchesState } from '../states/batches.state';
  * and returns a slice of a state conformed with BatchesState
  * @param state a slice of state which provided as default once a reducer is invoked
  * @param action set of action of particular type for reducer to process
+ * @returns a state object related to dispathced action type
  */
 export function batchesReducer(
     state: BatchesState = initBatchesState,
@@ -35,7 +36,8 @@ export function batchesReducer(
                 data,
             };
         }
+        default:
+            return state;
     }
-    return state;
 }
 
