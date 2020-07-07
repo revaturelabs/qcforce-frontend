@@ -17,30 +17,27 @@ export class FilterItemsComponent implements OnInit {
 
   subMenuList = [ 'Batch', 'Week' ];
 
-  batchFilterClick(option) {
-    this.store.dispatch(new fromStore.BatchFilterChange(option));
-    if (this.weekFilter === 'Average' && option === 'Average') {
+  pullDataActions(batch, week) {
+    if (week === 'Average' && batch === 'Average') {
       this.store.dispatch(new fromStore.GetAvgWeekBatch());
     }
-    else if (this.weekFilter === 'All' && option !== 'Average') {
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch(option));
+    else if (week === 'All' && batch !== 'Average') {
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch(batch));
+    } 
+    else if (week !== 'Average' && batch !== 'Average') {
+      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ batch, week }));
     }
-    else if (this.weekFilter !== 'Average' && option !== 'Average') {
-      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ batch: option, week: this.weekFilter }));
-    }
+  }
+
+
+  batchFilterClick(option) {
+    this.store.dispatch(new fromStore.BatchFilterChange(option));
+    this.pullDataActions(option, this.weekFilter);
   }
 
   weekFilterClick(option) {
     this.store.dispatch(new fromStore.WeekFilterChange(option));
-    if (option === 'Average' && this.batchFilter === 'Average') {
-      this.store.dispatch(new fromStore.GetAvgWeekBatch());
-    }
-    else if (option === 'All' && this.batchFilter !== 'Average') {
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch(this.batchFilter));
-    }
-    else if (option !== 'Average' && this.batchFilter !== 'Average') {
-      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ batch: this.batchFilter, week: option }));
-    }
+    this.pullDataActions(this.batchFilter, option);
   }
 
   constructor(private store: Store<fromStore.AppState>) { }
