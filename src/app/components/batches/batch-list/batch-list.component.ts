@@ -13,6 +13,7 @@ import * as fromStore from '../../../store';
 export class BatchListComponent implements OnInit {
 
   batchId: string;
+  batchName: string;
   batches$: Observable<Batch[]>;
 
   constructor(private store: Store<fromStore.AppState>) {}
@@ -26,4 +27,7 @@ export class BatchListComponent implements OnInit {
     localStorage.setItem('batchId', this.batchId = batchId);
   }
 
+  saveBatchByBatchName(batchName: string) {
+    localStorage.setItem('batchName', this.batchName = batchName);
+  }
 }

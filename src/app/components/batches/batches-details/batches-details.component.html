@@ -1,40 +1,29 @@
 <div class="p-3 ">
-    <h2 class="title ">{{'name of batch'| uppercase }}: {{batchId}}</h2><hr>
-    <!-- <table class="table table-striped">
-        <thead>           
+    <h2 class="title ">{{'name of batch'| uppercase }}: {{batchName}}</h2>
+</div>
+<hr/>
+<div class="p-3 ">
+    <h2 class="title ">{{'Revature Associates in Training Batches'| uppercase }}</h2>
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <th scope="col">Id</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">email</th>
-                <th scope="col">Grade</th>
+                <th scope="col">Associate First Name</th>
+                <th scope="col">Associate Last Name</th>
+                <th scope="col">Associate Start Date</th>
+                <th scope="col">Associate End Date</th>
+                <th scope="col">Associate Email</th>
             </tr>
         </thead>
-
-        <tbody>         
-            <tr *ngFor="let details of batchesDetails">
-                <td>{{details.id}}</td>
-                <td>{{details.firstName}}</td>
-                <td>{{details.lastName}}</td>
-                <td>{{details.email}}</td>  
-                <td>{{details.grade}}</td>               
+    
+        <tbody>
+            <tr *ngFor="let associate of (associates$ | async)">
+                <td>{{associate.firstName}}</td>
+                <td>{{associate.lastName}}</td>
+                <td>{{associate.startDate | date:'mediumDate'}}</td>
+                <td>{{associate.endDate | date:'mediumDate'}}</td> 
+                <td>{{associate.email}}</td>             
             </tr>
         </tbody>
     </table>
-</div> -->
-<hr/>
-<h2 class="title  ">{{ 'view reports'| uppercase }}</h2>
-<div class="reports-chart p-2">
-    <canvas baseChart 
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColor"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-          >
-    </canvas>
-</div>  
-  
+</div>
 <p routerLink="/batch-list">back to batch list</p>
