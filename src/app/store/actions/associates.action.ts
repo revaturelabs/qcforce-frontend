@@ -16,6 +16,8 @@ export const LOAD_ASSOCIATES_BY_BATCH_NAME_SUCCESS = '[Associates] Load Associat
  */
 /**
  * The action of atempt to load all associates
+ * @param payload provides a batch name which allows to select
+ * all associates related to a particular batch
  */
 export class LoadAssociates implements Action {
     readonly type = LOAD_ASSOCIATES_BY_BATCH_NAME;
