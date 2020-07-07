@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store'
+import { Store } from '@ngrx/store';
 import * as fromStore from 'src/app/store';
 
 @Component({
@@ -9,34 +9,43 @@ import * as fromStore from 'src/app/store';
 })
 export class FilterItemsComponent implements OnInit {
 
-  filterOptionDisplayed : string;
-  batchFilterOptions : string[];
-  batchFilter : string;
-  weekFilterOptions : string[];
+  filterOptionDisplayed: string;
+  batchFilterOptions: string[];
+  batchFilter: string;
+  weekFilterOptions: string[];
   weekFilter: string;
-  
+
   subMenuList = [ 'Batch', 'Week' ];
 
-  filterOptionClick(subMenuItem) {
-    if (this.filterOptionDisplayed === subMenuItem) {
-      this.store.dispatch(new fromStore.FilterDisplayedChange(""));
-    } else {
-      this.store.dispatch(new fromStore.FilterDisplayedChange(subMenuItem));
+  pullDataActions(batch, week) {
+    if (week === 'Average' && batch === 'Average') {
+      let graph = 'ratingGraphData';
+      this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
+    }
+    else if (week === 'All' && batch !== 'Average') {
+      let graph = 'weekGraphData';
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
+    } 
+    else if (week !== 'Average' && batch !== 'Average') {
+      let graph = 'ratingGraphData';
+      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graph, batch, week }));
     }
   }
 
+
   batchFilterClick(option) {
     this.store.dispatch(new fromStore.BatchFilterChange(option));
+    this.pullDataActions(option, this.weekFilter);
   }
 
   weekFilterClick(option) {
     this.store.dispatch(new fromStore.WeekFilterChange(option));
+    this.pullDataActions(this.batchFilter, option);
   }
 
-  constructor(private store : Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new fromStore.GetBatches());
     this.store.select(fromStore.selectReportsState).subscribe((reports) => {
       this.filterOptionDisplayed = reports.filterOptionDisplayed;
       this.batchFilterOptions = reports.batchFilterOptions;

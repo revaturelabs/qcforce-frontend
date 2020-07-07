@@ -1,57 +1,73 @@
 export interface ReportsState {
-  filterOptionDisplayed: string;
   batchFilterOptions: string[];
   batchFilter: string;
   weekFilterOptions: string[];
   weekFilter: string;
-  ratingGraph: any;
-  paceGraph: any;
-  majorGraph: any;
-  responseData: any[];
-  questionList: string[];
+  weekGraphData: any[];
+  weekGraphQuestions: string[];
+  ratingGraphData: any[];
+  ratingGraphQuestions: string[];
+  //questionLongList: string[];
+  listShortQuestions: string[];
+  listLongQuestions: string[];
+  // questionMapping: object;
 }
 
 export const initReportsState: ReportsState = {
-  filterOptionDisplayed: '',
+
   batchFilterOptions: [ 'Average' ],
   batchFilter: 'Average',
-  weekFilterOptions: ['All', 'Average', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+  weekFilterOptions: ['All', 'Average'],
   weekFilter: 'All',
-  ratingGraph: {
-    visible: false,
-    data: [],
-    labels: [
-      'Satisfaction Rating',
-      'Materials Helpful',
-      'Well Organized',
-      'Questions Encouraged',
-      'Met Expectations',
-      'Topic Understanding',
-      'Project Clarity',
-      'Project Preparedness'
-    ] 
-  },
-  paceGraph: {
-    visible: false,
-    data: [],
-    labels: [
-      'Too Slow',
-      'Good',
-      'Too Fast'
-    ]
-  },
-  majorGraph: {
-    visible: false,
-    data: [],
-    labels: [
-      'Computer Science Major',
-      'STEM major (non-CS)',
-      'Non-STEM major'
-    ]
-  },
-  questionList:  [ 'Satisfaction Rating', 'Materials Helpful', 'Well Organized', 
-  'Questions Encouraged', 'Met Expectations','Topic Understanding', 
-  'Project Clarity', 'Project Preparedness'],
-  responseData: []
-}
+
+  weekGraphData: [],
+  weekGraphQuestions: [
+    'Satisfaction Rating',
+    'Met Expectations',
+    'Questions Encouraged',
+    'Topic Understanding',
+    'Well Organized',
+    'Materials Helpful'
+  ],
+
+  ratingGraphData: [],
+  ratingGraphQuestions: [
+    'Satisfaction Rating',
+    'Met Expectations',
+    'Questions Encouraged',
+    'Topic Understanding',
+    'Well Organized',
+    'Materials Helpful'
+  ],
+  
+  listShortQuestions: [
+    'Project Clarity',
+    'One-to-One/Online Assessment',
+    'Overall Feedback',
+    'Batch',
+    'Background',
+    'Topic Understanding',
+    'Location',
+    'Project Preparedness',
+    'SPARK',
+    'Email',
+    'Programming Experience',
+    'Name',
+    'Project Feedback',
+    'Issues',
+    'Satisfaction Rating',
+    'Met Expectations',    
+    'Pace of Training',
+    'Questions Encouraged',
+    'Well Organized',
+    'Week',
+    'Materials Helpful',
+    'Batch Name'
+  ],
+  //questionLongList: [],
+  listLongQuestions: [
+  ],
+  //responseData: [],
+
+};
 

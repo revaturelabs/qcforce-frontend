@@ -1,152 +1,41 @@
-function _batchClearence(answer, batch) {
-  if (batch === "Average") {
-    return true;
-  } else {
-    return answer.batch === batch;
-  }
-}
-
-function _weekClearence(answer, week) {
-  if (week === "Average") {
-    return true;
-  } else {
-    return answer.week === week;
-  }
-}
-
-function calculate(data, questionList, batch, week) {
-  let avg = questionList.map(() => 0);
-  let num = questionList.map(() => 0);
-  for (let answer of data) {
-    let qIndex = questionList.indexOf(answer.question);
-    if (qIndex != -1 && 
-      _batchClearence(answer, batch) && 
-      _weekClearence(answer, week)) 
-    {
-      let val = answer.answer * 1;
-      num[qIndex]++;
-      avg[qIndex] = ((num[qIndex] - 1) / num[qIndex]) * avg[qIndex] + (1 / num[qIndex]) * val;
+export function weekGraphData(state) {
+  let multiData = [];
+  let weekList = state.weekFilterOptions.slice(2);
+  for (let i = 0; i < state.weekGraphQuestions.length; i++) {
+    let qIndex = state.listShortQuestions.indexOf(state.weekGraphQuestions[i]);
+    let data = weekList.map((week) => 0);
+    for (let responseDatum of state.weekGraphData) {
+      let wIndex = weekList.indexOf(responseDatum.label);
+      let value = responseDatum.data[state.listLongQuestions[qIndex]];
+      if (value) {
+        data[wIndex] = value;
+      }
     }
+    let label = state.weekGraphQuestions[i];
+    multiData.push({ data, label });
   }
-  return avg;
+  return multiData;
 }
 
-function calculateByWeek(data, weekList, batch, question) {
-  let avg = weekList.map(() => 0);
-  let num = weekList.map(() => 0);
-  for (let answer of data) {
-    let wIndex = weekList.indexOf(answer.week);
-    if (wIndex != -1 && 
-      _batchClearence(answer, batch) && answer.question === question)
-    {
-      let val = answer.answer * 1;
-      num[wIndex]++;
-      avg[wIndex] = ((num[wIndex] - 1) / num[wIndex]) * avg[wIndex] + (1 / num[wIndex]) * val;
+export function ratingGraphData(state) {
+  let multiData = [];
+  let questionList = state.ratingGraphQuestions;
+  let data = questionList.map((q) => 0);
+  for (let i = 0; i < questionList.length; i++) {
+    let qIndex = state.listShortQuestions.indexOf(questionList[i]);
+    let avg = 0;
+    let num = 0;
+    for (let responseDatum of state.ratingGraphData) {
+      let value = responseDatum.data[state.listLongQuestions[qIndex]];
+      if (value) {
+        num++;
+        avg = ((num-1)/num) * avg + (1/num) * value;
+      }
     }
+    data[i] = avg;
   }
-  return avg;
+  let label = `${state.batchFilter} (${state.weekFilter})`;
+  multiData.push({ data, label });
+  return multiData;
 }
 
-
-export function ratingGraphFilter(state) {
-  let bF = state.batchFilter;
-  let wF = state.weekFilter;
-  let multiDataSet = []
-  if (wF !== "All" && bF !== "All") {
-    let data = calculate(state.responseData, state.ratingGraph.labels, bF, wF);
-    let label = `${bF} (${wF})`;
-    multiDataSet.push({ data, label });
-  } else if (wF !== "All" && bF === "All") {
-    for (let bFOption of state.batchFilterOptions.slice(2)) {
-      let data = calculate(state.responseData, state.ratingGraph.labels, bFOption, wF);
-      let label = `${bFOption} (${wF})`;
-      multiDataSet.push({ data, label });
-    }
-  }
-  return multiDataSet;
-}
-
-export function weeklyGraphFilter(state) {
-  let bF = state.batchFilter;
-  let wF = state.weekFilter;
-  let multiDataSet = [];
-  if (wF === "All" && bF !== "All") {
-    for (let question of state.questionList) {
-      let data = calculateByWeek(state.responseData, state.weekFilterOptions.slice(2), bF, question);
-      let label = question;
-      multiDataSet.push({ data, label });
-    }
-  }
-  return multiDataSet;
-}
-
-function calcPace(data, labels, batch, week) {
-  let singledata = [0,0,0];
-  for (let answer of data) {
-    if (answer.question === "Pace of Training" &&
-      _batchClearence(answer, batch) && 
-      _weekClearence(answer, week)) 
-    {
-      let i = labels.indexOf(answer.answer);
-      singledata[i]++;
-    }
-  }
-  return singledata;
-}
-
-export function paceGraphFilter(state) {
-  let bF = state.batchFilter;
-  let wF = state.weekFilter;
-  let multiDataSet = [];
-  if (wF !== "All" && bF !== "All") {
-    let singleData = calcPace(state.responseData, state.paceGraph.labels,bF, wF); 
-    multiDataSet.push(singleData);
-  } else if (wF === "All" && bF !== "All") {
-    for (let wFOption of state.weekFilterOptions.slice(2)) {
-      let singleData = calcPace(state.responseData, state.paceGraph.labels, bF, wFOption);
-      multiDataSet.push(singleData);
-    }
-  } else if (wF !== "All" && bF === "All") {
-    for (let bFOption of state.batchFilterOptions.slice(2)) {
-      let singleData = calcPace(state.responseData, state.paceGraph.labels, bFOption, wF);
-      multiDataSet.push(singleData);
-    } 
-  }
-  return multiDataSet;
-}
-
-function calcMajor(data, labels, batch) {
-  let singledata = [0,0,0];
-  for (let answer of data) {
-    if (answer.question === "Background" &&
-      _batchClearence(answer, batch))
-    {
-      let i = labels.indexOf(answer.answer);
-      singledata[i]++;
-    }
-  }
-  return singledata;
-}
-
-
-export function majorGraphFilter(state) {
-  let bF = state.batchFilter;
-  let multiDataSet = [];
-  if (bF !== "All") {
-    let singleData = calcMajor(state.responseData, state.majorGraph.labels, bF);
-    multiDataSet.push(singleData);
-  } else {
-    for (let bFOption of state.batchFilterOptions.slice(2)) {
-      let singleData = calcMajor(state.responseData, state.majorGraph.labels, bFOption);
-      multiDataSet.push(singleData);
-    } 
-  }
-  return multiDataSet;
-}
-
-export function graphFilter(state){
-  majorGraphFilter(state);
-  paceGraphFilter(state);
-  ratingGraphFilter(state);
-  return state;
-}
