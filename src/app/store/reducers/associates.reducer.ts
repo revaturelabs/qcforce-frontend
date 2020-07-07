@@ -7,6 +7,7 @@ import { AssociatesState , initAssociatesState } from '../states/associates.stat
  * and returns a slice of a state conformed with AssociatesState
  * @param state a slice of state which provided as default once a reducer is invoked
  * @param action set of action of particular type for reducer to process
+ * @returns a state object related to dispathced action type
  */
 export function associatesReducer(
     state: AssociatesState = initAssociatesState,
@@ -36,5 +37,7 @@ export function associatesReducer(
                 data,
             };
         }
+        default:
+            return state;
     }
 }

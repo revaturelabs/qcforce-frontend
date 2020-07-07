@@ -6,14 +6,20 @@ import { map, switchMap, catchError } from 'rxjs/operators';
 
 import * as BatchesActions from '../actions/batches.action';
 import { BatchesService } from '../../services/batches.service';
-
+/**
+ * Effects associated with batch actions
+ */
 @Injectable()
 export class BatchesEffects {
     constructor(
         private actions$: Actions,
         private batchesService: BatchesService
         ) {}
-
+/**
+ * Side effect of Loading Batches
+ * if success => invokes LoadBatchesSucces
+ * if failure => invokes LoadBatchesFail
+ */
     @Effect()
     loadBatches$ = this.actions$.pipe(
         ofType(BatchesActions.LOAD_BATCHES),

@@ -6,7 +6,9 @@ import { map, switchMap, catchError } from 'rxjs/operators';
 
 import * as AssociateActions from '../actions/associates.action';
 import { BatchesService } from '../../services/batches.service';
-
+/**
+ * Effects associated with associates actions
+ */
 @Injectable()
 export class AssociatesEffects {
 
@@ -14,7 +16,11 @@ export class AssociatesEffects {
         private actions$: Actions,
         private batchesService: BatchesService
         ) {}
-
+/**
+ * Side effect of Loading Associates by Batch Name
+ * if success => invokes LoadLoadAssociatesSuccess
+ * if failure => invokes LoadAssociatesFail
+ */
     @Effect()
     loadAssociates$ = this.actions$.pipe(
         ofType<AssociateActions.LoadAssociates>(AssociateActions.LOAD_ASSOCIATES_BY_BATCH_NAME),
