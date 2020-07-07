@@ -1,19 +1,15 @@
 import { Action } from '@ngrx/store';
-
 import { Batch } from '../../models/batch.model';
 /**
  * All action related to unique events that happen to batch model
  */
-
 /**
  * Subset of actions related to loading of batch information
  * and specific name space where the action will dispatched;
  */
-
 export const LOAD_BATCHES = '[Batches] Load Batches';
 export const LOAD_BATCHES_FAIL = '[Batches] Load Batches Fail';
 export const LOAD_BATCHES_SUCCESS = '[Batches] Load Batches Success';
-
 /**
  * Define classes as action creators
  */
@@ -43,5 +39,3 @@ export class LoadBatchesSuccess implements Action {
  * Export all action types related to batch model
  */
 export type BatchesAction = LoadBatches | LoadBatchesFail | LoadBatchesSuccess;
-
-// for fututre development: LOAD_BATCHES_BY_ID

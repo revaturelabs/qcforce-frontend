@@ -1,5 +1,5 @@
 <div class="p-3 ">
-    <h2 class="title ">{{'Revature Training Batches'| uppercase }}</h2>
+    <h2 class="title ">{{ 'Revature Training Batches'| uppercase }}</h2>
     <hr/>
     <table class="table table-striped">
         <thead>
@@ -16,8 +16,8 @@
     
         <tbody>
             <tr *ngFor="let batch of (batches$ | async)">
-                <td routerLink="/batches-details" (click)="saveBatchById(batch.batchId)">{{batch.batchId}}</td>
-                <td>{{batch.batchName}}</td>
+                <td>{{batch.batchId}}</td>
+                <td routerLink="/batches-details" (click)="saveBatchByBatchName(batch.batchName)">{{batch.batchName}}</td>
                 <td>{{batch.startDate | date:'mediumDate'}}</td>
                 <td>{{batch.endDate | date:'mediumDate'}}</td> 
                 <td>{{batch.skill}}</td> 

@@ -1,33 +1,34 @@
-import * as fromBatches from '../actions/batches.action';
-import { BatchesState , initBatchesState } from '../states/batches.state';
+import * as fromAssociates from '../actions/associates.action';
+import { AssociatesState , initAssociatesState } from '../states/associates.state';
 
 /**
- * The reducer function which changes batch state
+ * The reducer function which changes associate state
  * related to action type dispatched from a component
- * and returns a slice of a state conformed with BatchesState
+ * and returns a slice of a state conformed with AssociatesState
  * @param state a slice of state which provided as default once a reducer is invoked
  * @param action set of action of particular type for reducer to process
  * @returns a state object related to dispathced action type
  */
-export function batchesReducer(
-    state: BatchesState = initBatchesState,
-    action: fromBatches.BatchesAction
-): BatchesState {
+export function associatesReducer(
+    state: AssociatesState = initAssociatesState,
+    action: fromAssociates.AssociatesAction
+): AssociatesState {
     switch (action.type) {
-        case fromBatches.LOAD_BATCHES: {
+        case fromAssociates.LOAD_ASSOCIATES_BY_BATCH_NAME: {
             return {
                 ...state,
-                loading: true
+                loading: true,
+                batchName: action.payload
             };
         }
-        case fromBatches.LOAD_BATCHES_FAIL: {
+        case fromAssociates.LOAD_ASSOCIATES_BY_BATCH_NAME_FAIL: {
             return {
                 ...state,
                 loading: false,
                 loaded: false,
             };
         }
-        case fromBatches.LOAD_BATCHES_SUCCESS: {
+        case fromAssociates.LOAD_ASSOCIATES_BY_BATCH_NAME_SUCCESS: {
             const data = action.payload;
             return {
                 ...state,
@@ -40,4 +41,3 @@ export function batchesReducer(
             return state;
     }
 }
-
