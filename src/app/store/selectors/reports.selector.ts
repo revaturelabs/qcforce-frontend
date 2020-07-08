@@ -37,17 +37,18 @@ const _selectRatingGraphData = (state: ReportsState) => {
 
 // tslint:disable-next-line: variable-name
 const _selectPaceGraphData = (state: ReportsState) => {
-  if (state.weekFilter !== 'All') {
-    return {
-      data: Filters.paceGraphData(state),
-      labels: state.paceGraphQuestions
-    };
-  } else {
-    return {
-      data:  Filters.paceGraphDataAll(state),
-      labels: state.paceGraphQuestions
-    };
-  }
+  return {
+    data: Filters.paceGraphData(state),
+    labels: state.paceGraphQuestions
+  };
+  // if (state.weekFilter !== 'All') {
+    
+  // } else {
+  //   return {
+  //     data:  Filters.paceGraphDataAll(state),
+  //     labels: state.paceGraphQuestions
+  //   };
+  // }
 };
 
 const _selectAssessmentGraphData = (state: ReportsState) => {

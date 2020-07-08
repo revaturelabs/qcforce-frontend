@@ -6,8 +6,15 @@ p {
   color: rgb(108, 108, 110);
   font-family: Arial, Helvetica, sans-serif;  
   font-stretch: wider ;
+  padding: 0;
+  margin: 0;
 }
+.pace-chart {
+  /* height: 25rem !important; */  
+  height: 200px !important;
+  width: 800px !important;  
+}
+
 canvas {
-  /* height: 25rem !important; */
-  width: 40vw !important;  
+ 
 }

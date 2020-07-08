@@ -8,7 +8,10 @@ p {
     font-family: Arial, Helvetica, sans-serif;  
     font-stretch: wider ;
 }
-  canvas {    
-    width: 40vw !important;  
+  .assess-chart {    
+    height: 400px !important;
+    width: 300px !important;  
   }
+
+
   

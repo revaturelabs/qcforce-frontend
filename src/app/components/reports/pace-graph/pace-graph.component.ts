@@ -49,7 +49,7 @@ export class PaceGraphComponent implements OnInit {
       ],
       yAxes: [
         {
-          display: true,
+          display: false,
           ticks: {
             fontSize: 18
           },
@@ -58,7 +58,7 @@ export class PaceGraphComponent implements OnInit {
     },
   };
   public paceChartType: ChartType = 'horizontalBar';
-  public paceChartLegend = true;
+  public paceChartLegend = false;
 
   public paceChartData: ChartDataSets[];
 

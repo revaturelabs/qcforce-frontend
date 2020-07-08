@@ -1,12 +1,14 @@
-<div class="p-3 border text-center m-2 assess-chart">
+<div class="p-3 border text-center m-2">
     <p class="title">One on One/Assessment Completion</p>
-    <canvas baseChart 
-      [colors]="pieChartColor"
-      [data]="pieChartData" 
-      [labels]="pieChartLabels" 
-      [chartType]="pieChartType"
-      [options]="pieChartOptions"
-      [plugins]="pieChartPlugins"
-      [legend]="pieChartLegend">
-    </canvas>
+    <div class="assess-chart">
+      <canvas baseChart 
+        [colors]="pieChartColor"
+        [data]="pieChartData" 
+        [labels]="pieChartLabels" 
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [plugins]="pieChartPlugins"
+        [legend]="pieChartLegend">
+      </canvas>
+    </div>
   </div>

@@ -1,14 +1,15 @@
-<div class="p-3 border text-center m-2 pace-chart">
-  <p class="title">Pace of Training</p>  
-            
-    <canvas baseChart
+<div class="p-3 border text-center m-2">
+  <p class="title">Pace of Training</p>              
+    <div class="pace-chart">
+        <canvas baseChart 
         [options]="paceChartOptions"
         [datasets]="paceChartData"
         [labels]="paceChartLabels"
         [colors]="paceChartColor"
         [legend]="paceChartLegend"
         [chartType]="paceChartType">
-    </canvas>
+      </canvas>
+    </div>  
 
 </div>
 
