@@ -13,6 +13,6 @@ export class SurveyQuestionsComponent implements OnInit {
   }
 
   sendSyncReq() {
-    this.surveyService.postSync();
+    this.surveyService.postSync().subscribe();
   }
 }

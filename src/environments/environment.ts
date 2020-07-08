@@ -7,29 +7,34 @@
    * Survey Service: http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087;
    * ec2-13-59-82-196.us-east-2.compute.amazonaws.com
 13.59.82.196
+http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SyncService/sync
+http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/list
+
+http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/TrainingService/associate/active-emails
+
 
    */
 
 export const environment = {
   production: false,
   // =============Angular URLS==============================
-  getBatchUrl: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/list',
-  getWeeksUrl: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/weeks',
-  getBatchAllWeeks: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/chartdatabatch/name/',
-  getOneBatchOneWeek: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/chartdatabatch/',
-  getAvgWeekBatch: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/chartdatabatch/all',
+  getBatchUrl: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/list',
+  getWeeksUrl: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/weeks',
+  getBatchAllWeeks: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/chartdatabatch/name/',
+  getOneBatchOneWeek: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/chartdatabatch/',
+  getAvgWeekBatch: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/chartdatabatch/all',
   getAnswersUrl: 'http://localhost:3000/answers',
-  getWeekAllUrl: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/chartdatabatch/week/',
+  getWeekAllUrl: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/chartdatabatch/week/',
 
   // =============Training Service URLS==============================
-  
-  getBatchListUrl: 'http://ec2-18-219-219-28.us-east-2.compute.amazonaws.com:8086/batch/', // 'http://localhost:3100/batches',
+
+  getBatchListUrl: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/TrainingService/batch/',
   getSurveysByBatchIdUrl: 'http://localhost:3001/surveys',
-  getBatchByBatchName: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087',
-  getAssociateByBatchName: 'http://ec2-18-219-219-28.us-east-2.compute.amazonaws.com:8086/associate/batch-name/',
+  getBatchByBatchName: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService',
+  getAssociateByBatchName: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/TrainingService/associate/batch-name/',
 
  // ==============Sync Service===============================
- postSyncService: 'http://ec2-3-23-215-133.us-east-2.compute.amazonaws.com:8085/sync',
+ postSyncService: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SyncService/sync',
 };
 
 /*

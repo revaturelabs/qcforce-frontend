@@ -11,6 +11,6 @@ export class SurveysService {
   constructor(private http: HttpClient) { }
 
   postSync() {
-    this.http.post(environment.postSyncService, '');
+    return this.http.post(environment.postSyncService, '');
   }
 }
