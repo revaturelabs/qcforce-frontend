@@ -32,7 +32,7 @@ export class AssessmentGraphComponent implements OnInit {
   public pieChartPlugins = [];
   public pieChartColor = [
     {
-      backgroundColor: ['teal', 'rgba(248, 74, 11, 1)' ],
+      backgroundColor: [' rgb(242, 105, 38)', 'rgb(108, 108, 110)' ],
     }
   ];
 

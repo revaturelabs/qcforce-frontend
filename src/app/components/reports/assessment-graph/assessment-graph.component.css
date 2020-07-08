@@ -2,10 +2,13 @@ p {
     font-size: 1.25rem;
   }
   
-  /* .pace-chart {
-    width: 40wv;
-  } */
+  .title {
+    text-align: center;
+    color: rgb(108, 108, 110);
+    font-family: Arial, Helvetica, sans-serif;  
+    font-stretch: wider ;
+}
   canvas {
-    width: 40rem !important;  
+    width: 20rem !important;  
   }
   

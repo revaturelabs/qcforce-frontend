@@ -1,7 +1,7 @@
 
 
 <div class="d-flex justify-content-lg-center p-2" >
-  <h6 class="py-2 pr-3 m-0">{{ 'Batch:' | uppercase }}</h6>
+  <h6 class="py-2 pr-3 m-0 title" >{{ 'Batch:' | uppercase }}</h6>
   <ul class="nav nav-pills flex-nowrap d-flex">
     <li class="nav-item text-nowrap" *ngFor="let option of batchFilterOptions">
       <p class="nav-link" [class.active]="option === batchFilter" (click)="batchFilterClick(option)">{{ option }}</p>
@@ -9,7 +9,7 @@
   </ul>
 </div>
 <div class="d-flex justify-content-lg-center p-2">
-  <h6 class="py-2 pr-3 m-0">{{ 'Week:' | uppercase }}</h6>
+  <h6 class="py-2 pr-3 m-0 title">{{ 'Week:' | uppercase }}</h6>
   <ul class="nav nav-pills flex-nowrap d-flex">
     <li class="nav-item text-nowrap" *ngFor="let option of weekFilterOptions">
       <p class="nav-link" [class.active]="option === weekFilter" (click)="weekFilterClick(option)">{{ option }}</p>
