@@ -4,9 +4,9 @@ import { SurveysState } from '../states';
 
 export const selectSurveyState = (state) => state.surveys;
 
-const _selectSubnavSelected = (state : SurveysState) => state.subnavSelected;
+// const _selectSubnavSelected = (state : SurveysState) => state.subnavSelected;
 
-export const selectSubnavSelected = createSelector(selectSurveyState, _selectSubnavSelected);
+// export const selectSubnavSelected = createSelector(selectSurveyState, _selectSubnavSelected);
 
 /*
 export const selectSurveysLoading = (state: SurveysState) => state.loading;

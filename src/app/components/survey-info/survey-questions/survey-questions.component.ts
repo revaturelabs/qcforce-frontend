@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SurveysService } from '../../../services/surveys.service';
 @Component({
   selector: 'app-survey-questions',
   templateUrl: './survey-questions.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyQuestionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private surveyService: SurveysService) { }
 
   ngOnInit(): void {
   }
 
+  sendSyncReq() {
+    this.surveyService.postSync();
+  }
 }

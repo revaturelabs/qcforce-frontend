@@ -13,6 +13,8 @@ export interface ReportsState {
   // questionMapping: object;
   paceGraphData: any[];
   paceGraphQuestions: string[];
+  assessGraphData: any[];
+  assessGraphQuestions: string[];
 }
 
 export const initReportsState: ReportsState = {
@@ -20,7 +22,7 @@ export const initReportsState: ReportsState = {
   batchFilterOptions: [ 'Average' ],
   batchFilter: 'Average',
   weekFilterOptions: ['All', 'Average'],
-  weekFilter: 'All',
+  weekFilter: 'Average',
 
   weekGraphData: [],
   weekGraphQuestions: [
@@ -49,6 +51,11 @@ export const initReportsState: ReportsState = {
   paceGraphData: [],
   paceGraphQuestions: [
     'Pace of Training',
+  ],
+
+  assessGraphData: [],
+  assessGraphQuestions: [
+    'One-to-One/Online Assessment'
   ],
 
   listShortQuestions: [

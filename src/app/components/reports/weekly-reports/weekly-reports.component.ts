@@ -16,6 +16,9 @@ export class WeeklyReportsComponent implements OnInit {
   public weekChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+     },
     legend: {
       labels: {
         fontSize: 18

@@ -14,9 +14,9 @@ export class SurveyViewComponent implements OnInit {
   constructor(private store : Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
-    this.store.select(fromStore.selectSubnavSelected).subscribe((navSelected) => {
-      this.subMenuSelected = navSelected;
-    })
+    // this.store.select(fromStore.selectSubnavSelected).subscribe((navSelected) => {
+    //   this.subMenuSelected = navSelected;
+    // })
   }
 
 }

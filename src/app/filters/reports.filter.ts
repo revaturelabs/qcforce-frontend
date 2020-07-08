@@ -53,7 +53,7 @@ export function paceGraphData(state) {
   const multiData = [];
   const questionList = state.paceGraphQuestions;
   const data = questionList.map((q) => 0);
-  console.log(state.paceGraphQuestions);
+  // console.log(state.paceGraphQuestions);
   for (let i = 0; i < questionList.length; i++) {
     const qIndex = state.listShortQuestions.indexOf(questionList[i]);
     let avg = 0;
@@ -61,7 +61,7 @@ export function paceGraphData(state) {
     // console.log(state.paceGraphData); // <===================
     for (const responseDatum of state.paceGraphData) {
       const value = responseDatum.data[state.listLongQuestions[qIndex]];
-      console.log(value); // <===================
+      // console.log(value); // <===================
       if (value) {
         num++;
         avg = ((num - 1) / num) * avg + (1 / num) * value;
@@ -75,10 +75,11 @@ export function paceGraphData(state) {
 
 }
 
+
 export function paceGraphDataAll(state) {
   const multiData = [];
   const questionList = state.paceGraphQuestions;
-  console.log(state.paceGraphQuestions);
+  // console.log(state.paceGraphQuestions);
   for (let i = 0; i < questionList.length; i++) {
     const qIndex = state.listShortQuestions.indexOf(questionList[i]);
     for (const responseDatum of state.paceGraphData) {
@@ -93,6 +94,27 @@ export function paceGraphDataAll(state) {
     }
   }
   return multiData;
+
+}
+
+export function assessGraphData(state) {
+  let avg = 0;
+  let num = 0;
+  for (const responseDatum of state.assessGraphData) {
+    const qIndex = state.listShortQuestions.indexOf(state.assessGraphQuestions[0]);
+    const value = responseDatum.data[state.listLongQuestions[qIndex]];
+    // console.log(responseDatum);
+    // console.log(state.listLongQuestions[qIndex]);
+    if (value) {
+      num++;
+      avg = ((num - 1) / num) * avg + (1 / num) * value;
+    }
+  }
+
+  return [avg, 1 - avg];
+
+
+
 
 }
 

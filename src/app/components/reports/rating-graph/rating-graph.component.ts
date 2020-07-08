@@ -69,12 +69,12 @@ export class RatingGraphComponent implements OnInit {
     'rgba(248, 126, 11, 1)', // orange
     'rgba(248, 176, 11, 1)', // orange-yellow
     'rgba(248, 206, 11, 1)', // yellow-orange
-    'rgba(248, 231, 5, 1)', // yellow
-    'rgba(183, 247, 7, 1)', // yellow-green
-    'rgba(123, 247, 7, 1)', // green-yellow
-    'rgba(93, 247, 7, 1)', // green-yellow-green
-    'rgba(63, 190, 7, 1)', // green-green-yellow
-    'rgba(34, 175, 40, 1)', // green-green
+    'rgba(198, 200, 25, 1)', // yellow
+    'rgba(141, 170, 7, 1)', // yellow-green
+    'rgba(123, 153, 17, 1)', // green-yellow
+    'rgba(103, 147, 17, 1)', // green-yellow-green
+    'rgba(93, 155, 15, 1)', // green-green-yellow
+    'rgba(68, 173, 15, 1)', // green-green
     'rgba(15, 155, 15, 1)', // dark-green
   ];
   colorIndex = 0;

@@ -15,21 +15,36 @@ export class AssessmentGraphComponent implements OnInit {
    // Pie
    public pieChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+     },
+    legend: {
+      labels: {
+        fontSize: 18
+      }
+    },
   };
   public pieChartLabels: Label[];
-  public pieChartData: SingleDataSet = [ 20, 100];
+  public pieChartData: SingleDataSet;
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
   public pieChartColor = [
     {
-      backgroundColor: ['red', 'blue' ],
+      backgroundColor: ['teal', 'rgba(248, 74, 11, 1)' ],
     }
   ];
 
-  constructor() { }
+  constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
+    this.store.select(fromStore.selectAssessmentGraphData).subscribe((graph) => {
+      if (graph) {
+        this.pieChartData = graph.data;
+        this.pieChartLabels = graph.labels;
+      }
+    });
   }
 
 }

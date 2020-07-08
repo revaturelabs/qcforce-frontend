@@ -16,14 +16,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { SurveyCreateComponent } from './components/survey-info/survey-create/survey-create.component';
-import { SurveyManageComponent } from './components/survey-info/survey-manage/survey-manage.component';
-import { SurveyScheduleComponent } from './components/survey-info/survey-schedule/survey-schedule.component';
+// import { SurveyCreateComponent } from './components/survey-info/survey-create/survey-create.component';
+// import { SurveyManageComponent } from './components/survey-info/survey-manage/survey-manage.component';
+// import { SurveyScheduleComponent } from './components/survey-info/survey-schedule/survey-schedule.component';
 import { BatchesDetailsComponent } from './components/batches/batches-details/batches-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { WeeklyReportsComponent } from './components/reports/weekly-reports//weekly-reports.component';
-import { SurveyHomeComponent } from './components/survey-info/survey-home/survey-home.component';
+// import { SurveyHomeComponent } from './components/survey-info/survey-home/survey-home.component';
 import { BatchReportsComponent } from './components/reports/batch-reports/batch-reports.component';
 import { BatchListComponent } from './components/batches/batch-list/batch-list.component';
 import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
@@ -32,7 +32,7 @@ import { RatingGraphComponent } from './components/reports/rating-graph/rating-g
 import { PaceGraphComponent } from './components/reports/pace-graph/pace-graph.component';
 import { MajorGraphComponent } from './components/reports/major-graph/major-graph.component';
 import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
-import { SubnavItemsComponent } from './components/survey-info/subnav-items/subnav-items.component';
+// import { SubnavItemsComponent } from './components/survey-info/subnav-items/subnav-items.component';
 import { SurveyQuestionsComponent } from './components/survey-info/survey-questions/survey-questions.component';
 
 /*styling imports*/
@@ -64,10 +64,10 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    SurveyCreateComponent,
-    SurveyManageComponent,
-    SurveyScheduleComponent,
-    SurveyHomeComponent,
+    // SurveyCreateComponent,
+    // SurveyManageComponent,
+    // SurveyScheduleComponent,
+    // SurveyHomeComponent,
     BatchListComponent,
     BatchesDetailsComponent,
     DashboardComponent,
@@ -80,7 +80,7 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
     PaceGraphComponent,
     MajorGraphComponent,
     SurveyViewComponent,
-    SubnavItemsComponent,
+    // SubnavItemsComponent,
     SurveyQuestionsComponent,
     AssessmentGraphComponent,
   ],

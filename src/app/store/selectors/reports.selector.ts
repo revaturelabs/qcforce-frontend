@@ -50,9 +50,17 @@ const _selectPaceGraphData = (state: ReportsState) => {
   }
 };
 
+const _selectAssessmentGraphData = (state: ReportsState) => {
+  return {
+    data: Filters.assessGraphData(state),
+    labels: ['Yes', 'No']
+  }
+}
+
 export const selectBatchFilter = createSelector(selectReportsState, _selectBatchFilter);
 export const selectWeekFilter = createSelector(selectReportsState, _selectWeekFilter);
 export const selectTitle = createSelector(selectReportsState, _selectTitle);
 export const selectWeeklyGraphData = createSelector(selectReportsState, _selectWeeklyGraphData);
 export const selectRatingGraphData = createSelector(selectReportsState, _selectRatingGraphData);
 export const selectPaceGraphData = createSelector(selectReportsState, _selectPaceGraphData);
+export const selectAssessmentGraphData = createSelector(selectReportsState, _selectAssessmentGraphData);

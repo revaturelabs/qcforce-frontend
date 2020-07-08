@@ -19,71 +19,103 @@ export class PaceGraphComponent implements OnInit {
     animation: {
       duration: 0,
      },
+    legend: {
+      labels: {
+        fontSize: 18
+      }
+    },
     scales: {
-      yAxes: [{
-        ticks: {
-          min: -1,
-          max: 1
-        }
-      }]
-    }
+      xAxes: [
+        {
+          display: true,
+          ticks: {
+            beginAtZero: false,
+            min: -1,
+            max: 1,
+            callback: (value, index, values) => {
+              if (value === 1) {
+                return 'Too Fast';
+              } else if (value === -1) {
+                return 'Too Slow';
+              } else if (value === 0) {
+                return 'Good';
+              }
+              return value;
+            },
+            stepSize: 1,
+            fontSize: 18
+          },
+        },
+      ],
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            fontSize: 18
+          },
+        },
+      ],
+    },
   };
   public paceChartType: ChartType = 'horizontalBar';
   public paceChartLegend = true;
 
   public paceChartData: ChartDataSets[];
 
-  public paceChartLabels: string[];
+  public paceChartLabels: string[] = ['Too Fast', 'Good', 'Too Slow'];
 
   public paceChartColor: Color[] = [
-
-    { backgroundColor: 'orange' },
+    // { backgroundColor: 'red' },
+    // { backgroundColor: 'blue' },
+    // { backgroundColor: 'green' },
+    // { backgroundColor: 'orange' },
+    // { backgroundColor: 'gray' },
+    // { backgroundColor: 'pink' },
+    // { backgroundColor: 'brown' },
+    // { backgroundColor: 'black' },
   ];
-// ======================replace==================
-  public chartLabels;
-
-  public chartData;
-
-  public chartColor: Color[] = [
-    {
-      borderColor: 'gray',
-      backgroundColor: [
-        'rgba(200, 255, 0, 1)',
-        'rgba(100, 200, 100, 1)',
-        'rgba(255, 70, 70, 1)',
-      ]
-    },
-    {
-      borderColor: 'gray',
-      backgroundColor: [
-        'rgba(255, 70, 70, 1)',
-        'rgba(200, 255, 0, 1)',
-        'rgba(100, 200, 100, 1)',
-      ]
-    },
-     {
-      borderColor: 'gray',
-      backgroundColor: [
-        'rgba(255, 70, 70, 1)',
-        'rgba(200, 255, 0, 1)',
-        'rgba(100, 200, 100, 1)',
-      ]
-    },
+  colors = [
+    'rgba(68, 173, 15, 1)', // green-green
+    'rgba(93, 155, 15, 1)', // green-green-yellow
+    'rgba(123, 153, 17, 1)', // green-yellow
+    'rgba(141, 170, 7, 1)', // yellow-green
+    'rgba(198, 200, 25, 1)', // yellow
+    'rgba(248, 206, 11, 1)', // yellow-orange
+    'rgba(248, 176, 11, 1)', // orange-yellow
+    'rgba(248, 126, 11, 1)', // orange
+    'rgba(248, 74, 11, 1)', // red-orange
+    'rgba(248, 11, 15, 1)', // red
   ];
-
-  public chartLegend = true;
-
-  public chartType = 'doughnut';
-
+  colorIndex = 0;
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.store.select(fromStore.selectPaceGraphData).subscribe((graph) => {
     //  console.log(graph.data);
-      if(graph) {
+      if (graph) {
         this.paceChartData = cloneDeep(graph.data);
         this.paceChartLabels = cloneDeep(graph.labels);
+        if (this.paceChartData.length > 0) {
+          this.paceChartColor = this.getChartColor(this.paceChartData[0].data);
+        }
       }
     });
+  }
+
+  getChartColor(data) {
+    const backgroundColor = data.map((datum) => {
+      return this.colors[this.getColorGradient(datum)];
+    });
+    return [{backgroundColor}];
+  }
+    // -1 to 1 range of datum
+    // .10 color changes
+    // 20/5
+  getColorGradient(datum) {
+    const index = Math.round(Math.abs(datum) * this.colors.length);
+    if (index === this.colors.length) {
+      return index;
+    }
+    return index - 1;
   }
 }
