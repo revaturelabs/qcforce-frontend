@@ -2,10 +2,15 @@ p {
   font-size: 1.25rem;
 }
 
-.rating-chart {
+/* .rating-chart {
   margin: 10px 0 30px 0;
   height: 50vh; 
   width: 80vw;
+} */
+canvas {
+  margin: 10px 0 30px 0;
+  height: 50vh !important; 
+  width: 80vw !important;
 }
 
 
