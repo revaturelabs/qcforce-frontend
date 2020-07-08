@@ -1,0 +1,1028 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>qcforce-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">qcforce-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RatingGraphComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/reports/rating-graph/rating-graph.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-rating-graph</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./rating-graph.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./rating-graph.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartColor">chartColor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartData">chartData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartLabels">chartLabels</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartLegend">chartLegend</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartOptions">chartOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartPlugins">chartPlugins</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartType">chartType</a>
+                            </li>
+                            <li>
+                                <a href="#colorIndex">colorIndex</a>
+                            </li>
+                            <li>
+                                <a href="#colors">colors</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getChartColor">getChartColor</a>
+                            </li>
+                            <li>
+                                <a href="#getColorGradient">getColorGradient</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html">Store<fromStore.AppState></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;fromStore.AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChartColor"></a>
+                    <span class="name">
+                        <b>
+                            getChartColor
+                        </b>
+                        <a href="#getChartColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChartColor(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColorGradient"></a>
+                    <span class="name">
+                        <b>
+                            getColorGradient
+                        </b>
+                        <a href="#getColorGradient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getColorGradient(datum)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>datum</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartColor"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartColor</b>
+                            <a href="#chartColor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Color[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      borderColor: &#x27;black&#x27;,
+      backgroundColor: [
+        // &#x27;rgba(248, 11, 15, 1)&#x27;,
+        // &#x27;orange&#x27;,
+        // &#x27;yellow&#x27;,
+        // &#x27;yellowOrange&#x27;,
+        // &#x27;rgba(200, 100, 000,1)&#x27;,
+        // &#x27;rgba(100, 255, 150,1)&#x27;,
+        // &#x27;rgba(100, 255, 150,1)&#x27;,
+        // &#x27;rgba(100, 255, 000,1)&#x27;,
+      ],
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartData</b>
+                            <a href="#chartData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartLabels"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartLabels</b>
+                            <a href="#chartLabels"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartLegend"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartLegend</b>
+                            <a href="#chartLegend"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartOptions"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartOptions</b>
+                            <a href="#chartOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+     },
+    legend: {
+      labels: {
+        fontSize: 18
+      }
+    },
+    scales: {
+      yAxes: [
+        {
+            ticks: {
+            min: 0,
+            max: 5,
+            fontSize: 18
+          },
+        },
+      ],
+      xAxes: [
+        {
+            ticks: {
+            fontSize: 18
+          },
+        },
+      ],
+    },
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartPlugins"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartPlugins</b>
+                            <a href="#chartPlugins"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartType"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chartType</b>
+                            <a href="#chartType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;bar&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colorIndex"></a>
+                        <span class="name">
+                            <b>
+                            colorIndex</b>
+                            <a href="#colorIndex"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colors"></a>
+                        <span class="name">
+                            <b>
+                            colors</b>
+                            <a href="#colors"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    &#x27;rgba(65, 5, 5, 1)&#x27;, // darkest-red
+    &#x27;rgba(165, 13, 15, 1)&#x27;, // dark-red
+    &#x27;rgba(248, 11, 15, 1)&#x27;, // red
+    &#x27;rgba(248, 74, 11, 1)&#x27;, // red-orange
+    &#x27;rgba(248, 126, 11, 1)&#x27;, // orange
+    &#x27;rgba(248, 176, 11, 1)&#x27;, // orange-yellow
+    &#x27;rgba(248, 206, 11, 1)&#x27;, // yellow-orange
+    &#x27;rgba(198, 200, 25, 1)&#x27;, // yellow
+    &#x27;rgba(141, 170, 7, 1)&#x27;, // yellow-green
+    &#x27;rgba(123, 153, 17, 1)&#x27;, // green-yellow
+    &#x27;rgba(103, 147, 17, 1)&#x27;, // green-yellow-green
+    &#x27;rgba(93, 155, 15, 1)&#x27;, // green-green-yellow
+    &#x27;rgba(68, 173, 15, 1)&#x27;, // green-green
+    &#x27;rgba(15, 155, 15, 1)&#x27;, // dark-green
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/components/reports/rating-graph/rating-graph.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Color, Label, MultiDataSet } from &#x27;ng2-charts&#x27;;
+import { ChartDataSets, ChartOptions } from &#x27;chart.js&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import * as fromStore from &#x27;src/app/store&#x27;;
+import { cloneDeep } from &#x27;lodash&#x27;;
+
+@Component({
+  selector: &#x27;app-rating-graph&#x27;,
+  templateUrl: &#x27;./rating-graph.component.html&#x27;,
+  styleUrls: [&#x27;./rating-graph.component.css&#x27;]
+})
+export class RatingGraphComponent implements OnInit {
+
+  public chartData;
+
+  public chartLabels;
+
+  public chartOptions: any  &#x3D; {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+      duration: 0,
+     },
+    legend: {
+      labels: {
+        fontSize: 18
+      }
+    },
+    scales: {
+      yAxes: [
+        {
+            ticks: {
+            min: 0,
+            max: 5,
+            fontSize: 18
+          },
+        },
+      ],
+      xAxes: [
+        {
+            ticks: {
+            fontSize: 18
+          },
+        },
+      ],
+    },
+  };
+  public chartColor: Color[] &#x3D; [
+    {
+      borderColor: &#x27;black&#x27;,
+      backgroundColor: [
+        // &#x27;rgba(248, 11, 15, 1)&#x27;,
+        // &#x27;orange&#x27;,
+        // &#x27;yellow&#x27;,
+        // &#x27;yellowOrange&#x27;,
+        // &#x27;rgba(200, 100, 000,1)&#x27;,
+        // &#x27;rgba(100, 255, 150,1)&#x27;,
+        // &#x27;rgba(100, 255, 150,1)&#x27;,
+        // &#x27;rgba(100, 255, 000,1)&#x27;,
+      ],
+    },
+  ];
+  colors &#x3D; [
+    &#x27;rgba(65, 5, 5, 1)&#x27;, // darkest-red
+    &#x27;rgba(165, 13, 15, 1)&#x27;, // dark-red
+    &#x27;rgba(248, 11, 15, 1)&#x27;, // red
+    &#x27;rgba(248, 74, 11, 1)&#x27;, // red-orange
+    &#x27;rgba(248, 126, 11, 1)&#x27;, // orange
+    &#x27;rgba(248, 176, 11, 1)&#x27;, // orange-yellow
+    &#x27;rgba(248, 206, 11, 1)&#x27;, // yellow-orange
+    &#x27;rgba(198, 200, 25, 1)&#x27;, // yellow
+    &#x27;rgba(141, 170, 7, 1)&#x27;, // yellow-green
+    &#x27;rgba(123, 153, 17, 1)&#x27;, // green-yellow
+    &#x27;rgba(103, 147, 17, 1)&#x27;, // green-yellow-green
+    &#x27;rgba(93, 155, 15, 1)&#x27;, // green-green-yellow
+    &#x27;rgba(68, 173, 15, 1)&#x27;, // green-green
+    &#x27;rgba(15, 155, 15, 1)&#x27;, // dark-green
+  ];
+  colorIndex &#x3D; 0;
+
+  public chartLegend &#x3D; false;
+  public chartType &#x3D; &#x27;bar&#x27;;
+  public chartPlugins &#x3D; [];
+
+  constructor(private store: Store&lt;fromStore.AppState&gt;) { }
+
+  ngOnInit(): void {
+
+    this.store.select(fromStore.selectRatingGraphData).subscribe((graph) &#x3D;&gt; {
+      if (graph) {
+        this.chartData &#x3D; cloneDeep(graph.data);
+        this.chartLabels &#x3D; cloneDeep(graph.labels);
+        if (this.chartData.length &gt; 0) {
+          this.chartColor &#x3D; this.getChartColor(this.chartData[0].data);
+        }
+      }
+    });
+  }
+
+  getChartColor(data) {
+    const backgroundColor &#x3D; data.map((datum) &#x3D;&gt; {
+      return this.colors[this.getColorGradient(datum)];
+    });
+
+    return [{backgroundColor}];
+  }
+    // 1-5 range of datum
+    // .25 color changes
+    // 20/5
+  getColorGradient(datum) {
+    const index &#x3D; Math.round(((datum - 1) / 4) * this.colors.length);
+    if (index &#x3D;&#x3D;&#x3D; this.colors.length) {
+      return index - 1;
+    }
+
+    return index;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-3 pr-5 border text-center rating-chart&quot;&gt;
+    &lt;p class&#x3D;&quot;title&quot;&gt;&lt;/p&gt;
+    &lt;canvas baseChart
+      [datasets]&#x3D;&quot;chartData&quot;
+      [labels]&#x3D;&quot;chartLabels&quot;
+      [options]&#x3D;&quot;chartOptions&quot;
+      [colors]&#x3D;&quot;chartColor&quot;
+      [legend]&#x3D;&quot;chartLegend&quot;
+      [chartType]&#x3D;&quot;chartType&quot;
+      [plugins]&#x3D;&quot;chartPlugins&quot;
+      &gt;
+    &lt;/canvas&gt;
+&lt;/div&gt; 
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./rating-graph.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">p {
+  font-size: 1.25rem;
+}
+.title {
+  text-align: center;
+  color: rgb(108, 108, 110);
+  font-family: Arial, Helvetica, sans-serif;  
+  font-stretch: wider ;
+}
+canvas {
+  margin: 10px 0 30px 0;
+  height: 50vh !important; 
+  width: 80vw !important;
+}
+
+
+@media (min-width: 768px) {
+    canvas {
+      width: 80vw;
+      
+    }  
+  }
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="p-3 pr-5 border text-center rating-chart">    <p class="title"></p>    <canvas baseChart      [datasets]="chartData"      [labels]="chartLabels"      [options]="chartOptions"      [colors]="chartColor"      [legend]="chartLegend"      [chartType]="chartType"      [plugins]="chartPlugins"      >    </canvas></div> </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentGraphComponent', 'selector': 'app-assessment-graph'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FilterItemsComponent', 'selector': 'app-filter-items'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'MajorGraphComponent', 'selector': 'app-major-graph'},{'name': 'PaceGraphComponent', 'selector': 'app-pace-graph'},{'name': 'RatingGraphComponent', 'selector': 'app-rating-graph'},{'name': 'ReportsViewComponent', 'selector': 'app-reports-view'},{'name': 'SubnavItemsComponent', 'selector': 'app-subnav-items'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyQuestionsComponent', 'selector': 'app-survey-questions'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'},{'name': 'SurveyViewComponent', 'selector': 'app-survey-view'},{'name': 'WeeklyReportsComponent', 'selector': 'app-weekly-reports'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RatingGraphComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RatingGraphComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/components/survey-info/survey-manage/survey-manage.component.ts</code>
+    <code>unused-code/survey-manage/survey-manage.component.ts</code>
 </p>
 
 
@@ -121,6 +121,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#minDate">minDate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -156,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/survey-info/survey-manage/survey-manage.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">unused-code/survey-manage/survey-manage.component.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -195,8 +209,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/components/survey-info/survey-manage/survey-manage.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">unused-code/survey-manage/survey-manage.component.ts:14</a></div>
                 </td>
             </tr>
 
@@ -213,6 +227,33 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="minDate"></a>
+                        <span class="name">
+                            <b>
+                            minDate</b>
+                            <a href="#minDate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">unused-code/survey-manage/survey-manage.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
@@ -227,9 +268,12 @@
 })
 export class SurveyManageComponent implements OnInit {
 
+  minDate;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.minDate &#x3D; new Date();
   }
 
 }
@@ -238,9 +282,9 @@ export class SurveyManageComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-3&quot;&gt; 
-    &lt;h2 class&#x3D;&quot;title  &quot;&gt;{{&#x27; manage Surveys&#x27;| uppercase }}&lt;/h2&gt;&lt;hr&gt;
-   
-  
+    &lt;h2 class&#x3D;&quot;title&quot;&gt;{{&#x27; manage Surveys&#x27;| uppercase }}&lt;/h2&gt;&lt;hr&gt;
+    &lt;div class&#x3D;&quot;d-md-flex&quot;&gt; 
+    &lt;!--  
     &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
         &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
           &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Surveys&lt;/label&gt;
@@ -252,23 +296,25 @@ export class SurveyManageComponent implements OnInit {
           &lt;option value&#x3D;&quot;3&quot;&gt;Survey 3&lt;/option&gt;
         &lt;/select&gt;
       &lt;/div&gt;
-      &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+    --&gt;
+      
+      &lt;div class&#x3D;&quot;input-group p-3&quot;&gt;
         &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
           &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Batch&lt;/label&gt;
         &lt;/div&gt;
         &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
-          &lt;option selected&gt;Choose...&lt;/option&gt;
+          &lt;option selected disabled&gt;Choose...&lt;/option&gt;
           &lt;option value&#x3D;&quot;1&quot;&gt;CUNY04-JAVA&lt;/option&gt;
           &lt;option value&#x3D;&quot;2&quot;&gt;CUNY14_MEAN&lt;/option&gt;
           &lt;option value&#x3D;&quot;3&quot;&gt;CUNY25_SF&lt;/option&gt;
         &lt;/select&gt;
       &lt;/div&gt;
     
-      &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;
+      &lt;div class&#x3D;&quot;input-group p-3&quot;&gt;
         &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
-          &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect01&quot;&gt;Week&lt;/label&gt;
+          &lt;label class&#x3D;&quot;input-group-text&quot; for&#x3D;&quot;inputGroupSelect02&quot;&gt;Week&lt;/label&gt;
         &lt;/div&gt;
-        &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect01&quot;&gt;
+        &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputGroupSelect02&quot;&gt;
           &lt;option selected&gt;Choose...&lt;/option&gt;
           &lt;option value&#x3D;&quot;1&quot;&gt;Week 1&lt;/option&gt;
           &lt;option value&#x3D;&quot;2&quot;&gt;Week 2&lt;/option&gt;
@@ -277,11 +323,7 @@ export class SurveyManageComponent implements OnInit {
           &lt;option value&#x3D;&quot;5&quot;&gt;Week 5&lt;/option&gt;          
         &lt;/select&gt;
       &lt;/div&gt;
-    
-     
-    
-    
-   
+  &lt;/div&gt;
 &lt;/div&gt;
 
 </code></pre>
@@ -347,8 +389,8 @@ li {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-3">     <h2 class="title  ">{{\' manage Surveys\'| uppercase }}</h2><hr>         <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Surveys</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">Survey 1</option>          <option value="2">Survey 2</option>          <option value="3">Survey 3</option>        </select>      </div>      <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Batch</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">CUNY04-JAVA</option>          <option value="2">CUNY14_MEAN</option>          <option value="3">CUNY25_SF</option>        </select>      </div>          <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Week</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">Week 1</option>          <option value="2">Week 2</option>          <option value="3">Week 3</option>          <option value="4">Week 4</option>          <option value="5">Week 5</option>                  </select>      </div>                    </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'CurriculumReportsComponent', 'selector': 'app-curriculum-reports'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'},{'name': 'TrainerReportsComponent', 'selector': 'app-trainer-reports'},{'name': 'WeeklyReportsComponent', 'selector': 'app-weekly-reports'}];
+        var COMPONENT_TEMPLATE = '<div><div class="p-3">     <h2 class="title">{{\' manage Surveys\'| uppercase }}</h2><hr>    <div class="d-md-flex">     <!--      <div class="input-group mb-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Surveys</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected>Choose...</option>          <option value="1">Survey 1</option>          <option value="2">Survey 2</option>          <option value="3">Survey 3</option>        </select>      </div>    -->            <div class="input-group p-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect01">Batch</label>        </div>        <select class="custom-select" id="inputGroupSelect01">          <option selected disabled>Choose...</option>          <option value="1">CUNY04-JAVA</option>          <option value="2">CUNY14_MEAN</option>          <option value="3">CUNY25_SF</option>        </select>      </div>          <div class="input-group p-3">        <div class="input-group-prepend">          <label class="input-group-text" for="inputGroupSelect02">Week</label>        </div>        <select class="custom-select" id="inputGroupSelect02">          <option selected>Choose...</option>          <option value="1">Week 1</option>          <option value="2">Week 2</option>          <option value="3">Week 3</option>          <option value="4">Week 4</option>          <option value="5">Week 5</option>                  </select>      </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssessmentGraphComponent', 'selector': 'app-assessment-graph'},{'name': 'BatchesDetailsComponent', 'selector': 'app-batches-details'},{'name': 'BatchListComponent', 'selector': 'app-batches'},{'name': 'BatchReportsComponent', 'selector': 'app-batch-reports'},{'name': 'CurriculumComponent', 'selector': 'app-curriculum'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FilterItemsComponent', 'selector': 'app-filter-items'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'MajorGraphComponent', 'selector': 'app-major-graph'},{'name': 'PaceGraphComponent', 'selector': 'app-pace-graph'},{'name': 'RatingGraphComponent', 'selector': 'app-rating-graph'},{'name': 'ReportsViewComponent', 'selector': 'app-reports-view'},{'name': 'SubnavItemsComponent', 'selector': 'app-subnav-items'},{'name': 'SurveyCreateComponent', 'selector': 'app-survey-create'},{'name': 'SurveyHomeComponent', 'selector': 'app-survey-home'},{'name': 'SurveyManageComponent', 'selector': 'app-survey-manage'},{'name': 'SurveyQuestionsComponent', 'selector': 'app-survey-questions'},{'name': 'SurveyScheduleComponent', 'selector': 'app-survey-schedule'},{'name': 'SurveyViewComponent', 'selector': 'app-survey-view'},{'name': 'WeeklyReportsComponent', 'selector': 'app-weekly-reports'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SurveyManageComponent'};
 </script>
