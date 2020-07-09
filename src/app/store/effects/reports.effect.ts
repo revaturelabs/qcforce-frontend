@@ -39,9 +39,9 @@ export class ReportsEffects {
   @Effect()
   getAvgWeekBatch$ = this.actions$.pipe(
     ofType(ReportsActions.GET_AVG_WEEK_BATCH),
-    mergeMap(({ payload: { graph } }) => {
+    mergeMap(({ payload: { graphs } }) => {
       return this.reportsService.getAvgWeekBatch().pipe(
-        map(data => new ReportsActions.GetAvgWeekBatchSuccess({ graph, data })),
+        map(data => new ReportsActions.GetAvgWeekBatchSuccess({ graphs, data })),
         catchError(error => of(new ReportsActions.GetAvgWeekBatchFail(error)))
       );
     })
@@ -50,9 +50,9 @@ export class ReportsEffects {
   @Effect()
   getBatchAllWeeks$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ALL_WEEKS_ONE_BATCH),
-    mergeMap(({ payload: {graph, batch} }) => {
+    mergeMap(({ payload: {graphs, batch } }) => {
       return this.reportsService.getBatchAllWeeks(batch).pipe(
-        map(data => new ReportsActions.GetAllWeeksOneBatchSuccess({graph, data})),
+        map(data => new ReportsActions.GetAllWeeksOneBatchSuccess({graphs, data})),
         catchError(error => of(new ReportsActions.GetAllWeeksOneBatchFail(error)))
       );
     })
@@ -61,9 +61,9 @@ export class ReportsEffects {
   @Effect()
   getOneBatchOneWeek = this.actions$.pipe(
     ofType(ReportsActions.GET_ONE_WEEK_ONE_BATCH),
-    mergeMap(({ payload: { graph, batch, week} }) => {
+    mergeMap(({ payload: { graphs, batch, week } }) => {
       return this.reportsService.getOneBatchOneWeek(batch, week).pipe(
-        map(data => new ReportsActions.GetOneWeekOneBatchSuccess({ graph, data })),
+        map(data => new ReportsActions.GetOneWeekOneBatchSuccess({ graphs, data })),
         catchError(error => of(new ReportsActions.GetOneWeekOneBatchFail(error)))
       );
     })
@@ -92,9 +92,9 @@ export class ReportsEffects {
   @Effect()
   getWeekAllBatches$ = this.actions$.pipe(
     ofType(ReportsActions.GET_ONE_WEEK_ALL_BATCHES),
-    mergeMap(({ payload: {graph, week} }) => {
+    mergeMap(({ payload: {graphs, week } }) => {
       return this.reportsService.getWeekAllBatches(week).pipe(
-        map(data => new ReportsActions.GetOneWeekAllBatchesSuccess({graph, data})),
+        map(data => new ReportsActions.GetOneWeekAllBatchesSuccess({graphs, data})),
         catchError(error => of(new ReportsActions.GetOneWeekAllBatchesFail(error)))
       );
     })
