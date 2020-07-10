@@ -19,44 +19,24 @@ export class FilterItemsComponent implements OnInit {
 
   pullDataActions(batch, week) {
     if (week === 'Average' && batch === 'Average') {
-      let graph = 'ratingGraphData';
-      this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
-      graph = 'paceGraphData';
-      this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
-      graph = 'assessGraphData';
-      this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
+      let graphs = ['ratingGraphData', 'paceGraphData', 'assessGraphData'];
+      this.store.dispatch(new fromStore.GetAvgWeekBatch({ graphs }));
     }
     else if (week === 'All' && batch !== 'Average') {
-      let graph = 'weekGraphData';
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
-      graph = 'paceGraphData';
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
-      graph = 'assessGraphData';
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
+      let graphs = ['weekGraphData', 'paceGraphData', 'assessGraphData'];
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graphs, batch }));
     }
     else if (week === 'Average' && batch !== 'Average'){
-      let graph = 'ratingGraphData';
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
-      graph = 'paceGraphData';
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
-      graph = 'assessGraphData';
-      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graph, batch }));
+      let graphs = ['ratingGraphData', 'paceGraphData', 'assessGraphData'];
+      this.store.dispatch(new fromStore.GetAllWeeksOneBatch({ graphs, batch }));
     }
     else if (week !== 'Average' && batch !== 'Average') {
-      let graph = 'ratingGraphData';
-      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graph, batch, week }));
-      graph = 'paceGraphData';
-      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graph, batch, week }));
-      graph = 'assessGraphData';
-      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graph, batch, week }));
+      let graphs = ['ratingGraphData', 'paceGraphData', 'assessGraphData'];
+      this.store.dispatch(new fromStore.GetOneWeekOneBatch({ graphs, batch, week }));
     }
     else if (week !== 'Average' && batch === 'Average') {
-      let graph = 'ratingGraphData';
-      this.store.dispatch(new fromStore.GetOneWeekAllBatches({ graph, week }));
-      graph = 'paceGraphData';
-      this.store.dispatch(new fromStore.GetOneWeekAllBatches({ graph, week }));
-      graph = 'assessGraphData';
-      this.store.dispatch(new fromStore.GetOneWeekAllBatches({ graph, week }));
+      let graphs = ['ratingGraphData', 'paceGraphData', 'assessGraphData'];
+      this.store.dispatch(new fromStore.GetOneWeekAllBatches({ graphs, week }));
     }
   }
 
@@ -86,12 +66,8 @@ export class FilterItemsComponent implements OnInit {
       this.weekFilter = reports.weekFilter;
 
     });
-    let graph = 'ratingGraphData';
-    this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
-    graph = 'paceGraphData';
-    this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
-    graph = 'assessGraphData';
-    this.store.dispatch(new fromStore.GetAvgWeekBatch({ graph }));
+    let graphs = ['ratingGraphData', 'paceGraphData', 'assessGraphData'];
+    this.store.dispatch(new fromStore.GetAvgWeekBatch({ graphs }));
   }
 
 }

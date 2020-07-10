@@ -45,7 +45,9 @@ export function reportsReducer(
     }
     case fromReports.GET_ALL_WEEKS_ONE_BATCH_SUCCESS: {
       let newState = cloneDeep(state);
-      newState[action.payload.graph] = action.payload.data;
+      for (let graph of action.payload.graphs) {
+        newState[graph] = action.payload.data;
+      }
       return newState;
     }
     case fromReports.GET_ALL_WEEKS_ONE_BATCH_FAIL: {
@@ -57,7 +59,9 @@ export function reportsReducer(
     }
     case fromReports.GET_ONE_WEEK_ALL_BATCHES_SUCCESS: {
       let newState = cloneDeep(state);
-      newState[action.payload.graph] = action.payload.data;
+      for (let graph of action.payload.graphs) {
+        newState[graph] = action.payload.data;
+      }
       return newState;
     }
     case fromReports.GET_ONE_WEEK_ALL_BATCHES_FAIL: {
@@ -93,7 +97,9 @@ export function reportsReducer(
     }
     case fromReports.GET_ONE_WEEK_ONE_BATCH_SUCCESS: {
       let newState = cloneDeep(state);
-      newState[action.payload.graph] = [action.payload.data];
+      for (let graph of action.payload.graphs) {
+        newState[graph] = [action.payload.data];
+      }
       return newState;
     }
     case fromReports.GET_ONE_WEEK_ONE_BATCH_FAIL: {
@@ -104,7 +110,9 @@ export function reportsReducer(
     }
     case fromReports.GET_AVG_WEEK_BATCH_SUCCESS: {
       let newState = cloneDeep(state);
-      newState[action.payload.graph] = [action.payload.data];
+      for (let graph of action.payload.graphs) {
+        newState[graph] = [action.payload.data];
+      }
       return newState;
     }
     case fromReports.GET_AVG_WEEK_BATCH_FAIL: {
