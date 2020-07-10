@@ -12,7 +12,6 @@ const _selectTitle = (state: ReportsState) => {
     } else if (state.batchFilter === 'Average') {
       reportTitle = 'Average Across Batches';
     }
-    // tslint:disable-next-line: prefer-const
     for (let option of state.batchFilterOptions.slice(1)) {
         if (state.batchFilter === option) {
             reportTitle = option;
@@ -20,14 +19,12 @@ const _selectTitle = (state: ReportsState) => {
     }
     return reportTitle;
 };
-// tslint:disable-next-line: variable-name
 const _selectWeeklyGraphData = (state: ReportsState) => {
   return {
     data: Filters.weekGraphData(state),
     labels: state.weekFilterOptions.slice(2)
   };
 };
-// tslint:disable-next-line: variable-name
 const _selectRatingGraphData = (state: ReportsState) => {
   return {
     data: Filters.ratingGraphData(state),
@@ -35,20 +32,11 @@ const _selectRatingGraphData = (state: ReportsState) => {
   };
 };
 
-// tslint:disable-next-line: variable-name
 const _selectPaceGraphData = (state: ReportsState) => {
   return {
     data: Filters.paceGraphData(state),
     labels: state.paceGraphQuestions
   };
-  // if (state.weekFilter !== 'All') {
-    
-  // } else {
-  //   return {
-  //     data:  Filters.paceGraphDataAll(state),
-  //     labels: state.paceGraphQuestions
-  //   };
-  // }
 };
 
 const _selectAssessmentGraphData = (state: ReportsState) => {

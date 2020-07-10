@@ -12,7 +12,6 @@ http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batc
 
 http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/TrainingService/associate/active-emails
 
-
    */
 
 export const environment = {
@@ -34,7 +33,7 @@ export const environment = {
   getAssociateByBatchName: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/TrainingService/associate/batch-name/',
 
  // ==============Sync Service===============================
- postSyncService: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SyncService/sync',
+  postSyncService: 'http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SyncService/sync',
 };
 
 /*

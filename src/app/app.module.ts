@@ -67,13 +67,11 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
       router: routerReducer,
       reports: fromStore.reportsReducer,
       batches: fromStore.batchesReducer,
-      surveys: fromStore.surveysReducer,
       associates: fromStore.associatesReducer,
     }),
     EffectsModule.forRoot([
       fromStore.ReportsEffects,
       fromStore.BatchesEffects,
-      fromStore.SurveysEffects,
       fromStore.AssociatesEffects,
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
