@@ -41,22 +41,14 @@ const _selectPaceGraphData = (state: ReportsState) => {
     data: Filters.paceGraphData(state),
     labels: state.paceGraphQuestions
   };
-  // if (state.weekFilter !== 'All') {
-    
-  // } else {
-  //   return {
-  //     data:  Filters.paceGraphDataAll(state),
-  //     labels: state.paceGraphQuestions
-  //   };
-  // }
 };
 
 const _selectAssessmentGraphData = (state: ReportsState) => {
   return {
     data: Filters.assessGraphData(state),
     labels: ['Yes', 'No']
-  }
-}
+  };
+};
 
 export const selectBatchFilter = createSelector(selectReportsState, _selectBatchFilter);
 export const selectWeekFilter = createSelector(selectReportsState, _selectWeekFilter);

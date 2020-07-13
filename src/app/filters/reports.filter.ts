@@ -69,7 +69,6 @@ export function paceGraphData(state) {
   const label = `${state.batchFilter} (${state.weekFilter})`;
   multiData.push({ data, label });
   return multiData;
-
 }
 
 /*Second Horizontal bar chart filter, for showing All batches as one average */
@@ -90,7 +89,6 @@ export function paceGraphDataAll(state) {
     }
   }
   return multiData;
-
 }
 
 /* Pie chart filter */
@@ -106,6 +104,5 @@ export function assessGraphData(state) {
     }
   }
   return [avg, 1 - avg];
-
 }
 

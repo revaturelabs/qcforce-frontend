@@ -11,10 +11,10 @@ import { cloneDeep } from 'lodash';
   styleUrls: ['./rating-graph.component.css']
 })
 export class RatingGraphComponent implements OnInit {
-  /*
-  * ng2-charts variables starting with the options property,
-  * which can control the canvas display
-  */
+  /** chart.js utilizes various properties in the canvas.
+   * element to display and control the chart shown.
+   * ng2-charts variables; starting with the options property, which can control the canvas display.
+   */
   public chartOptions: any  = {
     responsive: true,
     maintainAspectRatio: false,
@@ -51,8 +51,9 @@ export class RatingGraphComponent implements OnInit {
       backgroundColor: [],
     },
   ];
-  /*Color array for 'temapture reading', red being the closest to 2.
-    Other color arrays could be added for alternative modes */
+  /* Color array for 'temapture reading', red being the closest to 2.
+   * Other color arrays could be added for alternative modes
+  */
   colors = [
     'rgba(65, 5, 5, 1)', // darkest-red
     'rgba(165, 13, 15, 1)', // dark-red
@@ -69,7 +70,9 @@ export class RatingGraphComponent implements OnInit {
     'rgba(68, 173, 15, 1)', // green-green
     'rgba(15, 155, 15, 1)', // dark-green
   ];
-  /*chartData and chartLabels are dynamically generated using ngrx states: see ngOnInit() line 78 */
+  /*
+  * chartData and chartLabels are dynamically generated using ngrx states
+  */
   public chartData;
   public chartLabels;
   public chartLegend = false;
@@ -90,14 +93,17 @@ export class RatingGraphComponent implements OnInit {
       }
     });
   }
-/* grabs color from getColorGradient() and sets to backgroundColor of bar chart */
+/*
+* grabs color from getColorGradient() and sets to backgroundColor of bar chart */
   getChartColor(data) {
     const backgroundColor = data.map((datum) => {
       return this.colors[this.getColorGradient(datum)];
     });
     return [{backgroundColor}];
   }
-
+  /**
+   * Normalizes the data range of 1 to 5 and scales it to the length of the color array.
+   */
   getColorGradient(datum) {
     const index = Math.round(((datum - 1) / 4) * this.colors.length);
     if (index === this.colors.length) {

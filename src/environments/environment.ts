@@ -2,19 +2,6 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-/* Sync Service: http://ec2-3-23-215-133.us-east-2.compute.amazonaws.com:8085;
-   * Training Service: 'http://ec2-18-219-219-28.us-east-2.compute.amazonaws.com:8086';
-   * Survey Service: http://ec2-3-134-110-211.us-east-2.compute.amazonaws.com:8087;
-   * ec2-13-59-82-196.us-east-2.compute.amazonaws.com
-13.59.82.196
-http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SyncService/sync
-http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/SurveyService/batch/list
-
-http://ec2-18-191-226-95.us-east-2.compute.amazonaws.com:8090/TrainingService/associate/active-emails
-
-
-   */
-
 export const environment = {
   production: false,
   // =============Angular URLS==============================

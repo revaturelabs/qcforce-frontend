@@ -84,7 +84,7 @@ export class PaceGraphComponent implements OnInit {
     'rgba(248, 74, 11, 1)', // red-orange
     'rgba(248, 11, 15, 1)', // red
   ];
-  /** constructor */
+
   constructor(private store: Store<fromStore.AppState>) { }
   /*on initialization, the data from ngrx store is grabbed and translated to show labels and data */
   ngOnInit(): void {
@@ -98,14 +98,18 @@ export class PaceGraphComponent implements OnInit {
       }
     });
   }
-  /* grabs color from getColorGradient() and sets to backgroundColor of pace chart */
+  /**
+   * grabs color from getColorGradient() and sets to backgroundColor of pace chart.
+   */
   getChartColor(data) {
     const backgroundColor = data.map((datum) => {
       return this.colors[this.getColorGradient(datum)];
     });
     return [{backgroundColor}];
   }
-  /* Normalizes the data range of -1 to 1 and scales it to the length of the color array @line: 67 */
+  /**
+   * Normalizes the data range of -1 to 1 and scales it to the length of the color array.
+   */
   getColorGradient(datum) {
     const index = Math.round(Math.abs(datum) * this.colors.length);
     if (index === this.colors.length) {

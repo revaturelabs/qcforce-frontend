@@ -7,10 +7,8 @@ export interface ReportsState {
   weekGraphQuestions: string[];
   ratingGraphData: any[];
   ratingGraphQuestions: string[];
-  // questionLongList: string[];
   listShortQuestions: string[];
   listLongQuestions: string[];
-  // questionMapping: object;
   paceGraphData: any[];
   paceGraphQuestions: string[];
   assessGraphData: any[];
@@ -82,10 +80,10 @@ export const initReportsState: ReportsState = {
     'Materials Helpful',
     'Batch Name'
   ],
-  // questionLongList: [],
+
   listLongQuestions: [
   ],
-  // responseData: [],
+
 
 };
 

@@ -10,7 +10,6 @@ export const environment = {
   getWeekAllUrl: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087/batch/chartdatabatch/week/',
 
   // =============Training Service URLS==============================
-  
   getBatchListUrl: 'http://ec2-18-219-219-28.us-east-2.compute.amazonaws.com:8086/batch/', // 'http://localhost:3100/batches',
   getSurveysByBatchIdUrl: 'http://localhost:3001/surveys',
   getBatchByBatchName: 'http://ec2-13-59-82-196.us-east-2.compute.amazonaws.com:8087',

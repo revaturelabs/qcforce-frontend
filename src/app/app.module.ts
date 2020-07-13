@@ -29,8 +29,6 @@ import { SurveyQuestionsComponent } from './components/survey-info/survey-questi
 /*styling imports*/
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
 
 /*util imports*/
@@ -64,21 +62,17 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
       router: routerReducer,
       reports: fromStore.reportsReducer,
       batches: fromStore.batchesReducer,
-      surveys: fromStore.surveysReducer,
       associates: fromStore.associatesReducer,
     }),
     EffectsModule.forRoot([
       fromStore.ReportsEffects,
       fromStore.BatchesEffects,
-      fromStore.SurveysEffects,
       fromStore.AssociatesEffects,
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
     NgbModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatCheckboxModule,
     ChartsModule,
     FormsModule,
     HttpClientModule,
