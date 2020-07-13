@@ -1,17 +1,19 @@
+import { Report } from 'src/app/models/reports.model';
+
 export interface ReportsState {
   batchFilterOptions: string[];
   batchFilter: string;
   weekFilterOptions: string[];
   weekFilter: string;
-  weekGraphData: any[];
+  weekGraphData: Report[];
   weekGraphQuestions: string[];
-  ratingGraphData: any[];
+  ratingGraphData: Report[];
   ratingGraphQuestions: string[];
   listShortQuestions: string[];
   listLongQuestions: string[];
-  paceGraphData: any[];
+  paceGraphData: Report[];
   paceGraphQuestions: string[];
-  assessGraphData: any[];
+  assessGraphData: Report[];
   assessGraphQuestions: string[];
 }
 

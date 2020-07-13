@@ -16,16 +16,6 @@ export function reportsReducer(
       const weekFilter = action.payload;
       return { ...state, weekFilter };
     }
-    // case fromReports.GET_ANSWERS: {
-    //     return { ...state };
-    // }
-    // case fromReports.GET_ANSWERS_SUCCESS: {
-    //   const responseData = action.payload;
-    //   return { ...state, responseData };
-    // }
-    // case fromReports.GET_ANSWERS_FAIL: {
-    //   return { ...state };
-    // }
     case fromReports.GET_BATCHES: {
       return { ...state };
     }
