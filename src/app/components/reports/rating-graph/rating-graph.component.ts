@@ -11,11 +11,10 @@ import { cloneDeep } from 'lodash';
   styleUrls: ['./rating-graph.component.css']
 })
 export class RatingGraphComponent implements OnInit {
-
-  public chartData;
-
-  public chartLabels;
-
+  /*
+  * ng2-charts variables starting with the options property,
+  * which can control the canvas display
+  */
   public chartOptions: any  = {
     responsive: true,
     maintainAspectRatio: false,
@@ -49,18 +48,11 @@ export class RatingGraphComponent implements OnInit {
   public chartColor: Color[] = [
     {
       borderColor: 'black',
-      backgroundColor: [
-        // 'rgba(248, 11, 15, 1)',
-        // 'orange',
-        // 'yellow',
-        // 'yellowOrange',
-        // 'rgba(200, 100, 000,1)',
-        // 'rgba(100, 255, 150,1)',
-        // 'rgba(100, 255, 150,1)',
-        // 'rgba(100, 255, 000,1)',
-      ],
+      backgroundColor: [],
     },
   ];
+  /*Color array for 'temapture reading', red being the closest to 2.
+    Other color arrays could be added for alternative modes */
   colors = [
     'rgba(65, 5, 5, 1)', // darkest-red
     'rgba(165, 13, 15, 1)', // dark-red
@@ -77,8 +69,9 @@ export class RatingGraphComponent implements OnInit {
     'rgba(68, 173, 15, 1)', // green-green
     'rgba(15, 155, 15, 1)', // dark-green
   ];
-  colorIndex = 0;
-
+  /*chartData and chartLabels are dynamically generated using ngrx states: see ngOnInit() line 78 */
+  public chartData;
+  public chartLabels;
   public chartLegend = false;
   public chartType = 'bar';
   public chartPlugins = [];
@@ -97,23 +90,19 @@ export class RatingGraphComponent implements OnInit {
       }
     });
   }
-
+/* grabs color from getColorGradient() and sets to backgroundColor of bar chart */
   getChartColor(data) {
     const backgroundColor = data.map((datum) => {
       return this.colors[this.getColorGradient(datum)];
     });
-
     return [{backgroundColor}];
   }
-    // 1-5 range of datum
-    // .25 color changes
-    // 20/5
+
   getColorGradient(datum) {
     const index = Math.round(((datum - 1) / 4) * this.colors.length);
     if (index === this.colors.length) {
       return index - 1;
     }
-
     return index;
   }
 }

@@ -23,7 +23,6 @@ import { ReportsViewComponent } from './components/reports/reports-view/reports-
 import { FilterItemsComponent } from './components/reports/filter-items/filter-items.component';
 import { RatingGraphComponent } from './components/reports/rating-graph/rating-graph.component';
 import { PaceGraphComponent } from './components/reports/pace-graph/pace-graph.component';
-import { MajorGraphComponent } from './components/reports/major-graph/major-graph.component';
 import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
 import { SurveyQuestionsComponent } from './components/survey-info/survey-questions/survey-questions.component';
 
@@ -33,7 +32,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ChartsModule } from 'ng2-charts';
-import { Ng5SliderModule } from 'ng5-slider';
 
 /*util imports*/
 import { environment } from '../environments/environment';
@@ -55,7 +53,6 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
     FilterItemsComponent,
     RatingGraphComponent,
     PaceGraphComponent,
-    MajorGraphComponent,
     SurveyViewComponent,
     SurveyQuestionsComponent,
     AssessmentGraphComponent,
@@ -85,7 +82,6 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
     ChartsModule,
     FormsModule,
     HttpClientModule,
-    Ng5SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

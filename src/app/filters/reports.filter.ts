@@ -1,12 +1,11 @@
+/*Line chart filter, also shows weeks 8-9 as separate from the others */
 export function weekGraphData(state) {
-  // tslint:disable-next-line: prefer-const
-  let multiData = [];
+  const multiData = [];
   const weekList = state.weekFilterOptions.slice(2);
-  // tslint:disable-next-line: prefer-for-of
   for (let i = 0; i < state.weekGraphQuestions.length; i++) {
     const qIndex = state.listShortQuestions.indexOf(state.weekGraphQuestions[i]);
     const data = weekList.map((week, j) => {
-      if(i > 5 && j < 9) {
+      if (i > 5 && j < 9) {
         return null;
       } else if (i <= 5 && j >= 9) {
         return null;
@@ -27,6 +26,7 @@ export function weekGraphData(state) {
   return multiData;
 }
 
+/*Bar chart filter */
 export function ratingGraphData(state) {
   const multiData = [];
   const questionList = state.ratingGraphQuestions;
@@ -48,20 +48,17 @@ export function ratingGraphData(state) {
   multiData.push({ data, label });
   return multiData;
 }
-
+/* Horizontal bar chart filter */
 export function paceGraphData(state) {
   const multiData = [];
   const questionList = state.paceGraphQuestions;
   const data = questionList.map((q) => 0);
-  // console.log(state.paceGraphQuestions);
   for (let i = 0; i < questionList.length; i++) {
     const qIndex = state.listShortQuestions.indexOf(questionList[i]);
     let avg = 0;
     let num = 0;
-    // console.log(state.paceGraphData); // <===================
     for (const responseDatum of state.paceGraphData) {
       const value = responseDatum.data[state.listLongQuestions[qIndex]];
-      // console.log(value); // <===================
       if (value) {
         num++;
         avg = ((num - 1) / num) * avg + (1 / num) * value;
@@ -75,11 +72,10 @@ export function paceGraphData(state) {
 
 }
 
-
+/*Second Horizontal bar chart filter, for showing All batches as one average */
 export function paceGraphDataAll(state) {
   const multiData = [];
   const questionList = state.paceGraphQuestions;
-  // console.log(state.paceGraphQuestions);
   for (let i = 0; i < questionList.length; i++) {
     const qIndex = state.listShortQuestions.indexOf(questionList[i]);
     for (const responseDatum of state.paceGraphData) {
@@ -97,24 +93,19 @@ export function paceGraphDataAll(state) {
 
 }
 
+/* Pie chart filter */
 export function assessGraphData(state) {
   let avg = 0;
   let num = 0;
   for (const responseDatum of state.assessGraphData) {
     const qIndex = state.listShortQuestions.indexOf(state.assessGraphQuestions[0]);
     const value = responseDatum.data[state.listLongQuestions[qIndex]];
-    // console.log(responseDatum);
-    // console.log(state.listLongQuestions[qIndex]);
     if (value) {
       num++;
       avg = ((num - 1) / num) * avg + (1 / num) * value;
     }
   }
-
   return [avg, 1 - avg];
-
-
-
 
 }
 

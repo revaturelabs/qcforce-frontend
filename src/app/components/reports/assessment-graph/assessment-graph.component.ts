@@ -4,15 +4,20 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Store } from '@ngrx/store';
 import * as fromStore from 'src/app/store';
 import { cloneDeep } from 'lodash';
-
+/**
+ * `AssessmentGraphComponent` (Angular Component)
+ *
+ * This component represents the assessment graph,
+ * a pie chart showing the percentage of assessment completetion.
+ */
 @Component({
   selector: 'app-assessment-graph',
   templateUrl: './assessment-graph.component.html',
   styleUrls: ['./assessment-graph.component.css']
 })
 export class AssessmentGraphComponent implements OnInit {
-
-   // Pie
+   /*chart.js utilizes various properties in the canvas element to display and control the chart shown */
+   /* ng2-charts variables; starting with the options property, which can control the canvas display*/
    public pieChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -30,6 +35,7 @@ export class AssessmentGraphComponent implements OnInit {
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
+  /*Color matrix required for pie chart */
   public pieChartColor = [
     {
       backgroundColor: [' rgba(242, 105, 38, 1)', 'rgb(108, 108, 110)' ],

@@ -11,8 +11,10 @@ import { cloneDeep } from 'lodash';
   styleUrls: ['./weekly-reports.component.css']
 })
 export class WeeklyReportsComponent implements OnInit {
-  public weekChartData: ChartDataSets[];
-  public weekChartLabels: Label[];
+  /** chart.js utilizes various properties in the canvas
+   * element to display and control the chart shown
+   * ng2-charts variables; starting with the options property, which can control the canvas display
+   */
   public weekChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -42,40 +44,10 @@ export class WeeklyReportsComponent implements OnInit {
         },
       ],
     },
-
-    
-    // annotation: {
-    //   annotations: [
-    //     {
-    //       type: 'line',
-    //       mode: 'vertical',
-    //       scaleID: 'x-axis-0',
-    //       value: 'week 3',
-    //       borderColor: 'black',
-    //       borderWidth: 2,
-    //       label: {
-    //         enabled: true,
-    //         fontColor: 'white',
-    //         content: 'week 3'
-    //       }
-    //     },
-    //     {
-    //       type: 'line',
-    //       mode: 'horizontal',
-    //       scaleID: 'y-axis-0',
-    //       value: 3.25,
-    //       borderColor: 'black',
-    //       borderWidth: 2,
-    //       label: {
-    //         enabled: true,
-    //         fontColor: 'white',
-    //         borderColor: 'blue',
-    //         content: 'Question 2: 3.25'
-    //       }
-    //     },
-    //   ]
-    // },
   };
+  /**
+   * Hard coded color array for the line chart
+   */
   public weekChartColors: Color[] = [
     {
       borderColor: 'red',
@@ -113,9 +85,13 @@ export class WeeklyReportsComponent implements OnInit {
   public weekChartLegend = true;
   public weekChartType = 'line';
   public weekChartPlugins = [pluginAnnotations];
+  public weekChartData: ChartDataSets[];
+  public weekChartLabels: Label[];
 
   constructor(private store: Store<fromStore.AppState>) { }
-
+/**
+ * Generate Graph and Label on init
+ */
   ngOnInit(): void {
     this.store.select(fromStore.selectWeeklyGraphData).subscribe((graph) => {
       if (graph) {

@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromStore from 'src/app/store'; 
 import { reportInvalidActions } from '@ngrx/effects/src/effect_notification';
-
+/**
+ * `ReportsViewComponent` (Angular Component)
+ *
+ * This component acts as the parent component to the routes, sub-menus, and graphs,
+ */
 @Component({
   selector: 'app-reports-view',
   templateUrl: './reports-view.component.html',
