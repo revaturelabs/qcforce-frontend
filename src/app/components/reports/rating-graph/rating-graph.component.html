@@ -1,0 +1,14 @@
+<div class="p-3 pr-5 border text-center">
+    <p class="title"></p>
+    <div class="rating-chart">
+      <canvas baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [colors]="chartColor"
+        [legend]="chartLegend"
+        [chartType]="chartType"
+        [plugins]="chartPlugins">
+      </canvas>
+    </div>
+</div> 

@@ -1,0 +1,24 @@
+div {
+  overflow-x: auto;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.title {
+  text-align: center;
+  color: rgb(108, 108, 110);
+  font-family: Arial, Helvetica, sans-serif;  
+  font-stretch: wider ;
+}

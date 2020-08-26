@@ -1,0 +1,127 @@
+{
+    "surveys": [
+        {
+            "batchId": "TR-1649",
+            "surveys": [
+                {
+
+                    "name": "week1",
+                    "avgSatisfaction": 4.2,
+                    "avgExpectation" : 4.8
+
+                },
+                {
+                    "name": "week2",
+                    "avgSatisfaction": 4.6,
+                    "avgExpectation": 4.3
+
+                },
+                {
+                    "name": "week3",
+                    "avgSatisfaction": 4.8,
+                    "avgExpectation": 4.1
+                },
+                {
+                    "name": "week4",
+                    "avgSatisfaction": 4.7,
+                    "avgExpectation": 4.3
+                },
+                {
+                    "name": "week5",
+                    "avgSatisfaction": 4.2,
+                    "avgExpectation": 4.5
+                },
+                {
+                    "name": "week6",
+                    "avgSatisfaction": 4.6,
+                    "avgExpectation": 4.3
+                },
+                {
+                    "id": 7,
+                    "name": "week7",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.5,
+                            "avgExpectation": 4.2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "batchId": "TR-1656",
+            "surveys": [
+                {
+                    "id": 1,
+                    "name": "week1",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.9,
+                            "avgExpectation" : 4.3
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "week2",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.8,
+                            "avgExpectation": 4.5
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "week3",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.7,
+                            "avgExpectation": 4.4
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "week4",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.8,
+                            "avgExpectation": 4.4
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "week5",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.7,
+                            "avgExpectation": 4.4
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "week6",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.6,
+                            "avgExpectation": 4.9
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "name": "week7",
+                    "metrics": [
+                        {
+                            "avgSatisfaction": 4.2,
+                            "avgExpectation": 4.1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

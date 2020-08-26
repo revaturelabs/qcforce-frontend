@@ -1,0 +1,1350 @@
+{
+  "batch": [
+    {
+      "batchName": "2003 Mar02 AP-USF Java",
+      "batchId": 1,
+      "batchStateDate": "05-04-2020",
+      "batchEndDate": "07-10-2020",
+      "batchSkill": "Full Stack Java",
+      "batchLocation": "New York",
+      "type": "Regular",
+      "goodGrade": true,
+      "passingGrade": true,
+      "currentWeek": "Week 9"   
+    }, 
+    {
+      "batchName": "2003 Mar09 AP-UTA JwA Extended",
+      "batchId": 2,
+      "batchStateDate": "05-26-2020",
+      "batchEndDate": "08-01-2020",
+      "batchSkill": "Front End Javascript",
+      "batchLocation": "WVU",
+      "type": "Regular",
+      "goodGrade": true,
+      "passingGrade": true,
+      "currentWeek": "Week 7"   
+   }
+  ],
+  "answers": [
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Topic Understanding",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Materials Helpful",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Materials Helpful",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Met Expectations",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Satisfaction Rating",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Topic Understanding",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Questions Encouraged",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Met Expectations",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Satisfaction Rating",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Topic Understanding",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Materials Helpful",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Well Organized",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Well Organized",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Questions Encouraged",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Questions Encouraged",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Met Expectations",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Met Expectations",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Satisfaction Rating",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Topic Understanding",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Topic Understanding",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Materials Helpful",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Materials Helpful",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Well Organized",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Well Organized",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Met Expectations",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Met Expectations",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Materials Helpful",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Questions Encouraged",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Met Expectations",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Met Expectations",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Well Organized",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Materials Helpful",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Questions Encouraged",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Met Expectations",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Met Expectations",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Well Organized",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Satisfaction Rating",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Satisfaction Rating",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Well Organized",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Questions Encouraged",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Met Expectations",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Met Expectations",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Topic Understanding",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Materials Helpful",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Well Organized",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Well Organized",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Questions Encouraged",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Met Expectations",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Satisfaction Rating",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Satisfaction Rating",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Topic Understanding",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Well Organized",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Well Organized",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Questions Encouraged",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Met Expectations",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Met Expectations",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Satisfaction Rating",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Topic Understanding",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Topic Understanding",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Materials Helpful",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Well Organized",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Questions Encouraged",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Questions Encouraged",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Met Expectations",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Satisfaction Rating",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Satisfaction Rating",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Topic Understanding",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Topic Understanding",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Materials Helpful",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Materials Helpful",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Well Organized",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Well Organized",
+      "answer": 1
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Questions Encouraged",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Questions Encouraged",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Met Expectations",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Met Expectations",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 8",
+      "question": "Project Clarity",
+      "answer": 5
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 8",
+      "question": "Project Clarity",
+      "answer": 2
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 8",
+      "question": "Project Preparedness",
+      "answer": 4
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 8",
+      "question": "Project Preparedness",
+      "answer": 3
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 2",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 3",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 4",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 5",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 6",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Pace of Training",
+      "answer": "Too Fast"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Pace of Training",
+      "answer": "Good"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 7",
+      "question": "Pace of Training",
+      "answer": "Too Slow"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "Computer Science Major"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "Computer Science Major"
+    },
+    {
+      "batch": "2003 Mar02 AP-USF Java",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "STEM major (non-CS)"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "STEM major (non-CS)"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "STEM major (non-CS)"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "STEM major (non-CS)"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "Non-STEM major"
+    },
+    {
+      "batch": "2003 Mar09 AP-UTA JwA Extended",
+      "week": "Week 1",
+      "question": "Background",
+      "answer": "Non-STEM major"
+    }
+  ]
+}

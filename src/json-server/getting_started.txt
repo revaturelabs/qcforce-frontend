@@ -1,0 +1,4 @@
+Step 1: create a mock json file;
+Step 2: in terminal execute json-server --watch file.json (specify a path to file) most likly .\src\json-server\mock..... .json;
+Step 3: make a request to file;
+Step 4: for further information go to: https://www.npmjs.com/package/json-server

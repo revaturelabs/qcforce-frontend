@@ -1,0 +1,20 @@
+.title {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+    color: rgb(108, 108, 110);
+    font-family: Arial, Helvetica, sans-serif;  
+    font-stretch: wider;
+    font-size: 1.00rem;
+}
+
+.sub-menu-title {
+  overflow-x: auto; 
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2rem;
+    text-align: left;
+  }
+}

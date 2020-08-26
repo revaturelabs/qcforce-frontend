@@ -1,0 +1,15 @@
+
+<div class="p-3 pr-5 line-chart-container weekly-report border text-center">
+    <p class="title"></p>
+    <!-- <div style="display: block;" class=" line-chart  text-center"> -->
+        <canvas baseChart           
+          [datasets]="weekChartData"
+          [labels]="weekChartLabels"
+          [options]="weekChartOptions"
+          [colors]="weekChartColors"
+          [legend]="weekChartLegend"
+          [chartType]="weekChartType"
+          [plugins]="weekChartPlugins">
+        </canvas>   
+
+</div>
