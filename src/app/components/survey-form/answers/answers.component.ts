@@ -12,7 +12,7 @@ export class AnswersComponent implements OnInit {
 
   surveyForm: FormGroup;
   
-  surveysubmission = {
+  submittedAnswers = {
     shortAnswer: ''
   };
 
@@ -20,21 +20,18 @@ export class AnswersComponent implements OnInit {
 
   constructor() {
     this.createForm();
-   }
-
-   createForm(): void {
-     this.surveyForm = new FormGroup({
-      'shortAnswer' : new FormControl(this.surveysubmission.shortAnswer, [
-        Validators.required,
-        Validators.maxLength(100)
-      ]),
-     })
-   }
-
+  }
   ngOnInit(): void {
   }
-
-  onSumbmit(): void {
+  createForm(): void {
+    this.surveyForm = new FormGroup({
+    'shortAnswer' : new FormControl(this.submittedAnswers.shortAnswer, [
+      Validators.required,
+      Validators.maxLength(100)
+    ]),
+    })
+  }
+  onSubmit(): void {
     this.submitted = true;
   }
 

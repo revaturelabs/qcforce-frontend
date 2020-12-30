@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /*ngrx imports*/
 import { StoreModule } from '@ngrx/store';
@@ -42,10 +42,9 @@ import { environment } from '../environments/environment';
 import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
 import { SurveyFormComponent } from './components/survey-form/survey-form.component';
-
-import { SurveySubmissionComponent } from './components/survey-submission/survey-submission.component';
-import { AnswersComponent } from './components/survey-submission/answers/answers.component';
 import { QuestionComponent } from './components/survey-form/question/question.component';
+import { AnswersComponent } from './components/survey-form/answers/answers.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -65,7 +64,6 @@ import { QuestionComponent } from './components/survey-form/question/question.co
     AssessmentGraphComponent,
     SurveyFormComponent,
     QuestionComponent,
-    SurveySubmissionComponent,
     AnswersComponent
   ],
   imports: [
@@ -88,7 +86,9 @@ import { QuestionComponent } from './components/survey-form/question/question.co
     BrowserAnimationsModule,
     ChartsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
