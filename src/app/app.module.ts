@@ -43,6 +43,8 @@ import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
 import { SurveyFormComponent } from './components/survey-form/survey-form.component';
 import { QuestionComponent } from './components/question/question.component';
+import { SurveySubmissionComponent } from './components/survey-submission/survey-submission.component';
+import { AnswersComponent } from './components/survey-submission/answers/answers.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { QuestionComponent } from './components/question/question.component';
     SurveyQuestionsComponent,
     AssessmentGraphComponent,
     SurveyFormComponent,
-    QuestionComponent
+    QuestionComponent,
+    SurveySubmissionComponent,
+    AnswersComponent
   ],
   imports: [
     BrowserModule,
