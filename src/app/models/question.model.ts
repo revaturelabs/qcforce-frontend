@@ -1,5 +1,5 @@
 /**
- * Abstract representation of associate in caliber data
+ * Abstract representation of question data
  */
 export interface Question {
     id?: number;
