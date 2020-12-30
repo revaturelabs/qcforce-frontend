@@ -4,7 +4,9 @@ import { BatchListComponent } from './components/batches/batch-list/batch-list.c
 import { BatchesDetailsComponent } from './components/batches/batches-details/batches-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
+import { SurveyFormComponent } from './components/survey-form/survey-form.component';
 import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
+
 
 
 const routes: Routes = [
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'batches-details', component: BatchesDetailsComponent },
   { path: 'reports', component: ReportsViewComponent},
   { path: 'surveys', component: SurveyViewComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: 'survey', component: SurveyFormComponent},
+
 ];
 
 @NgModule({

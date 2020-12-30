@@ -11,6 +11,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
+/* Surveu import */
+
+
+
 /*application components*/
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -37,6 +41,8 @@ import { environment } from '../environments/environment';
 /*store imports*/
 import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
+import { SurveyFormComponent } from './components/survey-form/survey-form.component';
+import { QuestionComponent } from './components/question/question.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +60,8 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
     SurveyViewComponent,
     SurveyQuestionsComponent,
     AssessmentGraphComponent,
+    SurveyFormComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +83,7 @@ import { AssessmentGraphComponent } from './components/reports/assessment-graph/
     BrowserAnimationsModule,
     ChartsModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
