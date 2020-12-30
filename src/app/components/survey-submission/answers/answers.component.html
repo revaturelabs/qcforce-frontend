@@ -3,13 +3,13 @@
 
 <div>
 
-    <form [formGroup]="SurveyForm">
+    <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
-            <label for="shortAnswer">Anseer Fast</label>
+            <label for="shortAnswer">Answer Fast</label>
             <textarea  formControlName="shortAnswer" required name="shortAnswer" class="form-control" type="text" placeholder="shortAnswer" id="shortAnswer" ></textarea>
         </div>
-        <button type="submition" [disabled]="!contactForm.valid" class="btn btn-success">Submit</button>
+        <button type="submit" [disabled]="!surveyForm.valid" class="btn btn-success">Submit</button>
 
     </form>
 
