@@ -1,1 +1,15 @@
-<p>survey-form works!</p>
+<h1> {{text}} </h1>
+
+<div>
+
+    <form [formGroup]="createSurveyForm">
+
+        <div class="form-group">
+            <label for="shortAnswer">Anseer Fast</label>
+            <textarea  formControlName="shortAnswer" required name="shortAnswer" class="form-control" type="text" placeholder="shortAnswer" id="shortAnswer" ></textarea>
+        </div>
+        <button type="submition" [disabled]="!contactForm.valid" class="btn btn-success">Submit</button>
+
+    </form>
+
+</div>
