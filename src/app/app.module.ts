@@ -41,12 +41,8 @@ import { environment } from '../environments/environment';
 /*store imports*/
 import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
-import { SurveyFormComponent } from './components/survey-form/survey-form.component';
 import { CommonModule } from '@angular/common';
-import { MultipleChoiceComponent } from './components/survey-form/question/multiple-choice/multiple-choice.component';
-import { PickFromRangeComponent } from './components/survey-form/question/pick-from-range/pick-from-range.component';
-import { QuestionComponent } from './components/survey-form/question/question.component';
-import { ShortAnswerComponent } from './components/survey-form/question/short-answer/short-answer.component';
+import { TakeSurveyModule } from './takeSurvey/take-survey.module';
 
 @NgModule({
   declarations: [
@@ -63,16 +59,13 @@ import { ShortAnswerComponent } from './components/survey-form/question/short-an
     PaceGraphComponent,
     SurveyViewComponent,
     SurveyQuestionsComponent,
-    AssessmentGraphComponent,
-    SurveyFormComponent,
-    QuestionComponent,
-    ShortAnswerComponent,
-    MultipleChoiceComponent,
-    PickFromRangeComponent
+    AssessmentGraphComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    TakeSurveyModule,
     StoreModule.forRoot({
       router: routerReducer,
       reports: fromStore.reportsReducer,
@@ -91,8 +84,8 @@ import { ShortAnswerComponent } from './components/survey-form/question/short-an
     ChartsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
     CommonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
