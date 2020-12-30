@@ -45,6 +45,7 @@ import { SurveyFormComponent } from './components/survey-form/survey-form.compon
 import { QuestionComponent } from './components/survey-form/question/question.component';
 import { AnswersComponent } from './components/survey-form/answers/answers.component';
 import { CommonModule } from '@angular/common';
+import { QuestionListComponent } from './components/survey-form/question-list/question-list.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CommonModule } from '@angular/common';
     AssessmentGraphComponent,
     SurveyFormComponent,
     QuestionComponent,
-    AnswersComponent
+    AnswersComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,
