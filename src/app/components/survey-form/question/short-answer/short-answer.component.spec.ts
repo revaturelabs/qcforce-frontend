@@ -3,19 +3,19 @@ import { BrowserModule, By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
-import { AnswersComponent } from './answers.component';
+import { ShortAnswerComponent } from './short-answer.component';
 
 import { fromPairs } from 'lodash';
 
 describe('AnswersComponent', () => {
-  let component: AnswersComponent;
-  let fixture: ComponentFixture<AnswersComponent>;
+  let component: ShortAnswerComponent;
+  let fixture: ComponentFixture<ShortAnswerComponent>;
   let de: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnswersComponent ],
+      declarations: [ ShortAnswerComponent ],
       imports: [
         BrowserModule,
         FormsModule,
@@ -23,7 +23,7 @@ describe('AnswersComponent', () => {
       ]
     })
     .compileComponents().then(() => {
-      fixture = TestBed.createComponent(AnswersComponent);
+      fixture = TestBed.createComponent(ShortAnswerComponent);
 
       component = fixture.componentInstance;
 
@@ -33,7 +33,7 @@ describe('AnswersComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnswersComponent);
+    fixture = TestBed.createComponent(ShortAnswerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

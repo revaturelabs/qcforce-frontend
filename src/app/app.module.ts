@@ -42,10 +42,11 @@ import { environment } from '../environments/environment';
 import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
 import { SurveyFormComponent } from './components/survey-form/survey-form.component';
-import { QuestionComponent } from './components/survey-form/question/question.component';
-import { AnswersComponent } from './components/survey-form/answers/answers.component';
 import { CommonModule } from '@angular/common';
-import { QuestionListComponent } from './components/survey-form/question-list/question-list.component';
+import { MultipleChoiceComponent } from './components/survey-form/question/multiple-choice/multiple-choice.component';
+import { PickFromRangeComponent } from './components/survey-form/question/pick-from-range/pick-from-range.component';
+import { QuestionComponent } from './components/survey-form/question/question.component';
+import { ShortAnswerComponent } from './components/survey-form/question/short-answer/short-answer.component';
 
 @NgModule({
   declarations: [
@@ -65,8 +66,9 @@ import { QuestionListComponent } from './components/survey-form/question-list/qu
     AssessmentGraphComponent,
     SurveyFormComponent,
     QuestionComponent,
-    AnswersComponent,
-    QuestionListComponent
+    ShortAnswerComponent,
+    MultipleChoiceComponent,
+    PickFromRangeComponent
   ],
   imports: [
     BrowserModule,

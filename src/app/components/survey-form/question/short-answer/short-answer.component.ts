@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
   templateUrl: './answers.component.html',
   styleUrls: ['./answers.component.css']
 })
-export class AnswersComponent implements OnInit {
+export class ShortAnswerComponent implements OnInit {
 
   text = 'answers page';
 
