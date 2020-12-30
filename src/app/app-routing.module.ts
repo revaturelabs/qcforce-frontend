@@ -5,6 +5,8 @@ import { BatchesDetailsComponent } from './components/batches/batches-details/ba
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ReportsViewComponent } from './components/reports/reports-view/reports-view.component';
 import { SurveyViewComponent } from './components/survey-info/survey-view/survey-view.component';
+import { TakeSurveyModule } from './takeSurvey/take-survey.module';
+
 
 
 const routes: Routes = [
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'batches-details', component: BatchesDetailsComponent },
   { path: 'reports', component: ReportsViewComponent},
   { path: 'surveys', component: SurveyViewComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: 'survey', loadChildren: () => TakeSurveyModule}
+
 ];
 
 @NgModule({
