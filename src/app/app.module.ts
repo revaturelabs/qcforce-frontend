@@ -38,6 +38,7 @@ import { environment } from '../environments/environment';
 import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [

@@ -9,6 +9,10 @@ export class AdminNavbarComponent implements OnInit {
 
   menuList = [
     {
+      name: 'Admin',
+      routerLink: '/admin'
+    },
+    {
       name: 'Reports',
       routerLink: '/reports'
     },

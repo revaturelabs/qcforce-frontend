@@ -8,12 +8,13 @@ import { SurveyViewComponent } from './components/survey-info/survey-view/survey
 
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'batch-list', component: BatchListComponent },
   { path: 'batches-details', component: BatchesDetailsComponent },
-  { path: 'reports', component: ReportsViewComponent},
-  { path: 'surveys', component: SurveyViewComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+  { path: 'reports', component: ReportsViewComponent },
+  { path: 'surveys', component: SurveyViewComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' }
 ];
 
 @NgModule({
