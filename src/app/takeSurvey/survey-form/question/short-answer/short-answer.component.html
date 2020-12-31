@@ -1,15 +1,7 @@
+<div class="form-group"  [formGroup]="surveyForm">
+    <label for="shortAnswer" >Answer Fast</label>
+    <textarea  formControlName="shortAnswer" required name="shortAnswer" class="form-control" type="text" placeholder="shortAnswer"></textarea>
 
-<h1> {{text}} </h1>
+</div>
 
-
-
-    <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
-
-        <div class="form-group">
-            <label for="shortAnswer">Answer Fast</label>
-            <textarea  formControlName="shortAnswer" required name="shortAnswer" class="form-control" type="text" placeholder="shortAnswer" id="shortAnswer" ></textarea>
-        </div>
-        <button type="submit" [disabled]="!surveyForm.valid" class="btn btn-success">Submit</button>
-
-    </form>
 

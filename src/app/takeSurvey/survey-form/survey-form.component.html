@@ -12,3 +12,15 @@ LOOP THROUGH WITH *ngFor= 'question of questionList'
 
 
     *ngIf= 'question.type = mutiple choice' -->
+    
+    <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+        <app-question></app-question>
+       
+        <div class='app-short-answer' [surveyForm]="surveyForm"></div>
+
+        <div class='app-multiple-choice' [surveyForm]="surveyForm"></div>
+
+        <app-pick-from-range [surveyForm]="surveyForm" ></app-pick-from-range>
+
+        <button type="submit" [disabled]="!surveyForm.valid" class="btn btn-success">Submit</button>
+    </form>

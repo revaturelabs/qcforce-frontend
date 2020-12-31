@@ -13,12 +13,12 @@ import { TakeSurveyComponent } from './take-survey.component';
 
 @NgModule({
   declarations: [
-    
     TakeSurveyComponent,
     MultipleChoiceComponent,
     PickFromRangeComponent,
     ShortAnswerComponent,
-    SurveyFormComponent
+    SurveyFormComponent,
+    QuestionComponent
   ],
   imports: [
     CommonModule,
