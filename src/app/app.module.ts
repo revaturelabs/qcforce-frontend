@@ -71,11 +71,13 @@ import { TakeSurveyModule } from './takeSurvey/take-survey.module';
       reports: fromStore.reportsReducer,
       batches: fromStore.batchesReducer,
       associates: fromStore.associatesReducer,
+      surveyForm: fromStore.surveyFormReducer
     }),
     EffectsModule.forRoot([
       fromStore.ReportsEffects,
       fromStore.BatchesEffects,
       fromStore.AssociatesEffects,
+      fromStore.surveyFormEffects
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),

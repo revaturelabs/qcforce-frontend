@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
   styleUrls: ['./short-answer.component.css']
 })
 export class ShortAnswerComponent implements OnInit {
-  @Input()  surveyForm: FormGroup;
+  @Input()  mainSurveyForm: FormGroup;
 
   constructor() {
   }

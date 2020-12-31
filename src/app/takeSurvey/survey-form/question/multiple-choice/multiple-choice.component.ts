@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./multiple-choice.component.css']
 })
 export class MultipleChoiceComponent implements OnInit {
-  @Input()  surveyForm: FormGroup;
+  @Input()  mainSurveyForm: FormGroup;
   constructor() { }
 
   ngOnInit(): void {

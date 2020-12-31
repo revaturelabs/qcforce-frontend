@@ -1,26 +1,10 @@
-<!-- <app-question>
-</app-question>
-<app-answers></app-answers> -->
+   <form [formGroup]="mainSurveyForm" (ngSubmit)="onSubmit()">
 
-<!-- RECEIVE QUESTION LIST
+    <!-- <div *ngFor="let question of surveyForm.questionList"> -->
+            <!-- pass directive for surveyForm object -->
+        <app-question [mainSurveyForm]="mainSurveyForm" > </app-question>
+    <!-- </div> -->
 
-LOOP THROUGH WITH *ngFor= 'question of questionList'
-    *ngIf= 'question.type = short anwser'
+        <button type="submit" [disabled]="!mainSurveyForm.valid" class="btn btn-success">Submit</button>
 
-
-    *ngIf= 'question.type = Pick from range'
-
-
-    *ngIf= 'question.type = mutiple choice' -->
-    
-    <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
-        <app-question></app-question>
-       
-        <div class='app-short-answer' [surveyForm]="surveyForm"></div>
-
-        <div class='app-multiple-choice' [surveyForm]="surveyForm"></div>
-
-        <app-pick-from-range [surveyForm]="surveyForm" ></app-pick-from-range>
-
-        <button type="submit" [disabled]="!surveyForm.valid" class="btn btn-success">Submit</button>
-    </form>
+</form>
