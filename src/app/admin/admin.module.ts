@@ -11,12 +11,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminComponent } from './admin.component';
 import { QuestionListItemComponent } from './components/question-list-item/question-list-item.component';
 
-
 @NgModule({
-  declarations: [SurveyListViewComponent, QuestionListViewComponent, MakeQuestionViewComponent, MakeSurveyViewComponent, SurveyDetailViewComponent, NavbarComponent, AdminComponent, QuestionListItemComponent],
-  imports: [
-    CommonModule,
-    AdminRoutingModule
-  ]
+  declarations: [
+    SurveyListViewComponent,
+    QuestionListViewComponent,
+    MakeQuestionViewComponent,
+    MakeSurveyViewComponent,
+    SurveyDetailViewComponent,
+    NavbarComponent,
+    AdminComponent,
+    QuestionListItemComponent,
+  ],
+  imports: [CommonModule, AdminRoutingModule],
 })
-export class AdminModule { }
+export class AdminModule {}
