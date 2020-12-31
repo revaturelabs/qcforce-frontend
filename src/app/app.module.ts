@@ -3,13 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /*ngrx imports*/
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+
+/* Surveu import */
+
+
 
 /*application components*/
 import { AppComponent } from './app.component';
@@ -39,6 +43,8 @@ import * as fromStore from './store';
 import { AssessmentGraphComponent } from './components/reports/assessment-graph/assessment-graph.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminModule } from './admin/admin.module';
+import { CommonModule } from '@angular/common';
+import { TakeSurveyModule } from './takeSurvey/take-survey.module';
 
 @NgModule({
   declarations: [
@@ -61,16 +67,19 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    TakeSurveyModule,
     StoreModule.forRoot({
       router: routerReducer,
       reports: fromStore.reportsReducer,
       batches: fromStore.batchesReducer,
       associates: fromStore.associatesReducer,
+      surveyForm: fromStore.surveyFormReducer
     }),
     EffectsModule.forRoot([
       fromStore.ReportsEffects,
       fromStore.BatchesEffects,
       fromStore.AssociatesEffects,
+      fromStore.surveyFormEffects
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
@@ -79,6 +88,8 @@ import { AdminModule } from './admin/admin.module';
     ChartsModule,
     FormsModule,
     HttpClientModule,
+    CommonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

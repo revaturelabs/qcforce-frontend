@@ -1,0 +1,10 @@
+   <form [formGroup]="mainSurveyForm" (ngSubmit)="onSubmit()">
+
+    <!-- <div *ngFor="let question of surveyForm.questionList"> -->
+            <!-- pass directive for surveyForm object -->
+        <app-question [mainSurveyForm]="mainSurveyForm" > </app-question>
+    <!-- </div> -->
+
+        <button type="submit" [disabled]="!mainSurveyForm.valid" class="btn btn-success">Submit</button>
+
+</form>
