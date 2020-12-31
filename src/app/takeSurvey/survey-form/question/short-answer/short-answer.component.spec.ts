@@ -38,19 +38,6 @@ describe('AnswersComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should set submitted value to true', async( () => {
-    component.onSubmit();
-    expect(component.submitted).toBeTruthy();
-  }));
-
-  it('should call the onSubmit method'), async(() => {
-    fixture.detectChanges();
-    spyOn(component, 'onSubmit');
-    el = fixture.debugElement.query(By.css('button')).nativeElement;
-    el.click();
-    expect(component.onSubmit).toHaveBeenCalledTimes(0);
-  });
-
   it ('form should be invalid', async (() => {
     component.surveyForm.controls['shortAnswer'].setValue('');
     expect(component.surveyForm.valid).toBeFalsy();
