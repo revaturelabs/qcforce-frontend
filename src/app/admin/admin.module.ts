@@ -9,14 +9,11 @@ import { MakeSurveyViewComponent } from './components/make-survey-view/make-surv
 import { SurveyDetailViewComponent } from './components/survey-detail-view/survey-detail-view.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminComponent } from './admin.component';
-import { QuestionListItemComponent } from './components/question-list-view/question-list-item/question-list-item.component';
-import { QuestionResponseRadioComponent } from './components/make-question-view/question-response-radio/question-response-radio.component';
-import { QuestionResponseMultipleChoiceComponent } from './components/make-question-view/question-response-multiple-choice/question-response-multiple-choice.component';
-import { SurveyListItemComponent } from './components/survey-list-view/survey-list-item/survey-list-item.component';
+import { QuestionListItemComponent } from './components/question-list-item/question-list-item.component';
 
 
 @NgModule({
-  declarations: [SurveyListViewComponent, QuestionListViewComponent, MakeQuestionViewComponent, MakeSurveyViewComponent, SurveyDetailViewComponent, NavbarComponent, AdminComponent, QuestionListItemComponent, QuestionResponseRadioComponent, QuestionResponseMultipleChoiceComponent, SurveyListItemComponent],
+  declarations: [SurveyListViewComponent, QuestionListViewComponent, MakeQuestionViewComponent, MakeSurveyViewComponent, SurveyDetailViewComponent, NavbarComponent, AdminComponent, QuestionListItemComponent],
   imports: [
     CommonModule,
     AdminRoutingModule
