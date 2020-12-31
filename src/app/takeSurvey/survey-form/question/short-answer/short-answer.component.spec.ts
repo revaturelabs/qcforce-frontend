@@ -38,6 +38,7 @@ describe('AnswersComponent', () => {
     fixture.detectChanges();
   });
 
+<<<<<<< HEAD
 
 
   // it ('form should be invalid', async (() => {
@@ -55,4 +56,21 @@ describe('AnswersComponent', () => {
   //   setValue('I attended bootcamp starting in December');
   //   expect(component.surveyForm.valid).toBeTruthy();
   // }));
+=======
+  it ('form should be invalid', async (() => {
+    component.surveyForm.controls['shortAnswer'].setValue('');
+    expect(component.surveyForm.valid).toBeFalsy();
+  }));
+
+  it ('form should be invalid', async (() => {
+    component.surveyForm.controls['shortAnswer'].
+    setValue('I attended bootcamp starting in December of 2019 and graduating at the end of February 2020. I was a part of a batch that was taught skills in Machine Learning. Revature at this point had not had a Machine Learning course so my batch acted as a guinea pig of sorts. Training felt very disorganized and poorly put together. Most of the learning that was done was independent or with other classmates and not from the instructor. Keep in mind that I did not get to choose what course I would be taught but rather was elected based on where Revature thought I would best fit.');
+    expect(component.surveyForm.valid).toBeFalsy();
+  }));
+  it ('form should be valid', async (() => {
+    component.surveyForm.controls['shortAnswer'].
+    setValue('I attended bootcamp starting in December');
+    expect(component.surveyForm.valid).toBeTruthy();
+  }));
+>>>>>>> d5080a7af9aad6f730d10b2442719cb4125e5dce
 });
