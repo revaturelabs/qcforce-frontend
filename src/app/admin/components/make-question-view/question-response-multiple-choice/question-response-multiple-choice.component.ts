@@ -6,11 +6,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./question-response-multiple-choice.component.css"],
 })
 export class QuestionResponseMultipleChoiceComponent implements OnInit {
-  
   addChoiceClicked = false;
-  questionInput: string = '';
+  questionInput: string = "";
   completeQuestion = [];
-  
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -18,11 +17,8 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
   showChoiceMaker() {
     this.addChoiceClicked = !this.addChoiceClicked;
     //Add questionInput to completeQuestion
-
   }
-  onInput(event: any, questionInput: string){
-    if (event.target.keyboardEvent){
-      questionInput = 'hello';
-    }
+  onInput(questionInput: string) {
+    this.questionInput = questionInput;
   }
 }

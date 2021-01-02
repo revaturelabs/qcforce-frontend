@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuestionResponseRadioComponent } from './question-response-radio.component';
+import { QuestionResponseRadioComponent } from "./question-response-radio.component";
 
-describe('QuestionResponseRadioComponent', () => {
+describe("QuestionResponseRadioComponent", () => {
   let component: QuestionResponseRadioComponent;
   let fixture: ComponentFixture<QuestionResponseRadioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuestionResponseRadioComponent ]
-    })
-    .compileComponents();
+      declarations: [QuestionResponseRadioComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,12 +18,24 @@ describe('QuestionResponseRadioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it ('should have a radio button for range'), () =>{
-    expect(fixture.nativeElement.querySelector('#range').toBeTruthy());
-  } 
-  
+  it("should have a textarea for question range"),
+    () => {
+      expect(
+        fixture.nativeElement.querySelector("#rangeQuestion").toBeTruthy()
+      );
+    };
+
+  it("should have a button to add a choice"),
+    () => {
+      expect(fixture.nativeElement.querySelector("#addChoice").toBeTruthy());
+    };
+
+  it("should have a submit button"),
+    () => {
+      expect(fixture.nativeElement.querySelector("#submit").toBeTruthy());
+    };
 });

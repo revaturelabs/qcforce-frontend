@@ -23,11 +23,9 @@ describe("QuestionResponseMultipleChoiceComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should have a radio button for multiple choice"),
+  it("should have a button to add a choice"),
     () => {
-      expect(
-        fixture.nativeElement.querySelector("#multipleChoice").toBeTruthy()
-      );
+      expect(fixture.nativeElement.querySelector("#addChoice").toBeTruthy());
     };
 
   it("should have a submit button"),
@@ -42,18 +40,11 @@ describe("QuestionResponseMultipleChoiceComponent", () => {
       );
     };
 
-  it("should have valid input when submit button is clicked"),
-    () => {
-      fixture.detectChanges();
-      const button = fixture.debugElement.query(By.css("#submitButton"));
-      expect(button.nativeElement.disabled).toBeTruthy();
-    };
-
   it("should enable button when textArea is not empty", () => {
     fixture.nativeElement.query("#inputQuestion").innerText =
-      "I love this test";
+      "How prepared do you feel for your projects?";
     fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css("button"));
+    const button = fixture.debugElement.query(By.css("submitButton"));
     expect(button.nativeElement.disabled).toBeFalsy();
   });
 });
