@@ -1,9 +1,12 @@
 <form>
-    <textarea class="questionInput" placeholder="Enter a question for multiple choice..."></textarea>
-    <button id="addChoice" (click)='showChoiceMaker()'>Add Choice</button>
+    <form>
+        <textarea id=choice placeholder="Enter a question for multiple choice..."></textarea>
+        <button id="addChoice" (click)='showChoiceMaker()'[disabled]="questionInput==''"(change)='onInput($event, questionInput)'>Add Choice</button>
+    </form>
 
     <div [hidden]=!addChoiceClicked>
         <p>Enter choice</p>
     </div>
-    <button id="submitButton" [disabled]= !hasInput ></button>
+
+    <button type=submit id="submitButton" [disabled]= "questionInput == ''" >Submit</button>
 </form>
