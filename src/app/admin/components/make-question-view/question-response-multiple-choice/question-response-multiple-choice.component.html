@@ -1,1 +1,8 @@
-<p>Multiple choice works</p>
+<form>
+    <textarea class="questionInput" placeholder="Enter a question for multiple choice..."></textarea>
+    <button id="addChoice" (click)='showChoiceMaker()'>Add Choice</button>
+
+    <div [hidden]=!addChoiceClicked>
+        <p>Enter choice</p>
+    </div>
+</form>

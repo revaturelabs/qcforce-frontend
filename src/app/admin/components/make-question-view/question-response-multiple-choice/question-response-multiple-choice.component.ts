@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question-response-multiple-choice.component.css']
 })
 export class QuestionResponseMultipleChoiceComponent implements OnInit {
-
+  addChoiceClicked = false;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  showChoiceMaker() {
+    this.addChoiceClicked = !this.addChoiceClicked
+  }
+
 
 }

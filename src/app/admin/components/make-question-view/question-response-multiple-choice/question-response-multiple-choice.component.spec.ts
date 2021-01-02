@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuestionResponseMultipleChoiceComponent } from './question-response-multiple-choice.component';
+import { QuestionResponseMultipleChoiceComponent } from "./question-response-multiple-choice.component";
 
-describe('QuestionResponseMultipleChoiceComponent', () => {
+describe("QuestionResponseMultipleChoiceComponent", () => {
   let component: QuestionResponseMultipleChoiceComponent;
   let fixture: ComponentFixture<QuestionResponseMultipleChoiceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuestionResponseMultipleChoiceComponent ]
-    })
-    .compileComponents();
+      declarations: [QuestionResponseMultipleChoiceComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,11 +18,14 @@ describe('QuestionResponseMultipleChoiceComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it ('should have a radio button for multiple choice'), () =>{
-    expect(fixture.nativeElement.querySelector('#multipleChoice').toBeTruthy());
-}
+  it("should have a radio button for multiple choice"),
+    () => {
+      expect(
+        fixture.nativeElement.querySelector("#multipleChoice").toBeTruthy()
+      );
+    };
 });
