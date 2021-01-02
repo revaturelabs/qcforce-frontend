@@ -9,6 +9,8 @@ import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 export class ShortAnswerComponent implements OnInit {
   @Input()  mainSurveyForm: FormGroup;
 
+  
+
   constructor() {
   }
   ngOnInit(): void {

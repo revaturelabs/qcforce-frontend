@@ -10,17 +10,21 @@ import { SurveyDetailViewComponent } from './components/survey-detail-view/surve
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminComponent } from './admin.component';
 import { QuestionListItemComponent } from './components/question-list-item/question-list-item.component';
+import { QuestionResponseShortAnswerComponent } from './components/make-question-view/question-response-short-answer/question-response-short-answer.component';
+import { QuestionResponseMultipleChoiceComponent} from './components/make-question-view/question-response-multiple-choice/question-response-multiple-choice.component';
 
 @NgModule({
   declarations: [
+    MakeQuestionViewComponent,
     SurveyListViewComponent,
     QuestionListViewComponent,
-    MakeQuestionViewComponent,
     MakeSurveyViewComponent,
     SurveyDetailViewComponent,
     NavbarComponent,
     AdminComponent,
     QuestionListItemComponent,
+    QuestionResponseShortAnswerComponent,
+    QuestionResponseMultipleChoiceComponent
   ],
   imports: [CommonModule, AdminRoutingModule],
 })

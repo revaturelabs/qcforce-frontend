@@ -22,4 +22,8 @@ describe('QuestionResponseMultipleChoiceComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('should have a radio button for multiple choice'), () =>{
+    expect(fixture.nativeElement.querySelector('#multipleChoice').toBeTruthy());
+}
 });

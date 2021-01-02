@@ -46,6 +46,7 @@ import { AdminModule } from './admin/admin.module';
 import { CommonModule } from '@angular/common';
 import { TakeSurveyModule } from './takeSurvey/take-survey.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { TakeSurveyModule } from './takeSurvey/take-survey.module';
     SurveyQuestionsComponent,
     AssessmentGraphComponent,
     NavbarComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -22,4 +22,9 @@ describe('QuestionResponseRadioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('should have a radio button for range'), () =>{
+    expect(fixture.nativeElement.querySelector('#range').toBeTruthy());
+  } 
+  
 });

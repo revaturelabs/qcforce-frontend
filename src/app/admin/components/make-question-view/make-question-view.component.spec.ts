@@ -5,7 +5,6 @@ import { MakeQuestionViewComponent } from './make-question-view.component';
 describe('MakeQuestionViewComponent', () => {
   let component: MakeQuestionViewComponent;
   let fixture: ComponentFixture<MakeQuestionViewComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MakeQuestionViewComponent ]
@@ -22,4 +21,19 @@ describe('MakeQuestionViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should make a button to create a new multiple choice type', () =>{
+    expect(fixture.nativeElement.querySelector('#multiChoice')).toBeTruthy();
+  });
+
+  it('should make a button to create a new short answer type', () =>{
+    expect(fixture.nativeElement.querySelector('#shortAnswer')).toBeTruthy();
+  });
+
+  it('should make a button to create a new range type', () =>{
+    expect(fixture.nativeElement.querySelector('#rangeOption')).toBeTruthy();
+  });
+
+
 });
