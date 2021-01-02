@@ -1,9 +1,9 @@
 <form>
-    <form>
-        <textarea id=choice placeholder="Enter a question for multiple choice..." (input)='onInput(questionInput)'></textarea>
-        <button id="addChoice" (click)='showChoiceMaker()'[disabled]="questionInput == '' "
-        >Add Choice</button>
-    </form>
+
+    <textarea id=choice placeholder="Enter a question for multiple choice..." (input)='onInput($event)'></textarea>
+    <button id="addChoice" (click)='showChoiceMaker()'[disabled]="questionInput == '' "
+    >Add Choice</button>
+
 
     <div [hidden]=!addChoiceClicked>
         <p>Enter choice</p>

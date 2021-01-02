@@ -18,7 +18,7 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
     this.addChoiceClicked = !this.addChoiceClicked;
     //Add questionInput to completeQuestion
   }
-  onInput(questionInput: string) {
-    this.questionInput = questionInput;
+  onInput(event: any) {
+    this.questionInput = event.value;
   }
 }
