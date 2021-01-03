@@ -12,47 +12,23 @@
     <button type=submit id="submitButton" [disabled]= "questionInput == '' "  >Submit</button>
 </form> -->
 
-<form [formGroup]="newMultiChoiceQuestion">
-
-    Value: {{ newMultiChoiceQuestion.value | json }}
-
-    <hr>
-
-    <div>
-        <input placeholder="Question" formControlName="question">
-    </div>
-
-    <div formArrayName="questions">
-
-        <div *ngFor="let phone of questionForms.controls; let i=index" [formGroupName]="i">
+<form [formGroup]="QuestionForm">
 
 
-            <div>
-                <input placeholder="Question" formControlName="questionPart">
+    <div formArrayName = "questions">
+        <div *ngFor = "let question of questionForms.controls; let i = index" >
+            <input placeholder= "Enter question..." formControlName="i">
+            <button (click) = "deleteQuestion(i)">Delete Question</button>
+            <div *ngFor = "let choice of choiceForms.controls; let i = index" >
+                <input placeholder= "Enter choice for question..." formControlName="i">
+                <button (click) = "deleteChoice(i)">Delete Choice</button>
             </div>
-
-            <!-- <div>
-                <input placeholder="First Choice" formControlName="questionPart">
-            </div>
-
-            <div>
-                <input placeholder="Second Choice" formControlName="questionPart">
-            </div>
-
-            <div>
-                <input placeholder="Third Choice" formControlName="questionPart">
-            </div>
-
-            <div>
-                <input placeholder="Fourth Choice" formControlName="questionPart">
-            </div> -->
-
-            <button (click)="deleteChoice(i)">Delete</button>
-
+            <button (click) = addChoice()>Add Choice</button>
         </div>
+        <button (click) = addQuestion()>Add Question</button>
+
 
     </div>
+    </form>
 
-    <button (click)="addChoice()">Add Choice</button>
-
-  </form>
+   

@@ -7,29 +7,45 @@ import { FormArray, FormBuilder, FormGroup } from "@angular/forms";
   styleUrls: ["./question-response-multiple-choice.component.css"],
 })
 export class QuestionResponseMultipleChoiceComponent implements OnInit {
-  
   addChoiceClicked = false;
   questionInput: string = "";
   completeQuestion = [];
-  newMultiChoiceQuestion: FormGroup; 
-  
+  QuestionForm: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-
-    const questionTemplate = this.fb.group({
-      newQuesion: this.fb.array([])
-    })
-
+    this.QuestionForm = this.fb.group({
+      questions: this.fb.array([
+        {
+          choices: this.fb.array([]),
+        },
+      ]),
+    });
   }
-  
-  addChoice(){
-    const field = this.fb.group({
-      questionPart: []
-    })
 
-    this.questionForms.push(field);
+  get choiceForms() {
+    return this.QuestionForm.get("choices") as FormArray;
+  }
+
+  get questionForms() {
+    return this.QuestionForm.get("questions") as FormArray;
+  }
+
+  addChoice() {
+    const questionChoice = this.fb.group({
+      choice: [],
+    });
+
+    this.questionForms.push(questionChoice);
+  }
+
+  addQuestion() {
+    const questionInput = this.fb.group({
+      question: [],
+    });
+
+    this.questionForms.push(questionInput);
   }
 
   showChoiceMaker() {
@@ -40,11 +56,11 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
     this.questionInput = event.value;
   }
 
-  get questionForms() {
-    return this.newMultiChoiceQuestion.get('questions') as FormArray
+  deleteChoice(i) {
+    this.choiceForms.removeAt(i);
   }
 
-  deleteChoice(i) {
-    this.questionForms.removeAt(i)
+  deleteQuestion(i) {
+    this.questionForms.removeAt(i);
   }
 }

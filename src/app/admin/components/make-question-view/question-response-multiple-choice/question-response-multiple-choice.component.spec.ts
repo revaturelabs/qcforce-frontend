@@ -44,7 +44,7 @@ describe("QuestionResponseMultipleChoiceComponent", () => {
     fixture.nativeElement.query("#inputQuestion").innerText =
       "How prepared do you feel for your projects?";
     fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css("submitButton"));
+    const button = fixture.nativeElement.querySelector("#submitButton");
     expect(button.nativeElement.disabled).toBeFalsy();
   });
 });
