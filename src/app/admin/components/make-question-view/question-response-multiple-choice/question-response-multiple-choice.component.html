@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
 
     <textarea id=choice placeholder="Enter a question for multiple choice..." (input)='onInput($event)'></textarea>
     <button id="addChoice" (click)='showChoiceMaker()'[disabled]="questionInput == '' "
@@ -10,4 +10,49 @@
     </div>
 
     <button type=submit id="submitButton" [disabled]= "questionInput == '' "  >Submit</button>
-</form>
+</form> -->
+
+<form [formGroup]="newMultiChoiceQuestion">
+
+    Value: {{ newMultiChoiceQuestion.value | json }}
+
+    <hr>
+
+    <!-- <mat-form-field class="full">
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field> -->
+
+    <div formArrayName="questions">
+
+        <div *ngFor="let phone of questionForms.controls; let i=index" [formGroupName]="i">
+
+
+            <div>
+                <input placeholder="Question" formControlName="questionPart">
+            </div>
+
+            <!-- <div>
+                <input placeholder="First Choice" formControlName="questionPart">
+            </div>
+
+            <div>
+                <input placeholder="Second Choice" formControlName="questionPart">
+            </div>
+
+            <div>
+                <input placeholder="Third Choice" formControlName="questionPart">
+            </div>
+
+            <div>
+                <input placeholder="Fourth Choice" formControlName="questionPart">
+            </div> -->
+
+            <button (click)="deleteChoice(i)">Delete</button>
+
+        </div>
+
+    </div>
+
+    <button (click)="addChoice()">Add Choice</button>
+
+  </form>

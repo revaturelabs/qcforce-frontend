@@ -13,6 +13,7 @@ import { QuestionListItemComponent } from "./components/question-list-item/quest
 import { QuestionResponseShortAnswerComponent } from "./components/make-question-view/question-response-short-answer/question-response-short-answer.component";
 import { QuestionResponseMultipleChoiceComponent } from "./components/make-question-view/question-response-multiple-choice/question-response-multiple-choice.component";
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,6 @@ import { FormsModule } from "@angular/forms";
     QuestionResponseShortAnswerComponent,
     QuestionResponseMultipleChoiceComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, FormsModule],
+  imports: [CommonModule, AdminRoutingModule, FormsModule,ReactiveFormsModule],
 })
 export class AdminModule {}
