@@ -91,7 +91,6 @@ import { TakeSurveyModule } from './takeSurvey/take-survey.module';
     FormsModule,
     HttpClientModule,
     CommonModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

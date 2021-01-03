@@ -14,6 +14,8 @@ import { QuestionResponseShortAnswerComponent } from "./components/make-question
 import { QuestionResponseMultipleChoiceComponent } from "./components/make-question-view/question-response-multiple-choice/question-response-multiple-choice.component";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuestionResponseRadioComponent } from "./components/make-question-view/question-response-radio/question-response-radio.component";
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     QuestionListItemComponent,
     QuestionResponseShortAnswerComponent,
     QuestionResponseMultipleChoiceComponent,
+    QuestionResponseRadioComponent
   ],
   imports: [CommonModule, AdminRoutingModule, FormsModule,ReactiveFormsModule],
+  bootstrap: [AdminComponent]
+
 })
 export class AdminModule {}
