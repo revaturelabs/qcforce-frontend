@@ -18,10 +18,13 @@ describe("QuestionResponseRadioComponent", () => {
     fixture.detectChanges();
   });
 
+  //Tests question-response-radio component exist
+
   it("should create", () => {
     expect(component).toBeTruthy();
   });
 
+  // Tests question-response-radio-component text area exists
   it("should have a textarea for question range"),
     () => {
       expect(
@@ -29,10 +32,14 @@ describe("QuestionResponseRadioComponent", () => {
       );
     };
 
+  // Tests question-response-radio-component add choice button exists
+
   it("should have a button to add a choice"),
     () => {
       expect(fixture.nativeElement.querySelector("#addChoice").toBeTruthy());
     };
+
+  // Tests question-response-radio-component submit button exists
 
   it("should have a submit button"),
     () => {
