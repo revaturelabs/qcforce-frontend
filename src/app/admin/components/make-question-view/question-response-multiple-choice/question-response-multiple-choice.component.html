@@ -1,34 +1,20 @@
-<!-- <form>
+<form [formGroup]="multipleChoiceForm">
 
-    <textarea id=choice placeholder="Enter a question for multiple choice..." (input)='onInput($event)'></textarea>
-    <button id="addChoice" (click)='showChoiceMaker()'[disabled]="questionInput == '' "
-    >Add Choice</button>
+    <input formControlName="question">
 
-
-    <div [hidden]=!addChoiceClicked>
-        <p>Enter choice</p>
-    </div>
-
-    <button type=submit id="submitButton" [disabled]= "questionInput == '' "  >Submit</button>
-</form> -->
-
-<form [formGroup]="QuestionForm">
-
-
-    <div formArrayName = "questions">
-        <div *ngFor = "let question of questionForms.controls; let i = index" >
-            <input placeholder= "Enter question..." formControlName="i">
-            <button (click) = "deleteQuestion(i)">Delete Question</button>
-            <div *ngFor = "let choice of choiceForms.controls; let i = index" >
-                <input placeholder= "Enter choice for question..." formControlName="i">
-                <button (click) = "deleteChoice(i)">Delete Choice</button>
-            </div>
-            <button (click) = addChoice()>Add Choice</button>
+    <div formArrayName="choices">
+  
+        <div *ngFor="let choice of multipleChoiceForms.controls; let i=index" [formGroupName]="i">
+  
+            <input formControlName="answers">
+  
+            <button (click)="deleteChoice(i)">Delete Choice</button>
+  
         </div>
-        <button (click) = addQuestion()>Add Question</button>
-
-
     </div>
-    </form>
+  
+    <button (click)="addChoice()">Add Choice</button>
+  
+  </form>
 
    
