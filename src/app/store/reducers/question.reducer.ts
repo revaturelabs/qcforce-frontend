@@ -1,56 +1,48 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { Question } from 'src/app/models/question.model';
 import * as QuestionSubmitActions from '../actions/question-submit';
-import { SubmissionState } from '../states';
+import { QuestionState } from '../states/question.state';
 
-export const initialState: Question = {
+export const initialQuestion: Question = {
     id: 0,
     createdOn: new Date(Date.now()),
     type: '',
     version: 0,
     question: [],
+  };
+
+  export const initialState: QuestionState = {
+    data: initialQuestion,
     loading: false,
+    loaded: false
   };
 
   const reducer = createReducer(
     initialState,
     on(QuestionSubmitActions.questionUpdate, (state, { submission }) => ({
-      id: submission.id,
-      createdOn: submission.createdOn,
-      type: submission.type,
-      version: submission.version,
-      question: submission.question
-      loading: submission.loading
+      ...state,
+      data: submission
     })),
-  
  
     on(QuestionSubmitActions.questionReset, (state) => ({
-        id: 0,
-        createdOn: new Date(Date.now()),
-        type: '',
-        version: 0,
-        question: []
+      ...state,
+    data: initialQuestion,
+    loading: false,
+    loaded: false
       })),
     
       on(QuestionSubmitActions.questionSubmit, (state, { submission }) => ({
-        id: submission.id,
-        createdOn: submission.createdOn,
-        type: submission.type,
-        version: submission.version,
-        question: submission.question
-        loading: submission.loading
+        ...state,
+        data: submission,
+        loading: true
       })),
     
       on(QuestionSubmitActions.submissionSuccess, (state) => ({
-        id: state.id,
-        createdOn: state.createdOn,
-        type: state.type,
-        version: state.version,
-        question: state.question,
-        loading: true
+        ...state,
+        loading: false
       })),
     );
     
-    export function questionSubmissionReducer(state: SubmissionState | undefined, action: Action) {
+    export function questionSubmissionReducer(state: QuestionState | undefined, action: Action) {
       return reducer(state, action);
     }
