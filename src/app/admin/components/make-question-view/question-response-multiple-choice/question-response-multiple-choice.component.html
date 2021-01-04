@@ -1,12 +1,12 @@
 <form [formGroup]="multipleChoiceForm">
 
-    <input formControlName="question">
+    <input formControlName="question" placeholder="Please enter question prompt">
 
     <div formArrayName="choices">
   
         <div *ngFor="let choice of multipleChoiceForms.controls; let i=index" [formGroupName]="i">
   
-            <input formControlName="answers">
+            <input formControlName="answers" placeholder="Please enter answer for this question">
   
             <button (click)="deleteChoice(i)">Delete Choice</button>
   
