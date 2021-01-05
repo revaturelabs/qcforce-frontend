@@ -1,15 +1,22 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from "@angular/common/http/testing";
 
 import { QuestionResponseShortAnswerComponent } from "./question-response-short-answer.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 describe("QuestionResponseShortAnswerComponent", () => {
   let component: QuestionResponseShortAnswerComponent;
   let fixture: ComponentFixture<QuestionResponseShortAnswerComponent>;
+  let submitEl;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [QuestionResponseShortAnswerComponent],
+      imports: [ReactiveFormsModule, HttpClientTestingModule],
     }).compileComponents();
   }));
 
@@ -17,6 +24,7 @@ describe("QuestionResponseShortAnswerComponent", () => {
     fixture = TestBed.createComponent(QuestionResponseShortAnswerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    submitEl = fixture.debugElement;
   });
   //Tests question-response-short-answer component exists
   it("should create", () => {
@@ -40,7 +48,7 @@ describe("QuestionResponseShortAnswerComponent", () => {
 
   it("should have a submit button"),
     () => {
-      expect(fixture.nativeElement.querySelector("#submit").toBeTruthy());
+      expect(fixture.nativeElement.querySelector("#submitButton").toBeTruthy());
     };
 
   //Tests question-response-short-answer component submission is valid when
@@ -55,10 +63,10 @@ describe("QuestionResponseShortAnswerComponent", () => {
   // Test question-response-short-answer component enables submit button
   // When Text area is not empty
   it("should enable submit button when textArea is not empty", () => {
-    fixture.nativeElement.query("#inputQuestion").innerText =
-      "I love this test";
+    fixture.nativeElement.query("#question").innerText = "I love this test";
     fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css("button"));
-    expect(button.nativeElement.disabled).toBeFalsy();
+    expect(
+      submitEl.nativeElement.querySelector("#submitButton").disabled.toBeFalsy()
+    );
   });
 });
