@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormArray, FormBuilder, FormGroup } from "@angular/forms";
+import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
 import { QuestionService } from "src/app/admin/admin-services/question.service";
 import { Question } from "src/app/models/question.model";
+import { validateWhitespace, validateQuestion } from "src/app/utilities/validators";
+
 
 @Component({
   selector: "app-question-response-multiple-choice",
@@ -25,12 +27,34 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
   // Initializes form group
   ngOnInit() {
     this.multipleChoiceForm = this.fb.group({
-      question: "",
-      choice1: "",
-      choice2: "",
-      choice3: "",
-      choice4: "",
+      choice1: this.fb.control( [
+        Validators.required,
+        // validateWhitespace
+
+    ]),
+        choice2: this.fb.control( [
+          Validators.required,
+          // validateWhitespace
+      ]),
+        choice3: this.fb.control( [
+          Validators.required,
+          // validateWhitespace
+
+      ]),
+        choice4: this.fb.control( [
+          Validators.required,
+          // validateWhitespace
+
+        ]),
+      question: this.fb.control( [
+        Validators.required,
+        // validateWhitespace
+
+    ]),
+    validateQuestion
     });
+
+
   }
   //getter for choices in multipChoiceForm formgroup
   get multipleChoiceForms() {
