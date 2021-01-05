@@ -45,6 +45,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminModule } from './admin/admin.module';
 import { CommonModule } from '@angular/common';
 import { TakeSurveyModule } from './takeSurvey/take-survey.module';
+import { AdminNavBarComponent } from './admin/components/admin-nav-bar/admin-nav-bar.component';
+import { ViewQuestionComponent } from './admin/components/make-survey-view/view-question/view-question.component';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { TakeSurveyModule } from './takeSurvey/take-survey.module';
     SurveyQuestionsComponent,
     AssessmentGraphComponent,
     NavbarComponent,
+    AdminNavBarComponent,
+    ViewQuestionComponent,
 
   ],
   imports: [

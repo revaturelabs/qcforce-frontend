@@ -1,18 +1,11 @@
 <form [formGroup]="radioForm">
 
-    <input formControlName="question">
-
-    <div formArrayName="radios">
-  
-        <div *ngFor="let radio of radioForms.controls; let i=index" [formGroupName]="i">
-  
-            <input formControlName="answers">
-  
-            <button (click)="deleteChoice(i)">Delete Choice</button>
-  
-        </div>
-    </div>
-  
-    <button (click)="addChoice()">Add Choice</button>
-  
+<div><input formControlName="question" placeholder="Please enter question prompt"></div>
+<div>
+<input placeholder="Enter lowest range label">
+</div>
+<div>
+<input placeholder="Enter highest range label">
+</div>
+<button (click) = "onSubmit()">Submit</button>
   </form>

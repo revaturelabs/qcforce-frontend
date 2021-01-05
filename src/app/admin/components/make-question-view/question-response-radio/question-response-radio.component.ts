@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { QuestionService } from 'src/app/admin/admin-services/question.service';
+import { Question } from 'src/app/models/question.model';
 
 
 @Component({
@@ -11,7 +13,14 @@ export class QuestionResponseRadioComponent implements OnInit {
 
   radioForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  newQuestion: Question = {
+    id: 1,
+    createdOn: new Date(Date.now()),
+    type: "PICK_FROM_RANGE",
+    version: 1,
+    question: [],
+  };
+  constructor(private fb: FormBuilder, private questionService: QuestionService) {}
 
   ngOnInit() {
     this.radioForm = this.fb.group({
@@ -36,6 +45,14 @@ export class QuestionResponseRadioComponent implements OnInit {
   
   deleteChoice(i) {
     this.radioForms.removeAt(i)
+  }
+
+  onSubmit() {
+
+    this.questionService.sendQuestionPost(this.newQuestion).subscribe(
+       questionResp => console.log(questionResp)
+    );
+
   }
 
 }

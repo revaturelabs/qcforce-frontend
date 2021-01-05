@@ -16,7 +16,7 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
   newQuestion: Question = {
     id: 1,
     createdOn: new Date(Date.now()),
-    type: "MULTIPLE-CHOICE",
+    type: "MULTIPLE_CHOICE",
     version: 1,
     question: [],
   };

@@ -18,7 +18,7 @@ export class QuestionService {
 
   public readAllQuestions(): Observable<Question[]> {
   
-    return this.httpClient.get<Question[]>(constUrl, this.httpOptions);
+    return this.httpClient.get<Question[]>(this.constUrl);
   }
 
 }
