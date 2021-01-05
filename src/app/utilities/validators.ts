@@ -8,7 +8,7 @@ export const validateWhitespace = (control: AbstractControl) => {
   return isValid ? null : { trimmed: true };
 };
 
-export const validateQuestion: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+export const validateQuestion: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
     const question = control.get('question');
     const choice1 = control.get('choice1');
     const choice2 = control.get('choice2');

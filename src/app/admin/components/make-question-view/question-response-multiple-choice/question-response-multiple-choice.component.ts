@@ -21,49 +21,33 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
     type: "MULTIPLE_CHOICE",
     version: 1,
     question: [],
+    //valid=true;
   };
   constructor(private fb: FormBuilder, private questionService: QuestionService) {}
 
   // Initializes form group
   ngOnInit() {
     this.multipleChoiceForm = this.fb.group({
-      choice1: this.fb.control( [
-        Validators.required,
-        // validateWhitespace
-
-    ]),
-        choice2: this.fb.control( [
-          Validators.required,
-          // validateWhitespace
-      ]),
-        choice3: this.fb.control( [
-          Validators.required,
-          // validateWhitespace
-
-      ]),
-        choice4: this.fb.control( [
-          Validators.required,
-          // validateWhitespace
-
-        ]),
-      question: this.fb.control( [
-        Validators.required,
-        // validateWhitespace
-
-    ]),
-    validateQuestion
+      question: [ '', Validators.required],
+      choice1: [ '', Validators.required],
+      choice2:[ '', Validators.required],
+      choice3: '',
+      choice4:''
+ 
+  
     });
 
 
   }
-  //getter for choices in multipChoiceForm formgroup
-  get multipleChoiceForms() {
-    return this.multipleChoiceForm.get("choices") as FormArray;
-  }
 
   // Deletes existing choice from form group
 
-  onSubmit() {
+  onSubmit(multipleChoiceForm: FormGroup) {
+
+  console.log(multipleChoiceForm.get("question").value);
+  console.log(multipleChoiceForm.get("question").valid);
+  console.log(multipleChoiceForm.get("choice1").valid);
+  console.log(multipleChoiceForm.get("question").valid);   
 
     this.questionService.sendQuestionPost(this.newQuestion).subscribe(
        questionResp => console.log(questionResp)

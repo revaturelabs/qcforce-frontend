@@ -8,7 +8,7 @@
     
    
   
-    <button (click) = "onSubmit()" [disabled] = "!multipleChoiceForm.valid">Submit</button>
+    <button (click) = "onSubmit(multipleChoiceForm)" [disabled] = "multipleChoiceForm.get('question').invalid || multipleChoiceForm.get('choice1').invalid || multipleChoiceForm.get('choice2').invalid">Submit</button>
   
   </form>
 
