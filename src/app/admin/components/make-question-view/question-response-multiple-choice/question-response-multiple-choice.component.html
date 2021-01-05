@@ -1,19 +1,13 @@
 <form [formGroup]="multipleChoiceForm">
 
-    <input formControlName="question" placeholder="Please enter question prompt">
-
-    <div formArrayName="choices">
+    <div><input formControlName="question" placeholder="Please enter question prompt"></div>
+    <div><input formControlName="choice1" placeholder= "Enter a choice..."></div>
+    <div><input formControlName="choice2" placeholder= "Enter a choice..."></div>
+    <div><input formControlName="choice3" placeholder= "Enter a choice..."></div>
+    <div><input formControlName="choice4" placeholder= "Enter a choice..."></div>
+    
+   
   
-        <div *ngFor="let choice of multipleChoiceForms.controls; let i=index" [formGroupName]="i">
-  
-            <input formControlName="answers" placeholder="Please enter answer for this question">
-  
-            <button (click)="deleteChoice(i)">Delete Choice</button>
-  
-        </div>
-    </div>
-  
-    <button (click)="addChoice()">Add Choice</button>
     <button (click) = "onSubmit()" [disabled] = "!multipleChoiceForm.valid">Submit</button>
   
   </form>

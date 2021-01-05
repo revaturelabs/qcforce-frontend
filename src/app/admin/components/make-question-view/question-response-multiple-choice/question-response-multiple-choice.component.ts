@@ -23,7 +23,10 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
   ngOnInit() {
     this.multipleChoiceForm = this.fb.group({
       question: "",
-      choices: this.fb.array([]),
+      choice1: "",
+      choice2: "",
+      choice3: "",
+      choice4: "",
     });
   }
   //getter for choices in multipChoiceForm formgroup
@@ -31,35 +34,7 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
     return this.multipleChoiceForm.get("choices") as FormArray;
   }
 
-  // adds choice option to form group
-  addChoice() {
-    const choice = this.fb.group({
-      answers: [],
-    });
-    this.newQuestion.question[0] = this.multipleChoiceForm
-      .get("question")
-      .value.toString();
-    console.log(this.newQuestion.question[0]);
-
-    this.multipleChoiceForms.push(choice);
-
-    if ((<FormArray>this.multipleChoiceForm.get("choices")).length > 0) {
-      for (
-        let i = 0;
-        i < (<FormArray>this.multipleChoiceForm.get("choices")).length;
-        i++
-      ) {
-        this.newQuestion.question[i + 1] = this.multipleChoiceForm.get(
-          "choices"
-        )[i];
-      }
-      console.log(this.newQuestion.question);
-    }
-  }
   // Deletes existing choice from form group
-  deleteChoice(i) {
-    this.multipleChoiceForms.removeAt(i);
-  }
 
   onSubmit() {}
 }
