@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormArray, FormBuilder, FormGroup } from "@angular/forms";
 import { Store } from "@ngrx/store";
+import { QuestionService } from "src/app/admin/admin-services/question.service";
 import { Question } from "src/app/models/question.model";
 
 @Component({
@@ -10,6 +11,8 @@ import { Question } from "src/app/models/question.model";
 })
 export class QuestionResponseMultipleChoiceComponent implements OnInit {
   multipleChoiceForm: FormGroup;
+
+  @Input()
   newQuestion: Question = {
     id: 1,
     createdOn: new Date(Date.now()),
@@ -17,7 +20,7 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
     version: 1,
     question: [],
   };
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private questionService: QuestionService) {}
 
   // Initializes form group
   ngOnInit() {
@@ -36,5 +39,11 @@ export class QuestionResponseMultipleChoiceComponent implements OnInit {
 
   // Deletes existing choice from form group
 
-  onSubmit() {}
+  onSubmit() {
+
+    this.questionService.sendQuestionPost(this.newQuestion).subscribe(
+       questionResp => console.log(questionResp)
+    );
+
+  }
 }
